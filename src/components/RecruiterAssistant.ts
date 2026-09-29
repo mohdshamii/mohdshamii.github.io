@@ -65,6 +65,7 @@ export function initRecruiterAssistant() {
     if (overlay && drawer) {
       overlay.classList.add('active');
       drawer.classList.add('active');
+      document.body.classList.add('drawer-open');
       setTimeout(() => input?.focus(), 200);
     }
   }
@@ -73,12 +74,19 @@ export function initRecruiterAssistant() {
     if (overlay && drawer) {
       overlay.classList.remove('active');
       drawer.classList.remove('active');
+      document.body.classList.remove('drawer-open');
     }
   }
 
   if (openBtn) openBtn.addEventListener('click', openDrawer);
   if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
   if (overlay) overlay.addEventListener('click', closeDrawer);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
 
   // Suggested chips
   document.querySelectorAll('.assistant-chip').forEach(chip => {

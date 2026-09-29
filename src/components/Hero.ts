@@ -62,7 +62,7 @@ export function renderHero(): string {
         </div>
 
         <div class="hero-avatar-wrapper">
-          <img src="/img/profile.png" alt="Mohd Shami" class="hero-avatar" />
+          <img src="/img/profile.png" alt="Mohd Shami - Data Science & AI Engineer" class="hero-avatar" width="220" height="220" loading="eager" decoding="async" />
         </div>
       </div>
     </section>

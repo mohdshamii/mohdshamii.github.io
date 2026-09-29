@@ -92,7 +92,7 @@ export function renderContact(): string {
             <p>
               Access a comprehensive, printer-ready one-page curriculum vitae covering technical skills, project architecture metrics, coursework, and internship records.
             </p>
-            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div class="resume-download-actions">
               <a href="${profileData.resumeUrl}" download class="btn btn-primary">
                 <i class="fas fa-download"></i>
                 <span>Download Resume (PDF)</span>
