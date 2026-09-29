@@ -1,7 +1,7 @@
 import '../styles/main.css';
 import './lab.css';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initLab() {
   // 1. Theme sync with main portfolio
   const currentTheme = localStorage.getItem('shami_theme') || 'light';
   document.documentElement.setAttribute('data-theme', currentTheme);
@@ -714,4 +714,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (runSqlBtn) runSqlBtn.addEventListener('click', executeSqlSimulation);
   executeSqlSimulation();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initLab);
+} else {
+  initLab();
+}
+

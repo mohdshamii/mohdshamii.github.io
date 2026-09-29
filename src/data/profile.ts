@@ -55,7 +55,7 @@ export const profileData: Profile = {
   location: 'Moradabad, UP, India',
   email: 'codexshami@gmail.com',
   phone: '+91 89235 91576',
-  resumeUrl: 'files/Mohd_Shami_Resume.pdf',
+  resumeUrl: '/files/Mohd_Shami_Resume.pdf',
   socials: {
     github: 'https://github.com/mohdshamii',
     linkedin: 'https://linkedin.com/in/mohdshamii',

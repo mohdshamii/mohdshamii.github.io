@@ -12,7 +12,7 @@ import { renderContact } from './components/Contact.ts';
 import { renderFooter } from './components/Footer.ts';
 import { renderRecruiterAssistant, initRecruiterAssistant } from './components/RecruiterAssistant.ts';
 
-document.addEventListener('DOMContentLoaded', () => {
+function initApp() {
   const app = document.getElementById('app');
   if (!app) return;
 
@@ -60,4 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initApp);
+} else {
+  initApp();
+}

@@ -16,7 +16,7 @@ export function renderNavbar(): string {
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#education" class="nav-link">Education</a>
           <a href="#contact" class="nav-link">Contact</a>
-          <a href="lab/index.html" class="nav-link" style="color: var(--accent-color); font-weight: 600;">
+          <a href="/lab/index.html" class="nav-link" style="color: var(--accent-color); font-weight: 600;">
             <i class="fas fa-flask"></i> AI Lab
           </a>
         </div>
@@ -50,7 +50,7 @@ export function renderNavbar(): string {
         <a href="#skills" class="nav-link mobile-link">Skills</a>
         <a href="#education" class="nav-link mobile-link">Education</a>
         <a href="#contact" class="nav-link mobile-link">Contact</a>
-        <a href="lab/index.html" class="nav-link mobile-link" style="color: var(--accent-color); font-weight: 600;">
+        <a href="/lab/index.html" class="nav-link mobile-link" style="color: var(--accent-color); font-weight: 600;">
           <i class="fas fa-flask"></i> Interactive AI Lab
         </a>
         <a href="${profileData.resumeUrl}" download class="btn btn-primary btn-sm" style="margin-top: 0.5rem;">

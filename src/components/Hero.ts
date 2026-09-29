@@ -35,7 +35,7 @@ export function renderHero(): string {
               <i class="fas fa-file-pdf"></i>
               <span>Download Resume</span>
             </a>
-            <a href="lab/index.html" class="btn btn-outline">
+            <a href="/lab/index.html" class="btn btn-outline">
               <i class="fas fa-flask"></i>
               <span>Interactive AI Lab</span>
             </a>
@@ -62,7 +62,7 @@ export function renderHero(): string {
         </div>
 
         <div class="hero-avatar-wrapper">
-          <img src="img/profile.png" alt="Mohd Shami" class="hero-avatar" />
+          <img src="/img/profile.png" alt="Mohd Shami" class="hero-avatar" />
         </div>
       </div>
     </section>

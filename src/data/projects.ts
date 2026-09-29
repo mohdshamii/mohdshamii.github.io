@@ -26,8 +26,8 @@ export const projectsData: Project[] = [
     result: 'Achieved 85% accuracy, an AUC-ROC of 0.91, and an F1-Score of 0.87, delivering reliable real-time probability estimates for clinician review.',
     technologies: ['Python', 'XGBoost', 'Scikit-learn Pipelines', 'SMOTE', 'Flask REST API', 'Docker', 'AUC-ROC: 0.91'],
     githubUrl: 'https://github.com/mohdshamii/Revive',
-    liveDemoUrl: 'lab/index.html#disease-tab',
-    image: 'img/project-revive.png',
+    liveDemoUrl: '/lab/index.html#disease-tab',
+    image: '/img/project-revive.png',
     featured: true
   },
   {
@@ -41,8 +41,8 @@ export const projectsData: Project[] = [
     result: 'Achieved 97.8% classification accuracy and a 0.96 F1-score on severely imbalanced classes with minimal false-positive errors.',
     technologies: ['Python', 'NLP', 'TF-IDF', 'SMOTE', 'Logistic Regression', 'Scikit-learn', 'Stratified K-Fold'],
     githubUrl: 'https://github.com/mohdshamii/HamOrSpam-Classifier',
-    liveDemoUrl: 'lab/index.html#spam-tab',
-    image: 'img/project-spam.png',
+    liveDemoUrl: '/lab/index.html#spam-tab',
+    image: '/img/project-spam.png',
     featured: true
   },
   {
@@ -56,8 +56,8 @@ export const projectsData: Project[] = [
     result: 'Achieved 93% accuracy on crop recommendation and high-precision visual leaf health diagnostic classifications on unseen agricultural test data.',
     technologies: ['Python', 'Random Forest', 'CNN (Deep Learning)', 'Keras / TensorFlow', 'Grid Search', 'Cross-Validation'],
     githubUrl: 'https://github.com/mohdshamii/FarmAIQ',
-    liveDemoUrl: 'lab/index.html#crop-tab',
-    image: 'img/project-farmaiq.png',
+    liveDemoUrl: '/lab/index.html#crop-tab',
+    image: '/img/project-farmaiq.png',
     featured: true
   },
   {
@@ -71,7 +71,7 @@ export const projectsData: Project[] = [
     result: 'Generated interactive choropleth visualizations and regional indicator scorecards that highlight spatial disparities and support data-backed resource planning.',
     technologies: ['Python', 'GeoPandas', 'Pandas', 'Folium', 'Data Cleaning', 'Spatial EDA'],
     githubUrl: 'https://github.com/mohdshamii/ZillaNaksha',
-    liveDemoUrl: 'lab/index.html#sql-tab',
+    liveDemoUrl: '/lab/index.html#sql-tab',
     featured: true
   },
   {
@@ -85,7 +85,7 @@ export const projectsData: Project[] = [
     result: 'Identified top churn indicators (month-to-month contracts, unresolved support tickets) and delivered an interpretable retention scoring model for strategic customer success workflows.',
     technologies: ['Python', 'XGBoost', 'Scikit-learn', 'Pandas', 'EDA', 'Power BI / Streamlit'],
     githubUrl: 'https://github.com/mohdshamii/ChurnShield-AI',
-    liveDemoUrl: 'lab/index.html#churn-tab',
+    liveDemoUrl: '/lab/index.html#churn-tab',
     featured: true
   }
 ];
