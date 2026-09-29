@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Interactive AI Lab | Mohd Shami</title>
+  <meta name="description" content="Interactive Machine Learning & Data Science Engineering Lab by Mohd Shami. Test real-time simulations of Revive XGBoost disease prediction, HamOrSpam NLP classification, Neural Boundary canvas, ChurnShield AI, and SQL Analytics." />
+  <link rel="icon" type="image/png" href="../img/favicon.png" />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Sticky Header -->
+  <header class="lab-header">
+    <div class="container lab-nav">
+      <a href="../index.html" class="lab-back-btn">
+        <i class="fas fa-arrow-left"></i>
+        <span>Back to Main Portfolio</span>
+      </a>
+
+      <div class="lab-title-wrap">
+        <h1>Interactive AI & ML Lab</h1>
+        <p>In-browser simulations of predictive models and data pipelines</p>
+      </div>
+
+      <button class="theme-toggle" id="labThemeToggle" aria-label="Toggle theme">
+        <i class="fas fa-moon" id="labThemeIcon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Lab Body Container -->
+  <main class="container" style="padding-top: 2rem; padding-bottom: 5rem;">
+    <!-- Navigation Tabs -->
+    <div class="lab-tabs" role="tablist">
+      <button class="lab-tab-btn active" data-tab="disease-tab" role="tab">
+        <i class="fas fa-heartbeat"></i> Revive (Disease Risk)
+      </button>
+      <button class="lab-tab-btn" data-tab="spam-tab" role="tab">
+        <i class="fas fa-shield-alt"></i> HamOrSpam (NLP)
+      </button>
+      <button class="lab-tab-btn" data-tab="crop-tab" role="tab">
+        <i class="fas fa-seedling"></i> FarmAIQ (Crop Advisor)
+      </button>
+      <button class="lab-tab-btn" data-tab="neural-tab" role="tab">
+        <i class="fas fa-network-wired"></i> Neural Lab (2D Boundary)
+      </button>
+      <button class="lab-tab-btn" data-tab="sentiment-tab" role="tab">
+        <i class="fas fa-smile-beam"></i> Emotion NLP
+      </button>
+      <button class="lab-tab-btn" data-tab="vector-tab" role="tab">
+        <i class="fas fa-project-diagram"></i> Vector RAG
+      </button>
+      <button class="lab-tab-btn" data-tab="churn-tab" role="tab">
+        <i class="fas fa-chart-line"></i> ChurnShield AI
+      </button>
+      <button class="lab-tab-btn" data-tab="sql-tab" role="tab">
+        <i class="fas fa-database"></i> SQL Sandbox
+      </button>
+    </div>
+
+    <!-- TAB 1: REVIVE -->
+    <div class="lab-tab-panel active" id="disease-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-sliders-h" style="color: var(--accent-color);"></i>
+            <span>Patient Clinical Biomarkers</span>
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Patient Age</span>
+              <span class="lab-val-highlight"><span id="ageVal">28</span> years</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="reviveAge" min="18" max="80" value="28" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Body Mass Index (BMI)</span>
+              <span class="lab-val-highlight"><span id="bmiVal">24.5</span> kg/m²</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="reviveBmi" min="15" max="45" value="24.5" step="0.5" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Systolic Blood Pressure</span>
+              <span class="lab-val-highlight"><span id="bpVal">120</span> mmHg</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="reviveBp" min="90" max="180" value="120" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Fasting Glucose</span>
+              <span class="lab-val-highlight"><span id="glucoseVal">95</span> mg/dL</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="reviveGlucose" min="70" max="250" value="95" />
+          </div>
+
+          <div style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 1rem;">
+            Model: <strong>XGBoost Classifier (85.4% Accuracy)</strong> with Stratified 5-Fold Validation
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-chart-pie" style="color: var(--accent-color);"></i>
+            <span>Diagnostic Inference & SHAP Impact</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div class="gauge-big-score" id="diseaseScore">18%</div>
+            <span class="gauge-status-badge status-low" id="diseaseBadge">Low Clinical Risk</span>
+            <p id="diseaseRec" style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.5;">
+              Biomarkers are within optimal clinical thresholds. Routine preventive follow-up recommended.
+            </p>
+          </div>
+
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">
+              SHAP Feature Importance Attribution
+            </div>
+
+            <div class="shap-list">
+              <div class="shap-row">
+                <div class="shap-header">
+                  <span>Fasting Glucose Factor</span>
+                  <strong id="shapGVal" class="lab-val-highlight">+0.00</strong>
+                </div>
+                <div class="shap-bar-bg"><div class="shap-bar-fill" id="shapGBar" style="width: 15%;"></div></div>
+              </div>
+
+              <div class="shap-row">
+                <div class="shap-header">
+                  <span>Systolic Blood Pressure Factor</span>
+                  <strong id="shapBpVal" class="lab-val-highlight">+0.00</strong>
+                </div>
+                <div class="shap-bar-bg"><div class="shap-bar-fill" id="shapBpBar" style="width: 15%;"></div></div>
+              </div>
+
+              <div class="shap-row">
+                <div class="shap-header">
+                  <span>BMI Factor</span>
+                  <strong id="shapBmiVal" class="lab-val-highlight">+0.00</strong>
+                </div>
+                <div class="shap-bar-bg"><div class="shap-bar-fill" id="shapBmiBar" style="width: 15%;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: HAMORSPAM -->
+    <div class="lab-tab-panel" id="spam-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-envelope-open-text" style="color: var(--accent-color);"></i>
+            <span>Input Text or Select Preset</span>
+          </div>
+
+          <div class="preset-wrap">
+            <button class="preset-chip spam-preset" data-text="URGENT: Your account password has been compromised. Verify your security details at http://secure-portal-verify.net">Phishing Alert</button>
+            <button class="preset-chip spam-preset" data-text="CONGRATS! You won $1,000,000 cash lottery prize. Click link to claim your bonus now.">Lottery Scam</button>
+            <button class="preset-chip spam-preset" data-text="Hi Shami, could you please review the updated Python ETL pipeline script before our morning standup meeting? Thanks!">Legitimate Work</button>
+          </div>
+
+          <textarea id="spamInput" rows="5" class="sql-editor" style="height: 140px;" placeholder="Paste an email, SMS, or notification text to classify...">Hi Shami, could you please review the updated Python ETL pipeline script before our morning standup meeting? Thanks!</textarea>
+
+          <button id="runSpamBtn" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">
+            <i class="fas fa-bolt"></i> Run TF-IDF NLP Inference
+          </button>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-robot" style="color: var(--accent-color);"></i>
+            <span>NLP Classification Output</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div class="gauge-big-score" id="spamProbVal">4%</div>
+            <span class="gauge-status-badge status-low" id="spamStatusBadge">HAM (CLEAN COMMUNICATION)</span>
+            <div style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.75rem;">
+              Pipeline: <strong>TF-IDF Vectorizer + SMOTE + Logistic Regression (&gt;98% Accuracy)</strong>
+            </div>
+          </div>
+
+          <div>
+            <div style="font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem;">
+              Extracted Lexical Features &amp; Tokens
+            </div>
+            <div class="tech-tags" id="spamTokensWrap">
+              <span class="tech-tag">review</span>
+              <span class="tech-tag">pipeline</span>
+              <span class="tech-tag">meeting</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3: FARMAIQ -->
+    <div class="lab-tab-panel" id="crop-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-mountain" style="color: var(--accent-color);"></i>
+            <span>Soil Macronutrients &amp; Climate</span>
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Nitrogen (N)</span>
+              <span class="lab-val-highlight"><span id="nVal">90</span> kg/ha</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="cropN" min="10" max="140" value="90" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Phosphorus (P)</span>
+              <span class="lab-val-highlight"><span id="pVal">42</span> kg/ha</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="cropP" min="10" max="140" value="42" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Potassium (K)</span>
+              <span class="lab-val-highlight"><span id="kVal">43</span> kg/ha</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="cropK" min="10" max="140" value="43" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Annual Rainfall</span>
+              <span class="lab-val-highlight"><span id="rainVal">200</span> mm</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="cropRain" min="30" max="300" value="200" />
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-leaf" style="color: var(--accent-color);"></i>
+            <span>Recommended Crop Architecture</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div id="cropIconHolder" style="margin-bottom: 0.75rem;">
+              <i class="fas fa-seedling" style="font-size: 2.5rem; color: var(--accent-color);"></i>
+            </div>
+            <h3 id="cropPredictedName" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem;">
+              Rice (Oryza sativa)
+            </h3>
+            <p id="cropPredictedReason" style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
+              High water retention and nitrogen availability optimal for paddy cereals.
+            </p>
+            <div style="margin-top: 1rem; font-size: 0.875rem; font-weight: 600; color: var(--accent-color);">
+              Crop Suitability Match: <span id="cropSuitabilityPct">96%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: NEURAL LAB -->
+    <div class="lab-tab-panel" id="neural-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-network-wired" style="color: var(--accent-color);"></i>
+            <span>Network Architecture Hyperparameters</span>
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label"><span>Dataset Geometry</span></div>
+            <div class="preset-wrap">
+              <button class="preset-chip active dataset-chip" data-dataset="moons">Two Moons</button>
+              <button class="preset-chip dataset-chip" data-dataset="circles">Concentric Circles</button>
+              <button class="preset-chip dataset-chip" data-dataset="xor">XOR Multi-Cluster</button>
+              <button class="preset-chip dataset-chip" data-dataset="linear">Linearly Separable</button>
+            </div>
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label"><span>Activation Function</span></div>
+            <div class="preset-wrap">
+              <button class="preset-chip active act-chip" data-act="relu">ReLU</button>
+              <button class="preset-chip act-chip" data-act="sigmoid">Sigmoid</button>
+              <button class="preset-chip act-chip" data-act="tanh">Tanh</button>
+            </div>
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Hidden Neurons</span>
+              <span class="lab-val-highlight"><span id="neuronsVal">16</span> nodes</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="neuralNeurons" min="4" max="32" value="16" step="4" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Training Epochs</span>
+              <span class="lab-val-highlight"><span id="epochsVal">80</span></span>
+            </div>
+            <input type="range" class="lab-range-slider" id="neuralEpochs" min="20" max="200" value="80" step="10" />
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-draw-polygon" style="color: var(--accent-color);"></i>
+            <span>Real-Time 2D Decision Contour Surface</span>
+          </div>
+
+          <div class="canvas-holder">
+            <canvas id="neuralCanvas" width="380" height="260"></canvas>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.875rem; color: var(--text-secondary); border-top: 1px solid var(--border-light); padding-top: 0.75rem;">
+            <span>Training Loss: <strong id="trainLossVal" class="lab-val-highlight">0.0342</strong></span>
+            <span>Validation Acc: <strong id="valAccVal" class="lab-val-highlight">97.5%</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 5: EMOTION NLP -->
+    <div class="lab-tab-panel" id="sentiment-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-comment-dots" style="color: var(--accent-color);"></i>
+            <span>Text Review / User Feedback</span>
+          </div>
+
+          <div class="preset-wrap">
+            <button class="preset-chip sent-preset" data-text="The new machine learning model achieved stunning accuracy and ultra-low latency in production testing! Absolutely thrilled with the results!">High Joy / Praise</button>
+            <button class="preset-chip sent-preset" data-text="I am extremely frustrated with the repeated API timeouts and breaking database schemas during deployment.">Frustration / Bug</button>
+            <button class="preset-chip sent-preset" data-text="URGENT: Production server memory spike exceeded 95%. Immediate failover migration required!">Critical Alert</button>
+          </div>
+
+          <textarea id="sentInput" rows="5" class="sql-editor" style="height: 140px;">The new machine learning model achieved stunning accuracy and ultra-low latency in production testing! Absolutely thrilled with the results!</textarea>
+
+          <button id="runSentBtn" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">
+            <i class="fas fa-brain"></i> Compute Multi-Class Sentiment
+          </button>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-heart" style="color: var(--accent-color);"></i>
+            <span>Emotion Breakdown &amp; Attention Weights</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <span class="gauge-status-badge status-low" id="sentStatusBadge">POSITIVE / HIGH CONFIDENCE</span>
+          </div>
+
+          <div class="shap-list">
+            <div class="shap-row">
+              <div class="shap-header"><span>Joy / Enthusiasm</span><strong id="joyVal" class="lab-val-highlight">88%</strong></div>
+              <div class="shap-bar-bg"><div class="shap-bar-fill" id="joyBar" style="width: 88%; background-color: #10b981;"></div></div>
+            </div>
+            <div class="shap-row">
+              <div class="shap-header"><span>Optimism / Reliability</span><strong id="optVal" class="lab-val-highlight">75%</strong></div>
+              <div class="shap-bar-bg"><div class="shap-bar-fill" id="optBar" style="width: 75%; background-color: #3b82f6;"></div></div>
+            </div>
+            <div class="shap-row">
+              <div class="shap-header"><span>Urgency / Critical</span><strong id="urgVal" class="lab-val-highlight">12%</strong></div>
+              <div class="shap-bar-bg"><div class="shap-bar-fill" id="urgBar" style="width: 12%; background-color: #f59e0b;"></div></div>
+            </div>
+            <div class="shap-row">
+              <div class="shap-header"><span>Frustration / Negative</span><strong id="frustVal" class="lab-val-highlight">4%</strong></div>
+              <div class="shap-bar-bg"><div class="shap-bar-fill" id="frustBar" style="width: 4%; background-color: #ef4444;"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6: VECTOR RAG -->
+    <div class="lab-tab-panel" id="vector-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-search" style="color: var(--accent-color);"></i>
+            <span>Semantic Vector Query</span>
+          </div>
+
+          <div class="preset-wrap">
+            <button class="preset-chip vector-preset" data-q="computer vision object detection and convolutional neural networks">Computer Vision</button>
+            <button class="preset-chip vector-preset" data-q="transformer attention mechanisms for natural language generation">Transformers &amp; LLMs</button>
+            <button class="preset-chip vector-preset" data-q="automated continuous integration and containerized MLOps pipelines">MLOps &amp; Docker</button>
+            <button class="preset-chip vector-preset" data-q="reinforcement learning policy gradient optimization robotics">Reinforcement Learning</button>
+          </div>
+
+          <div class="lab-input-group">
+            <input type="text" id="vectorInput" class="assistant-input" value="computer vision object detection and convolutional neural networks" style="width: 100%;" />
+          </div>
+
+          <button id="runVectorBtn" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-project-diagram"></i> Compute Cosine Similarity &amp; Rank Top-K
+          </button>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-list-ol" style="color: var(--accent-color);"></i>
+            <span>Ranked Document Embeddings</span>
+          </div>
+
+          <div id="vectorResults">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 7: CHURNSHIELD AI (NEW FEATURE) -->
+    <div class="lab-tab-panel" id="churn-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-user-shield" style="color: var(--accent-color);"></i>
+            <span>Customer Account Telemetry</span>
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Account Tenure</span>
+              <span class="lab-val-highlight" id="churnTenureVal">12 mo</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="churnTenure" min="1" max="72" value="12" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label">
+              <span>Monthly Charges</span>
+              <span class="lab-val-highlight" id="churnChargesVal">$75</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="churnCharges" min="20" max="150" value="75" />
+          </div>
+
+          <div class="lab-input-group">
+            <div class="lab-input-label"><span>Service Contract Type</span></div>
+            <select id="churnContract" class="assistant-input" style="width: 100%;">
+              <option value="monthly">Month-to-Month (Higher Elasticity)</option>
+              <option value="one-year">One-Year Fixed Contract</option>
+              <option value="two-year">Two-Year Committed Agreement</option>
+            </select>
+          </div>
+
+          <div class="lab-input-group" style="margin-top: 1rem;">
+            <div class="lab-input-label">
+              <span>Open Support Escalation Tickets</span>
+              <span class="lab-val-highlight" id="churnTicketsVal">1</span>
+            </div>
+            <input type="range" class="lab-range-slider" id="churnTickets" min="0" max="8" value="1" />
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-chart-line" style="color: var(--accent-color);"></i>
+            <span>Retention Risk Scoring</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div class="gauge-big-score" id="churnScore">42%</div>
+            <span class="gauge-status-badge status-moderate" id="churnBadge">Moderate Churn Risk</span>
+            <p id="churnRec" style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.5;">
+              Tenure or charge sensitivity noted. Offer annual commitment incentive with loyalty discount.
+            </p>
+          </div>
+
+          <div style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Business Impact:</strong> ChurnShield AI flags accounts before subscription cancellation occurs, enabling customer success managers to deploy targeted retention workflows.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 8: SQL SANDBOX (NEW FEATURE) -->
+    <div class="lab-tab-panel" id="sql-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-terminal" style="color: var(--accent-color);"></i>
+            <span>Interactive SQL Analytics Runner</span>
+          </div>
+
+          <div class="preset-wrap">
+            <button class="preset-chip sql-preset" data-sql="SELECT * FROM customers WHERE status = 'At-Risk';">Filter: At-Risk Accounts</button>
+            <button class="preset-chip sql-preset" data-sql="SELECT * FROM customers WHERE region = 'North';">Filter: Region 'North'</button>
+            <button class="preset-chip sql-preset" data-sql="SELECT * FROM customers ORDER BY monthly_spend DESC;">Sort: Highest Spend</button>
+          </div>
+
+          <textarea id="sqlEditor" class="sql-editor">SELECT * FROM customers WHERE status = 'At-Risk';</textarea>
+
+          <button id="runSqlBtn" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-play"></i> Execute Analytical Query
+          </button>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-table" style="color: var(--accent-color);"></i>
+            <span>Tabular Query Output</span>
+          </div>
+
+          <div id="sqlResultsWrap">
+            <!-- Dynamically populated table -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/src/lab/lab.ts"></script>
+</body>
+</html>

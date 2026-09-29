@@ -1,0 +1,342 @@
+/* ==========================================================================
+   Interactive AI Lab Stylesheet — High-Tech, Clean, Professional Engineering
+   ========================================================================== */
+
+.lab-header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.lab-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lab-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+}
+
+.lab-back-btn:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-border);
+}
+
+.lab-title-wrap h1 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--text-primary);
+}
+
+.lab-title-wrap p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Tabs Navigation */
+.lab-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  scrollbar-width: thin;
+}
+
+.lab-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.lab-tab-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-border);
+}
+
+.lab-tab-btn.active {
+  background-color: var(--accent-color);
+  color: var(--text-inverse);
+  border-color: var(--accent-color);
+}
+
+/* Tab Panels */
+.lab-tab-panel {
+  display: none;
+}
+
+.lab-tab-panel.active {
+  display: block;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.lab-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.lab-card-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Sliders & Form Groups */
+.lab-input-group {
+  margin-bottom: 1.25rem;
+}
+
+.lab-input-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+}
+
+.lab-val-highlight {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+}
+
+.lab-range-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-tertiary);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.lab-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Preset Buttons */
+.preset-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.preset-chip {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.preset-chip:hover,
+.preset-chip.active {
+  background-color: var(--accent-light);
+  border-color: var(--accent-border);
+  color: var(--accent-color);
+}
+
+/* Output Display Widgets */
+.gauge-metric-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.gauge-big-score {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  font-family: var(--font-mono);
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.gauge-status-badge {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+}
+
+.status-low {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.status-moderate {
+  background-color: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.status-high {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+/* SHAP Feature Bars */
+.shap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.shap-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.shap-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.shap-bar-bg {
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.shap-bar-fill {
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+/* Neural Canvas */
+.canvas-holder {
+  display: flex;
+  justify-content: center;
+  background-color: #080c14;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+#neuralCanvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* SQL Sandbox Table */
+.sql-editor {
+  width: 100%;
+  height: 110px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  resize: vertical;
+  margin-bottom: 0.75rem;
+}
+
+.sql-table-wrap {
+  overflow-x: auto;
+  margin-top: 1rem;
+  max-height: 280px;
+}
+
+.sql-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+  text-align: left;
+}
+
+.sql-table th,
+.sql-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border-color);
+}
+
+.sql-table th {
+  background-color: var(--bg-secondary);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.sql-table tr:hover {
+  background-color: var(--bg-secondary);
+}
+
+@media (max-width: 900px) {
+  .lab-grid {
+    grid-template-columns: 1fr;
+  }
+}
