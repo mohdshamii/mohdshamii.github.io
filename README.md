@@ -10,7 +10,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 
 ---
 
-## 👨‍💻 Candidate Overview
+## Candidate Overview
 
 - **Name**: Mohd Shami
 - **Headline**: B.Tech-2027 AI/ML Engineer | Python | Deep Learning | NLP | Computer Vision | Scikit-learn | XGBoost | Flask | Model Deployment
@@ -24,7 +24,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 
 ---
 
-## 🛠️ Technical Competencies
+## Technical Competencies
 
 - **AI/ML Algorithms**: XGBoost, Random Forest, Logistic Regression, Decision Trees, KNN, Naive Bayes, SVM (basic), Ensemble Methods
 - **Deep Learning**: CNN (image classification, feature extraction), TF-IDF (NLP text representation), Keras (basic), Neural Networks
@@ -35,7 +35,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 
 ---
 
-## 🚀 Work Experience
+## Work Experience
 
 ### 1. Data Science Intern | Codec Technologies India *(Aug 2025 – Oct 2025)*
 - Engineered an XGBoost AI diagnostic model on a clinical dataset (5,000+ records); applied advanced feature engineering, SMOTE class balancing, and Bayesian hyperparameter tuning to improve classification accuracy from 72% to 85% and reduce the false-negative rate by 18%.
@@ -49,7 +49,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 
 ---
 
-## 🧪 Featured Engineering Projects
+## Featured Engineering Projects
 
 1. **[Revive — AI-Powered Clinical Disease Prediction System](https://github.com/mohdshamii/Revive)** *(Jan 2026 – Mar 2026)*
    - *Stack*: Python, XGBoost, Scikit-learn Pipelines, SMOTE, Flask REST API, Docker
@@ -78,7 +78,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 
 ---
 
-## 🔬 Interactive AI & ML Engineering Lab (`/lab`)
+## Interactive AI & ML Engineering Lab (`/lab`)
 
 In addition to the clean, recruiter-focused homepage, an interactive technical lab is hosted at [`/lab`](https://mohdshamii.github.io/lab/):
 - **Revive Predictor**: Dynamic XGBoost inference with real-time SHAP impact bars.
@@ -92,7 +92,7 @@ In addition to the clean, recruiter-focused homepage, an interactive technical l
 
 ---
 
-## 💻 Local Development & Build
+## Local Development & Build
 
 ### Installation
 ```bash
@@ -113,7 +113,7 @@ npm run build
 
 ---
 
-## 🚀 Deployment to GitHub Pages
+## Deployment to GitHub Pages
 
 An automated GitHub Actions workflow is provided at `.github/workflows/deploy.yml`:
 1. In your GitHub repository, navigate to **Settings** &rarr; **Pages**.
