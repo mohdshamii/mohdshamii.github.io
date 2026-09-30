@@ -19,7 +19,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 - **Location**: Moradabad, UP, India
 - **Email**: [codexshami@gmail.com](mailto:codexshami@gmail.com)
 - **Phone**: +91 89235 91576
-- **Resume**: [Download Official PDF](files/Mohd_Shami_Resume.pdf)
+- **Resume**: [Download Official PDF](Mohd_Shami_Resume.pdf)
 - **Target Roles**: AI/ML Engineer, AI Engineer Fresher, ML Engineer
 
 ---
