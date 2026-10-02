@@ -1,182 +1,187 @@
-import { profileData } from '../data/profile.ts';
+import { portfolioData } from '../data/portfolio.ts';
+import { scrollToTarget } from '../animations/lenis.ts';
 
 export function renderNavbar(): string {
+  const { identity } = portfolioData;
+
   return `
-    <nav class="navbar" id="navbar">
-      <div class="container nav-container">
-        <a href="#hero" class="nav-logo" aria-label="Mohd Shami Portfolio Home">
-          <span class="nav-logo-text">${profileData.name}</span>
-          <span class="nav-logo-badge">Data Science &amp; AI</span>
+    <header id="site-header" class="site-header">
+      <div class="header-container">
+        <!-- Logo / Brand Identity -->
+        <a href="#hero" class="brand-identity" data-nav="hero">
+          <span class="brand-symbol">◈</span>
+          <span class="brand-name">${identity.name}</span>
+          <span class="brand-tag">AI/ML</span>
         </a>
 
-        <div class="nav-links">
-          <a href="#about" class="nav-link">About</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#education" class="nav-link">Education</a>
-          <a href="#contact" class="nav-link">Contact</a>
-          <a href="/lab/index.html" class="nav-link nav-link-lab" style="color: var(--accent-color); font-weight: 600;">
-            <i class="fas fa-flask"></i>
-            <span>AI Lab</span>
+        <!-- Desktop Navigation Links -->
+        <nav class="desktop-nav" aria-label="Main Navigation">
+          <ul class="nav-menu">
+            <li><a href="#projects" class="nav-link" data-nav="projects">WORK</a></li>
+            <li><a href="#experience" class="nav-link" data-nav="experience">EXPERIENCE</a></li>
+            <li><a href="#skills" class="nav-link" data-nav="skills">SKILLS</a></li>
+            <li><a href="#pipeline" class="nav-link" data-nav="pipeline">PIPELINE</a></li>
+            <li><a href="#about" class="nav-link" data-nav="about">ABOUT</a></li>
+            <li><a href="#education" class="nav-link" data-nav="education">EDUCATION</a></li>
+            <li><a href="#contact" class="nav-link" data-nav="contact">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Side Controls & Resume -->
+        <div class="header-actions">
+          <button class="cmd-palette-trigger" type="button" aria-label="Open Command Palette" title="Press Ctrl+K">
+            <span class="cmd-icon">⌘</span>
+            <span class="cmd-text">K</span>
+          </button>
+
+          <a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf" class="resume-pill-btn" data-cursor="open">
+            <span class="btn-text">RESUME</span>
+            <svg class="btn-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M7 17L17 7M17 7H7M17 7V17"/>
+            </svg>
           </a>
-        </div>
 
-        <div class="nav-actions">
-          <button class="assistant-trigger-btn" id="openAssistantBtn" title="Ask Mohd AI (Recruiter Assistant)" aria-label="Open AI Recruiter Assistant">
-            <i class="fas fa-sparkles"></i>
-            <span class="assistant-btn-label">Ask AI</span>
-          </button>
-
-          <button class="theme-toggle" id="themeToggleBtn" aria-label="Toggle light or dark theme" title="Toggle Light/Dark Theme">
-            <i class="fas fa-moon" id="themeIcon"></i>
-          </button>
-
-          <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-            <span class="hamburger-line line-top"></span>
-            <span class="hamburger-line line-mid"></span>
-            <span class="hamburger-line line-bot"></span>
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
           </button>
         </div>
       </div>
 
-      <div class="mobile-menu-backdrop" id="mobileMenuBackdrop" aria-hidden="true"></div>
+      <!-- Mobile Fullscreen Overlay Navigation -->
+      <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
+        <div class="mobile-nav-inner">
+          <div class="mobile-status-badge">
+            <span class="status-indicator-dot"></span>
+            <span>${identity.status}</span>
+          </div>
 
-      <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Mobile Navigation" aria-hidden="true">
-        <div class="mobile-menu-links">
-          <a href="#about" class="mobile-link">
-            <i class="fas fa-user-circle"></i>
-            <span>About</span>
-          </a>
-          <a href="#experience" class="mobile-link">
-            <i class="fas fa-briefcase"></i>
-            <span>Experience</span>
-          </a>
-          <a href="#projects" class="mobile-link">
-            <i class="fas fa-project-diagram"></i>
-            <span>Projects</span>
-          </a>
-          <a href="#skills" class="mobile-link">
-            <i class="fas fa-cogs"></i>
-            <span>Skills</span>
-          </a>
-          <a href="#education" class="mobile-link">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Education</span>
-          </a>
-          <a href="#contact" class="mobile-link">
-            <i class="fas fa-envelope"></i>
-            <span>Contact</span>
-          </a>
-          <a href="/lab/index.html" class="mobile-link mobile-lab-link">
-            <i class="fas fa-flask"></i>
-            <span>Interactive AI Lab</span>
-            <span class="mobile-badge-chip">Live</span>
-          </a>
-        </div>
+          <ul class="mobile-menu-list">
+            <li><a href="#projects" class="mobile-nav-link" data-nav="projects"><span class="m-idx">01</span> WORK</a></li>
+            <li><a href="#experience" class="mobile-nav-link" data-nav="experience"><span class="m-idx">02</span> EXPERIENCE</a></li>
+            <li><a href="#skills" class="mobile-nav-link" data-nav="skills"><span class="m-idx">03</span> SKILLS</a></li>
+            <li><a href="#pipeline" class="mobile-nav-link" data-nav="pipeline"><span class="m-idx">04</span> ML PIPELINE</a></li>
+            <li><a href="#about" class="mobile-nav-link" data-nav="about"><span class="m-idx">05</span> ABOUT</a></li>
+            <li><a href="#education" class="mobile-nav-link" data-nav="education"><span class="m-idx">06</span> EDUCATION</a></li>
+            <li><a href="#contact" class="mobile-nav-link" data-nav="contact"><span class="m-idx">07</span> CONTACT</a></li>
+          </ul>
 
-        <div class="mobile-menu-footer">
-          <a href="${profileData.resumeUrl}" download class="btn btn-primary btn-sm mobile-resume-btn">
-            <i class="fas fa-download"></i>
-            <span>Download Resume (PDF)</span>
-          </a>
+          <div class="mobile-drawer-footer">
+            <a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf" class="mobile-resume-btn">
+              DOWNLOAD RESUME (.PDF)
+            </a>
+            <div class="mobile-social-row">
+              <a href="${identity.socials.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <span class="dot-sep">•</span>
+              <a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              <span class="dot-sep">•</span>
+              <a href="/lab/index.html">AI Lab</a>
+            </div>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
   `;
 }
 
 export function initNavbarEvents() {
-  const hamburger = document.getElementById('hamburgerBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileBackdrop = document.getElementById('mobileMenuBackdrop');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-  const themeToggle = document.getElementById('themeToggleBtn');
-  const themeIcon = document.getElementById('themeIcon');
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const drawer = document.getElementById('mobile-nav-drawer');
 
-  function openMobileMenu() {
-    if (!hamburger || !mobileMenu) return;
-    hamburger.classList.add('active');
-    hamburger.setAttribute('aria-expanded', 'true');
-    mobileMenu.classList.add('active');
-    mobileMenu.setAttribute('aria-hidden', 'false');
-    if (mobileBackdrop) {
-      mobileBackdrop.classList.add('active');
-      mobileBackdrop.setAttribute('aria-hidden', 'false');
+  // Glass background on scroll
+  function handleScroll() {
+    if (!header) return;
+    if (window.scrollY > 40) {
+      header.classList.add('scrolled-glass');
+    } else {
+      header.classList.remove('scrolled-glass');
     }
-    document.body.classList.add('menu-open');
   }
 
-  function closeMobileMenu() {
-    if (!hamburger || !mobileMenu) return;
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
-    mobileMenu.classList.remove('active');
-    mobileMenu.setAttribute('aria-hidden', 'true');
-    if (mobileBackdrop) {
-      mobileBackdrop.classList.remove('active');
-      mobileBackdrop.setAttribute('aria-hidden', 'true');
-    }
-    document.body.classList.remove('menu-open');
-  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = hamburger.classList.contains('active');
+  // Mobile drawer open/close
+  if (toggle && drawer) {
+    const toggleEl: HTMLElement = toggle;
+    const drawerEl: HTMLElement = drawer;
+
+    toggleEl.addEventListener('click', () => {
+      const isOpen = drawerEl.classList.contains('active');
       if (isOpen) {
-        closeMobileMenu();
+        closeDrawer();
       } else {
-        openMobileMenu();
+        openDrawer();
       }
     });
 
-    if (mobileBackdrop) {
-      mobileBackdrop.addEventListener('click', closeMobileMenu);
+    function openDrawer() {
+      drawerEl.classList.add('active');
+      toggleEl.classList.add('is-open');
+      toggleEl.setAttribute('aria-expanded', 'true');
+      drawerEl.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
     }
 
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        closeMobileMenu();
+    function closeDrawer() {
+      drawerEl.classList.remove('active');
+      toggleEl.classList.remove('is-open');
+      toggleEl.setAttribute('aria-expanded', 'false');
+      drawerEl.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    // Close when clicking mobile nav links
+    drawerEl.querySelectorAll('.mobile-nav-link').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        closeDrawer();
+        if (targetId) {
+          setTimeout(() => scrollToTarget(targetId), 200);
+        }
       });
     });
+  }
 
-    // Close on Escape key
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-        closeMobileMenu();
+  // Smooth scroll for desktop nav links
+  document.querySelectorAll('.nav-link, .brand-identity').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        scrollToTarget(href);
       }
     });
+  });
 
-    // Close automatically if viewport resized to desktop width
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 960 && mobileMenu.classList.contains('active')) {
-        closeMobileMenu();
-      }
-    });
-  }
+  // Active section indicator
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
 
-  // Theme switcher
-  const currentTheme = localStorage.getItem('shami_theme') || 'light';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(currentTheme);
+  window.addEventListener(
+    'scroll',
+    () => {
+      const scrollPos = window.scrollY + 180;
+      let currentId = '';
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const active = document.documentElement.getAttribute('data-theme') || 'light';
-      const nextTheme = active === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('shami_theme', nextTheme);
-      updateThemeIcon(nextTheme);
-    });
-  }
+      sections.forEach((sec) => {
+        const top = (sec as HTMLElement).offsetTop;
+        const height = (sec as HTMLElement).offsetHeight;
+        if (scrollPos >= top && scrollPos < top + height) {
+          currentId = sec.getAttribute('id') || '';
+        }
+      });
 
-  function updateThemeIcon(theme: string) {
-    if (!themeIcon) return;
-    if (theme === 'dark') {
-      themeIcon.className = 'fas fa-sun';
-    } else {
-      themeIcon.className = 'fas fa-moon';
-    }
-  }
+      navLinks.forEach((l) => {
+        l.classList.remove('active');
+        if (l.getAttribute('href') === `#${currentId}`) {
+          l.classList.add('active');
+        }
+      });
+    },
+    { passive: true }
+  );
 }

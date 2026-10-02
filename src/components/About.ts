@@ -1,45 +1,100 @@
-import { profileData } from '../data/profile.ts';
+import { portfolioData } from '../data/portfolio.ts';
 
 export function renderAbout(): string {
+  const { about, identity } = portfolioData;
+
   return `
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Profile Overview</span>
-          <h2 class="section-title">About Me</h2>
-          <p class="section-subtitle">
-            AI/ML Engineer with 1+ year of experience building end-to-end Machine Learning systems, NLP, Computer Vision, and production REST APIs.
+    <section id="about" class="about-section" aria-label="About Mohd Shami — Behind the Models">
+      <div class="section-container">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-header-pill">
+            <span class="pill-dot"></span>
+            <span>PHILOSOPHY & ARCHITECTURE</span>
+          </div>
+          <h2 class="section-main-heading">BEHIND THE MODELS</h2>
+          <p class="section-sub-heading">
+            Bridging theoretical mathematics with deployable, production-ready machine learning architectures.
           </p>
         </div>
 
-        <div class="about-grid">
-          <div class="about-text">
-            ${profileData.summary.map(paragraph => `<p>${paragraph}</p>`).join('')}
-            <p>
-              My technical work prioritizes measurable production outcomes: improving clinical diagnostic models by 13 percentage points from 72% to 85% (AUC-ROC: 0.91) using XGBoost and Bayesian optimization, engineering automated Python ETL pipelines that reduce preprocessing latency by 50%, and building NLP pipelines achieving 97.8% accuracy with SMOTE on imbalanced text collections.
-            </p>
+        <!-- End-to-End Visual Workflow Pathway: DATA -> FEATURES -> MODEL -> EVALUATION -> API -> DEPLOYMENT -->
+        <div class="workflow-pathway-card">
+          <div class="workflow-header-row">
+            <span class="workflow-tag">END-TO-END ML WORKFLOW</span>
+            <span class="workflow-status">PIPELINE INTEGRATION: 100% REPRODUCIBLE</span>
           </div>
 
-          <div class="about-highlights-card">
-            <div class="highlight-row">
-              <span class="highlight-label">Degree</span>
-              <span class="highlight-val">B.Tech in Data Science (2027)</span>
+          <div class="pathway-track" role="list" aria-label="ML Pipeline Pathway">
+            ${about.workflowPathway
+              .map(
+                (step, idx) => `
+              <div class="pathway-node" role="listitem">
+                <div class="node-bullet">
+                  <span class="node-idx">0${idx + 1}</span>
+                  <div class="node-pulse"></div>
+                </div>
+                <div class="node-label">${step}</div>
+                ${
+                  idx < about.workflowPathway.length - 1
+                    ? `<div class="node-connector-line"><span class="flow-particle"></span></div>`
+                    : ''
+                }
+              </div>
+            `
+              )
+              .join('')}
+          </div>
+        </div>
+
+        <!-- Detailed Two-Column Profile & Disciplines -->
+        <div class="about-main-grid">
+          <!-- Left: Narrative & Background -->
+          <div class="about-narrative-panel">
+            <div class="narrative-badge">
+              <span class="badge-dot-green"></span>
+              <span>ACADEMIC LEADER · COHORT RANK #1</span>
             </div>
-            <div class="highlight-row">
-              <span class="highlight-label">Institution</span>
-              <span class="highlight-val">Teerthanker Mahaveer University</span>
+            
+            <h3 class="narrative-title">
+              Translating Raw Data into Validated Production Intelligence
+            </h3>
+
+            ${about.paragraphs
+              .map(
+                (p) => `
+              <p class="about-text-paragraph">${p}</p>
+            `
+              )
+              .join('')}
+
+            <div class="about-quote-box">
+              <span class="quote-icon">“</span>
+              <p class="quote-sentence">${identity.quote}</p>
+              <span class="quote-author">— Mohd Shami (GitHub Profile)</span>
             </div>
-            <div class="highlight-row">
-              <span class="highlight-label">Academic Rank</span>
-              <span class="highlight-val">1st Rank in Cohort (CGPA: 8.5 / 10)</span>
-            </div>
-            <div class="highlight-row">
-              <span class="highlight-label">Target Roles</span>
-              <span class="highlight-val">AI/ML Engineer · ML Engineer · AI Fresher</span>
-            </div>
-            <div class="highlight-row">
-              <span class="highlight-label">Core Stack</span>
-              <span class="highlight-val">XGBoost, Scikit-learn, CNN, NLP, Flask, Docker</span>
+          </div>
+
+          <!-- Right: Core Technical Disciplines Grid -->
+          <div class="about-disciplines-panel">
+            <h4 class="disciplines-header">CORE ENGINEERING DISCIPLINES</h4>
+            <div class="disciplines-grid">
+              ${about.disciplines
+                .map(
+                  (d) => `
+                <div class="discipline-card">
+                  <div class="discipline-icon-bar">
+                    <span class="discipline-dot"></span>
+                    <h5 class="discipline-name">${d.name}</h5>
+                  </div>
+                  <p class="discipline-desc">${d.desc}</p>
+                  <div class="discipline-tags">
+                    ${d.tags.map((t) => `<span class="d-tag">${t}</span>`).join('')}
+                  </div>
+                </div>
+              `
+                )
+                .join('')}
             </div>
           </div>
         </div>

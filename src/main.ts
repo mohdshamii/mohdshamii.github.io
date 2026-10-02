@@ -1,69 +1,76 @@
-import './styles/main.css';
+import './styles/cinematic.css';
+
+// Core Animations & Creative-Dev Systems
+import { initLenis } from './animations/lenis.ts';
+import { initCustomCursor } from './animations/cursor.ts';
+
+// Components
+import { renderLoader, initLoader } from './components/Loader.ts';
 import { renderNavbar, initNavbarEvents } from './components/Navbar.ts';
-import { renderHero } from './components/Hero.ts';
+import { renderHero, initHeroEvents } from './components/Hero.ts';
+import { renderSummary, initSummaryEvents } from './components/Summary.ts';
 import { renderAbout } from './components/About.ts';
+import { renderSkills, initSkillsEvents } from './components/Skills.ts';
 import { renderExperience } from './components/Experience.ts';
-import { renderProjects } from './components/Projects.ts';
-import { renderSkills } from './components/Skills.ts';
+import { renderProjects, initProjectEvents } from './components/Projects.ts';
+import { renderMlPipeline, initMlPipelineEvents } from './components/MlPipeline.ts';
 import { renderEducation } from './components/Education.ts';
 import { renderCertifications } from './components/Certifications.ts';
 import { renderAchievements } from './components/Achievements.ts';
-import { renderContact } from './components/Contact.ts';
+import { renderDsaSection } from './components/DsaSection.ts';
+import { renderContact, initContactEvents } from './components/Contact.ts';
 import { renderFooter } from './components/Footer.ts';
-import { renderRecruiterAssistant, initRecruiterAssistant } from './components/RecruiterAssistant.ts';
+import { renderCommandPalette, initCommandPalette } from './components/CommandPalette.ts';
 
-function initApp() {
+function bootstrapApplication() {
   const app = document.getElementById('app');
   if (!app) return;
 
+  // Render DOM tree
   app.innerHTML = `
+    ${renderLoader()}
     ${renderNavbar()}
-    <main>
+    <main id="main-content">
       ${renderHero()}
+      ${renderSummary()}
       ${renderAbout()}
+      ${renderSkills()}
       ${renderExperience()}
       ${renderProjects()}
-      ${renderSkills()}
+      ${renderMlPipeline()}
       ${renderEducation()}
       ${renderCertifications()}
       ${renderAchievements()}
+      ${renderDsaSection()}
       ${renderContact()}
     </main>
     ${renderFooter()}
-    ${renderRecruiterAssistant()}
+    ${renderCommandPalette()}
   `;
 
-  // Initialize interactive event handlers
+  // Initialize interactive systems
   initNavbarEvents();
-  initRecruiterAssistant();
+  initHeroEvents();
+  initSummaryEvents();
+  initSkillsEvents();
+  initProjectEvents();
+  initMlPipelineEvents();
+  initContactEvents();
+  initCommandPalette();
+  initCustomCursor();
 
-  // Scrollspy for active nav link
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  // Initialize Lenis smooth inertia scroll
+  initLenis();
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    const scrollPos = window.scrollY + 120;
-
-    sections.forEach(section => {
-      const top = (section as HTMLElement).offsetTop;
-      const height = (section as HTMLElement).offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
-        current = section.getAttribute('id') || '';
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
+  // Boot sequence loader
+  initLoader(() => {
+    // When loader finishes, ensure hero interactions are responsive
+    window.dispatchEvent(new Event('resize'));
   });
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initApp);
+  document.addEventListener('DOMContentLoaded', bootstrapApplication);
 } else {
-  initApp();
+  bootstrapApplication();
 }

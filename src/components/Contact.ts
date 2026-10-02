@@ -1,110 +1,206 @@
-import { profileData } from '../data/profile.ts';
+import { portfolioData } from '../data/portfolio.ts';
 
 export function renderContact(): string {
+  const { identity } = portfolioData;
+
   return `
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Let's Connect</span>
-          <h2 class="section-title">Contact & Opportunities</h2>
-          <p class="section-subtitle">
-            Interested in discussing Data Science, Machine Learning, or Analytics opportunities? Reach out directly.
+    <section id="contact" class="contact-section" aria-label="Contact Mohd Shami">
+      <div class="section-container">
+        <!-- Section Header -->
+        <div class="section-header-block">
+          <div class="section-header-pill">
+            <span class="pill-dot"></span>
+            <span>GET IN TOUCH</span>
+          </div>
+          <h2 class="section-main-heading contact-main-title">
+            LET'S BUILD<br/>
+            <span class="headline-gradient">SOMETHING INTELLIGENT.</span>
+          </h2>
+          <p class="section-sub-heading">
+            Currently open to AI/ML Engineer roles, Data Science internships, and production ML opportunities.
           </p>
         </div>
 
-        <div class="contact-grid">
-          <div class="contact-card-box">
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">
-              Direct Channels
-            </h3>
-            <p style="font-size: 0.9375rem; color: var(--text-secondary); line-height: 1.6;">
-              I respond promptly to recruiter inquiries, technical discussions, and collaborative project proposals.
-            </p>
-
-            <div class="contact-channels">
-              <div class="contact-channel-item">
-                <div class="contact-icon-bubble">
-                  <i class="fas fa-envelope"></i>
+        <div class="contact-layout-grid">
+          <!-- Left: Direct Channels & Telemetry -->
+          <div class="contact-info-panel">
+            <!-- Terminal Initiation Widget -->
+            <div class="contact-terminal-box">
+              <div class="terminal-bar">
+                <div class="term-dots">
+                  <span class="t-dot t-red"></span>
+                  <span class="t-dot t-yellow"></span>
+                  <span class="t-dot t-green"></span>
                 </div>
-                <div>
-                  <div class="contact-info-label">Email</div>
-                  <a href="mailto:${profileData.email}" class="contact-info-val">${profileData.email}</a>
-                </div>
+                <span class="term-title">connection_handshake.sh</span>
               </div>
-
-              <div class="contact-channel-item">
-                <div class="contact-icon-bubble">
-                  <i class="fas fa-phone"></i>
-                </div>
-                <div>
-                  <div class="contact-info-label">Phone</div>
-                  <a href="tel:${profileData.phone.replace(/\s+/g, '')}" class="contact-info-val">${profileData.phone}</a>
-                </div>
+              <div class="terminal-code-body">
+                <p class="term-line"><span class="term-prompt">$</span> <span class="term-cmd">initialize_connection()</span></p>
+                <p class="term-line text-muted">&gt; Handshake protocol initialized...</p>
+                <p class="term-line text-muted">&gt; Location: Moradabad, UP, India</p>
+                <p class="term-line text-success">&gt; <span class="pulse-dot-inline"></span> <strong id="connection-status-text">CONNECTION_READY // SECURE</strong></p>
               </div>
+            </div>
 
-              <div class="contact-channel-item">
-                <div class="contact-icon-bubble">
-                  <i class="fas fa-map-marker-alt"></i>
+            <!-- Direct Contact List -->
+            <div class="contact-methods-list">
+              <!-- Email -->
+              <a href="mailto:${identity.email}" class="contact-method-card" data-cursor="open">
+                <div class="method-icon-wrap">
+                  <i class="fa-solid fa-envelope"></i>
                 </div>
-                <div>
-                  <div class="contact-info-label">Location</div>
-                  <span class="contact-info-val">${profileData.location}</span>
+                <div class="method-meta">
+                  <span class="method-label">DIRECT EMAIL</span>
+                  <span class="method-val">${identity.email}</span>
                 </div>
-              </div>
+                <span class="method-arrow">↗</span>
+              </a>
 
-              <div class="contact-channel-item">
-                <div class="contact-icon-bubble">
-                  <i class="fab fa-linkedin"></i>
+              <!-- Phone -->
+              <a href="tel:${identity.phone.replace(/\s+/g, '')}" class="contact-method-card" data-cursor="open">
+                <div class="method-icon-wrap">
+                  <i class="fa-solid fa-phone"></i>
                 </div>
-                <div>
-                  <div class="contact-info-label">LinkedIn</div>
-                  <a href="${profileData.socials.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-info-val">linkedin.com/in/mohdshamii</a>
+                <div class="method-meta">
+                  <span class="method-label">PHONE & WHATSAPP</span>
+                  <span class="method-val">${identity.phone}</span>
                 </div>
-              </div>
+                <span class="method-arrow">↗</span>
+              </a>
 
-              <div class="contact-channel-item">
-                <div class="contact-icon-bubble">
-                  <i class="fab fa-github"></i>
+              <!-- LinkedIn -->
+              <a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-method-card" data-cursor="open">
+                <div class="method-icon-wrap">
+                  <i class="fa-brands fa-linkedin"></i>
                 </div>
-                <div>
-                  <div class="contact-info-label">GitHub</div>
-                  <a href="${profileData.socials.github}" target="_blank" rel="noopener noreferrer" class="contact-info-val">github.com/mohdshamii</a>
+                <div class="method-meta">
+                  <span class="method-label">LINKEDIN</span>
+                  <span class="method-val">linkedin.com/in/mohdshamii</span>
                 </div>
-              </div>
+                <span class="method-arrow">↗</span>
+              </a>
 
-              <div class="contact-channel-item">
-                <div class="contact-icon-bubble">
-                  <i class="fas fa-code"></i>
+              <!-- GitHub -->
+              <a href="${identity.socials.github}" target="_blank" rel="noopener noreferrer" class="contact-method-card" data-cursor="open">
+                <div class="method-icon-wrap">
+                  <i class="fa-brands fa-github"></i>
                 </div>
-                <div>
-                  <div class="contact-info-label">LeetCode</div>
-                  <a href="${profileData.socials.leetcode}" target="_blank" rel="noopener noreferrer" class="contact-info-val">leetcode.com/u/mohdshamii</a>
+                <div class="method-meta">
+                  <span class="method-label">GITHUB</span>
+                  <span class="method-val">github.com/mohdshamii</span>
                 </div>
-              </div>
+                <span class="method-arrow">↗</span>
+              </a>
             </div>
           </div>
 
-          <div class="resume-download-card">
-            <div style="width: 48px; height: 48px; border-radius: var(--radius-sm); background-color: var(--accent-light); color: var(--accent-color); display: flex; align-items: center; justify-content: center; font-size: 1.25rem; margin-bottom: 1.25rem;">
-              <i class="fas fa-file-pdf"></i>
-            </div>
-            <h3>Download Official Resume</h3>
-            <p>
-              Access a comprehensive, printer-ready one-page curriculum vitae covering technical skills, project architecture metrics, coursework, and internship records.
-            </p>
-            <div class="resume-download-actions">
-              <a href="${profileData.resumeUrl}" download class="btn btn-primary">
-                <i class="fas fa-download"></i>
-                <span>Download Resume (PDF)</span>
-              </a>
-              <a href="${profileData.resumeUrl}" target="_blank" class="btn btn-secondary">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Open in New Tab</span>
-              </a>
+          <!-- Right: Interactive Direct Message Form -->
+          <div class="contact-form-panel">
+            <div class="form-wrapper-card">
+              <div class="form-header">
+                <span class="form-title">TRANSMIT DIRECT MESSAGE</span>
+                <span class="form-status-tag">STATUS: IDLE</span>
+              </div>
+
+              <form id="portfolio-contact-form" class="contact-form">
+                <div class="form-group">
+                  <label for="contact-name" class="form-label">YOUR NAME</label>
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    required
+                    placeholder="e.g. Dr. Rajesh or Alex Morgan"
+                    class="form-input"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email" class="form-label">YOUR EMAIL ADDRESS</label>
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    required
+                    placeholder="alex@company.com"
+                    class="form-input"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject" class="form-label">TOPIC / OPPORTUNITY</label>
+                  <select id="contact-subject" name="subject" class="form-input form-select">
+                    <option value="AI/ML Engineer Role">AI / ML Engineer Opportunity</option>
+                    <option value="Data Science Internship">Data Science Internship</option>
+                    <option value="Technical Collaboration">Technical Project Collaboration</option>
+                    <option value="General Inquiry">General Technical Discussion</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-message" class="form-label">MESSAGE</label>
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    required
+                    placeholder="Discuss team requirements, model specifications, or scheduling an introductory interview..."
+                    class="form-input form-textarea"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="submit-contact-btn" id="contact-submit-btn">
+                  <span>SEND MESSAGE →</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </button>
+              </form>
+
+              <div id="contact-feedback-box" class="contact-feedback" style="display: none;"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
   `;
+}
+
+export function initContactEvents() {
+  const form = document.getElementById('portfolio-contact-form') as HTMLFormElement | null;
+  const feedback = document.getElementById('contact-feedback-box');
+
+  if (!form || !feedback) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = (document.getElementById('contact-name') as HTMLInputElement).value.trim();
+    const email = (document.getElementById('contact-email') as HTMLInputElement).value.trim();
+    const subject = (document.getElementById('contact-subject') as HTMLSelectElement).value;
+    const message = (document.getElementById('contact-message') as HTMLTextAreaElement).value.trim();
+
+    if (!name || !email || !message) {
+      feedback.style.display = 'block';
+      feedback.className = 'contact-feedback error';
+      feedback.textContent = 'Please fill out all required fields.';
+      return;
+    }
+
+    // Launch native mail client with populated payload
+    const mailtoSubject = encodeURIComponent(`[Portfolio Inquiry] ${subject} from ${name}`);
+    const mailtoBody = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nOpportunity: ${subject}\n\nMessage:\n${message}\n\nSent from mohdshamii.github.io`
+    );
+    const mailtoUrl = `mailto:${portfolioData.identity.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    feedback.style.display = 'block';
+    feedback.className = 'contact-feedback success';
+    feedback.innerHTML = `
+      <p><strong>Launching email client...</strong></p>
+      <span>If your mail client did not open automatically, please send directly to <strong>${portfolioData.identity.email}</strong>.</span>
+    `;
+
+    window.location.href = mailtoUrl;
+  });
 }

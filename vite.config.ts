@@ -9,6 +9,13 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         lab: resolve(__dirname, 'lab/index.html'),
       },
+      output: {
+        manualChunks: {
+          three: ['three'],
+          lenis: ['lenis'],
+        },
+      },
     },
+    chunkSizeWarningLimit: 800,
   },
 });
