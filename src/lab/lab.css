@@ -54,7 +54,7 @@
   font-size: clamp(1.25rem, 4vw, 1.85rem);
   font-weight: 800;
   letter-spacing: -0.025em;
-  background: linear-gradient(135deg, #FAF7F0 0%, #DFB15B 50%, #B82845 100%);
+  background: linear-gradient(135deg, #111111 0%, #7A1F35 60%, #962843 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.25;
@@ -104,7 +104,7 @@
   background-color: var(--accent-color);
   color: #fff;
   border-color: var(--accent-border);
-  box-shadow: 0 0 15px rgba(148, 32, 54, 0.45);
+  box-shadow: 0 4px 15px rgba(122, 31, 53, 0.3);
 }
 
 /* Tab Panels */
@@ -314,7 +314,8 @@
 .canvas-holder {
   display: flex;
   justify-content: center;
-  background-color: #080c14;
+  background-color: #F5E7EB;
+  border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 0.5rem;
   margin-bottom: 1.25rem;

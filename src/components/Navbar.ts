@@ -73,7 +73,7 @@ export function renderNavbar(): string {
           </ul>
 
           <div class="mobile-drawer-footer">
-            <a href="/lab/index.html" class="mobile-resume-btn" style="background: rgba(148, 32, 54, 0.35); border-color: var(--accent-gold); margin-bottom: 0.5rem;">
+            <a href="/lab/index.html" class="mobile-resume-btn" style="background: #F5E7EB; border-color: #7A1F35; color: #7A1F35; margin-bottom: 0.5rem;">
               🔬 OPEN SUPER INTELLIGENCE LAB
             </a>
             <a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf" class="mobile-resume-btn">

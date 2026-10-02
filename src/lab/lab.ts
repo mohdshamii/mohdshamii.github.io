@@ -355,8 +355,8 @@ function initLab() {
         const prob = 1 / (1 + Math.exp(-val * complexity * 2.2));
 
         ctx.fillStyle = prob > 0.5
-          ? `rgba(37, 99, 235, ${Math.min(0.4, (prob - 0.5) * 0.8)})`
-          : `rgba(239, 68, 68, ${Math.min(0.4, (0.5 - prob) * 0.8)})`;
+          ? `rgba(122, 31, 53, ${Math.min(0.35, (prob - 0.5) * 0.7)})`
+          : `rgba(17, 17, 17, ${Math.min(0.25, (0.5 - prob) * 0.5)})`;
         ctx.fillRect(px, py, step, step);
       }
     }
@@ -389,12 +389,12 @@ function initLab() {
       const px2 = ((x2 + 1.4) / 2.8) * w;
       const py2 = ((y2 + 1.4) / 2.8) * h;
 
-      ctx.fillStyle = '#2563eb';
+      ctx.fillStyle = '#7A1F35';
       ctx.beginPath();
       ctx.arc(px1, py1, 3.5, 0, 2 * Math.PI);
       ctx.fill();
 
-      ctx.fillStyle = '#ef4444';
+      ctx.fillStyle = '#111111';
       ctx.beginPath();
       ctx.arc(px2, py2, 3.5, 0, 2 * Math.PI);
       ctx.fill();

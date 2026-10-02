@@ -5,34 +5,35 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette — Ivory Dominant (Clean Contrast) */
-  --bg-primary: #FAF7F0;
-  --bg-secondary: #F3ECE0;
-  --bg-tertiary: #EBE2D3;
-  --bg-card: #FAF7F0;
-  --bg-card-hover: #F3ECE0;
+  /* Color Palette — White + Black + Burgundy + Soft Pink */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F5E7EB;
+  --bg-tertiary: #EFE1E6;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FDF9FA;
 
-  --text-primary: #12151B;
-  --text-secondary: #4A463F;
-  --text-muted: #7E7668;
-  --text-inverse: #FAF7F0;
+  --text-primary: #111111;
+  --text-secondary: #333333;
+  --text-muted: #555555;
+  --text-inverse: #FFFFFF;
 
-  --border-color: #DFD7C8;
-  --border-light: #EBE3D5;
-  --border-focus: #DFB15B;
+  --border-color: #E2CDD3;
+  --border-light: #EFE1E6;
+  --border-focus: #7A1F35;
 
-  --accent-color: #942036;
-  --accent-hover: #B82845;
-  --accent-light: rgba(148, 32, 54, 0.1);
-  --accent-border: #DFB15B;
-  --accent-gold: #DFB15B;
+  --accent-color: #7A1F35;
+  --accent-hover: #962843;
+  --accent-light: rgba(122, 31, 53, 0.1);
+  --accent-border: #7A1F35;
+  --accent-gold: #7A1F35;
+  --accent-pink: #F5E7EB;
 
-  --badge-bg: rgba(148, 32, 54, 0.08);
-  --badge-text: #942036;
+  --badge-bg: #F5E7EB;
+  --badge-text: #7A1F35;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(122, 31, 53, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 15px -3px rgba(122, 31, 53, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
 
   --radius-sm: 6px;
   --radius-md: 10px;
@@ -48,30 +49,32 @@
   --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dark Mode Support (Charcoal Base + Ivory Typography + Wine & Gold Accents) */
+/* Dark Mode Support (Black Base + White Typography + Burgundy & Soft Pink Accents) */
 [data-theme='dark'] {
-  --bg-primary: #0d0f12;
-  --bg-secondary: #14171d;
-  --bg-tertiary: #1c2027;
-  --bg-card: #14171d;
-  --bg-card-hover: #1c2027;
+  --bg-primary: #111111;
+  --bg-secondary: #1A1A1A;
+  --bg-tertiary: #222222;
+  --bg-card: #181818;
+  --bg-card-hover: #222222;
 
-  --text-primary: #FAF7F0;
-  --text-secondary: #E3DBCB;
-  --text-muted: #B8AF9F;
-  --text-inverse: #0d0f12;
+  --text-primary: #FFFFFF;
+  --text-secondary: #E5E5E5;
+  --text-muted: #AAAAAA;
+  --text-inverse: #111111;
 
-  --border-color: rgba(250, 247, 240, 0.1);
-  --border-light: rgba(250, 247, 240, 0.06);
-  --border-focus: #DFB15B;
+  --border-color: rgba(245, 231, 235, 0.15);
+  --border-light: rgba(245, 231, 235, 0.08);
+  --border-focus: #7A1F35;
 
-  --accent-color: #942036;
-  --accent-hover: #B82845;
-  --accent-light: rgba(148, 32, 54, 0.22);
-  --accent-border: #DFB15B;
+  --accent-color: #7A1F35;
+  --accent-hover: #962843;
+  --accent-light: rgba(122, 31, 53, 0.22);
+  --accent-border: #7A1F35;
+  --accent-gold: #7A1F35;
+  --accent-pink: #F5E7EB;
 
-  --badge-bg: #192231;
-  --badge-text: #e5e7eb;
+  --badge-bg: #221518;
+  --badge-text: #F5E7EB;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
