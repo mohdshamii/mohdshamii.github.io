@@ -20,7 +20,7 @@ export function renderCommandPalette(): string {
           <input
             id="cmd-palette-input"
             type="text"
-            placeholder="Type a command or section... (e.g., projects, resume, skills)"
+            placeholder="Search commands, sections, or assistant... (e.g. lab, assistant, projects)"
             autocomplete="off"
             spellcheck="false"
           />
@@ -46,6 +46,25 @@ export function initCommandPalette() {
   if (!modal || !input || !list) return;
 
   const commands: CommandItem[] = [
+    {
+      id: 'assistant',
+      name: 'Launch Super Intelligence Assistant',
+      category: 'AI Agent',
+      shortcut: 'I',
+      action: () => {
+        const launcher = document.getElementById('si-assistant-launcher');
+        launcher?.click();
+      }
+    },
+    {
+      id: 'lab',
+      name: 'Open Super Intelligence Lab (/lab)',
+      category: 'Lab',
+      shortcut: 'X',
+      action: () => {
+        window.location.href = '/lab/index.html';
+      }
+    },
     {
       id: 'projects',
       name: 'Jump to Projects Showcase',
@@ -111,7 +130,7 @@ export function initCommandPalette() {
     },
     {
       id: 'contact',
-      name: 'Jump to Contact & Terminal',
+      name: 'Jump to Contact & Handshake Terminal',
       category: 'Navigation',
       shortcut: 'T',
       action: () => scrollToTarget('#contact')
@@ -142,15 +161,6 @@ export function initCommandPalette() {
       action: () => {
         window.open('https://linkedin.com/in/mohdshamii', '_blank');
       }
-    },
-    {
-      id: 'lab',
-      name: 'Open Experimental AI Lab (/lab)',
-      category: 'Experiments',
-      shortcut: 'X',
-      action: () => {
-        window.location.href = '/lab/index.html';
-      }
     }
   ];
 
@@ -175,7 +185,7 @@ export function initCommandPalette() {
       list!.innerHTML = `
         <div class="cmd-no-results">
           <p>No matching commands found.</p>
-          <span>Try searching for "projects", "resume", or "contact"</span>
+          <span>Try searching for "lab", "assistant", "projects", or "resume"</span>
         </div>
       `;
       return;

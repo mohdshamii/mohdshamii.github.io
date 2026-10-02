@@ -39,7 +39,7 @@ export function renderFooter(): string {
             <li><a href="${identity.socials.github}" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
             <li><a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
             <li><a href="${identity.socials.leetcode}" target="_blank" rel="noopener noreferrer">LeetCode Profile</a></li>
-            <li><a href="/lab/index.html">Interactive AI Lab (/lab)</a></li>
+            <li><a href="/lab/index.html">Super Intelligence Lab (/lab)</a></li>
           </ul>
         </div>
       </div>

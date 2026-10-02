@@ -27,8 +27,13 @@ export function renderNavbar(): string {
           </ul>
         </nav>
 
-        <!-- Right Side Controls & Resume -->
+        <!-- Right Side Controls, Super Lab & Resume -->
         <div class="header-actions">
+          <a href="/lab/index.html" class="super-lab-nav-pill" data-cursor="open" title="Open Super Intelligence Lab">
+            <span class="lab-pill-icon">🔬</span>
+            <span>SUPER INTELLIGENCE LAB</span>
+          </a>
+
           <button class="cmd-palette-trigger" type="button" aria-label="Open Command Palette" title="Press Ctrl+K">
             <span class="cmd-icon">⌘</span>
             <span class="cmd-text">K</span>
@@ -68,6 +73,9 @@ export function renderNavbar(): string {
           </ul>
 
           <div class="mobile-drawer-footer">
+            <a href="/lab/index.html" class="mobile-resume-btn" style="background: rgba(148, 32, 54, 0.35); border-color: var(--accent-gold); margin-bottom: 0.5rem;">
+              🔬 OPEN SUPER INTELLIGENCE LAB
+            </a>
             <a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf" class="mobile-resume-btn">
               DOWNLOAD RESUME (.PDF)
             </a>
@@ -76,7 +84,7 @@ export function renderNavbar(): string {
               <span class="dot-sep">•</span>
               <a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <span class="dot-sep">•</span>
-              <a href="/lab/index.html">AI Lab</a>
+              <a href="/lab/index.html">Super Intelligence Lab</a>
             </div>
           </div>
         </div>

@@ -5,29 +5,30 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette — Light Mode (Primary Default) */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f9fafb;
-  --bg-tertiary: #f3f4f6;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f9fafb;
+  /* Color Palette — Ivory Dominant (Clean Contrast) */
+  --bg-primary: #FAF7F0;
+  --bg-secondary: #F3ECE0;
+  --bg-tertiary: #EBE2D3;
+  --bg-card: #FAF7F0;
+  --bg-card-hover: #F3ECE0;
 
-  --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --text-muted: #6b7280;
-  --text-inverse: #ffffff;
+  --text-primary: #12151B;
+  --text-secondary: #4A463F;
+  --text-muted: #7E7668;
+  --text-inverse: #FAF7F0;
 
-  --border-color: #e5e7eb;
-  --border-light: #f3f4f6;
-  --border-focus: #2563eb;
+  --border-color: #DFD7C8;
+  --border-light: #EBE3D5;
+  --border-focus: #DFB15B;
 
-  --accent-color: #2563eb;
-  --accent-hover: #1d4ed8;
-  --accent-light: #eff6ff;
-  --accent-border: #bfdbfe;
+  --accent-color: #942036;
+  --accent-hover: #B82845;
+  --accent-light: rgba(148, 32, 54, 0.1);
+  --accent-border: #DFB15B;
+  --accent-gold: #DFB15B;
 
-  --badge-bg: #f3f4f6;
-  --badge-text: #374151;
+  --badge-bg: rgba(148, 32, 54, 0.08);
+  --badge-text: #942036;
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
@@ -47,27 +48,27 @@
   --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Dark Mode Support (High-Contrast, Clean, Eye-Friendly) */
+/* Dark Mode Support (Charcoal Base + Ivory Typography + Wine & Gold Accents) */
 [data-theme='dark'] {
-  --bg-primary: #0b0f17;
-  --bg-secondary: #111622;
-  --bg-tertiary: #192231;
-  --bg-card: #111622;
-  --bg-card-hover: #161e2e;
+  --bg-primary: #0d0f12;
+  --bg-secondary: #14171d;
+  --bg-tertiary: #1c2027;
+  --bg-card: #14171d;
+  --bg-card-hover: #1c2027;
 
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
-  --text-inverse: #0b0f17;
+  --text-primary: #FAF7F0;
+  --text-secondary: #E3DBCB;
+  --text-muted: #B8AF9F;
+  --text-inverse: #0d0f12;
 
-  --border-color: #1f2937;
-  --border-light: #192231;
-  --border-focus: #3b82f6;
+  --border-color: rgba(250, 247, 240, 0.1);
+  --border-light: rgba(250, 247, 240, 0.06);
+  --border-focus: #DFB15B;
 
-  --accent-color: #3b82f6;
-  --accent-hover: #60a5fa;
-  --accent-light: rgba(59, 130, 246, 0.12);
-  --accent-border: rgba(59, 130, 246, 0.3);
+  --accent-color: #942036;
+  --accent-hover: #B82845;
+  --accent-light: rgba(148, 32, 54, 0.22);
+  --accent-border: #DFB15B;
 
   --badge-bg: #192231;
   --badge-text: #e5e7eb;

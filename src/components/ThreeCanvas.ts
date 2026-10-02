@@ -44,7 +44,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   scene.add(neuralGroup);
 
   // --- Neural Network Nodes & Topology ---
-  // Create layers representing an AI neural network
+  // Palette: Ivory (#FAF7F0), Wine (#942036), Subtle Gold (#DFB15B)
   const layers = [
     { count: 12, x: -36, radius: 14 },
     { count: 20, x: -18, radius: 22 },
@@ -64,10 +64,10 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   const nodePositions: number[] = [];
   const nodeColors: number[] = [];
 
-  // Accent colors: Electric Cyan (#06b6d4), Purple (#8b5cf6), Blue (#3b82f6)
-  const colorCyan = new THREE.Color(0x06b6d4);
-  const colorPurple = new THREE.Color(0x8b5cf6);
-  const colorBlue = new THREE.Color(0x3b82f6);
+  // Theme Palette: Deep Wine, Warm Champagne Gold, Pure Ivory
+  const colorWine = new THREE.Color(0x942036);
+  const colorGold = new THREE.Color(0xdfb15b);
+  const colorIvory = new THREE.Color(0xfaf7f0);
 
   layers.forEach((layer, lIdx) => {
     for (let i = 0; i < layer.count; i++) {
@@ -87,9 +87,12 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
 
       nodePositions.push(x, y, z);
 
-      // Color gradient across layers
+      // Color gradient across layers from Wine to Gold to Ivory
       const t = lIdx / (layers.length - 1);
-      const nodeColor = new THREE.Color().lerpColors(colorPurple, colorCyan, t);
+      const nodeColor = t < 0.5
+        ? new THREE.Color().lerpColors(colorWine, colorGold, t * 2)
+        : new THREE.Color().lerpColors(colorGold, colorIvory, (t - 0.5) * 2);
+
       nodeColors.push(nodeColor.r, nodeColor.g, nodeColor.b);
     }
   });
@@ -99,10 +102,10 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   nodesGeo.setAttribute('position', new THREE.Float32BufferAttribute(nodePositions, 3));
   nodesGeo.setAttribute('color', new THREE.Float32BufferAttribute(nodeColors, 3));
 
-  // Circular glowing point texture
+  // Circular glowing point texture (Ivory core + Wine aura + subtle Gold halo)
   const canvasTexture = createNodePointTexture();
   const nodesMat = new THREE.PointsMaterial({
-    size: 2.8,
+    size: 2.9,
     map: canvasTexture,
     vertexColors: true,
     transparent: true,
@@ -114,7 +117,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   const nodePoints = new THREE.Points(nodesGeo, nodesMat);
   neuralGroup.add(nodePoints);
 
-  // --- Synaptic Connections (Lines) ---
+  // --- Synaptic Connections (Lines in Wine & Gold) ---
   const linePositions: number[] = [];
   const lineColors: number[] = [];
 
@@ -132,8 +135,8 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
         linePositions.push(n1.pos.x, n1.pos.y, n1.pos.z);
         linePositions.push(n2.pos.x, n2.pos.y, n2.pos.z);
 
-        const c1 = colorPurple.clone();
-        const c2 = colorCyan.clone();
+        const c1 = colorWine.clone();
+        const c2 = colorGold.clone();
         lineColors.push(c1.r, c1.g, c1.b);
         lineColors.push(c2.r, c2.g, c2.b);
       }
@@ -147,15 +150,15 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   const linesMat = new THREE.LineBasicMaterial({
     vertexColors: true,
     transparent: true,
-    opacity: 0.28,
+    opacity: 0.32,
     blending: THREE.AdditiveBlending
   });
 
   const lines = new THREE.LineSegments(linesGeo, linesMat);
   neuralGroup.add(lines);
 
-  // --- Ambient Mathematical Particles ---
-  const particleCount = 200;
+  // --- Ambient Mathematical Particles in Subtle Gold & Ivory ---
+  const particleCount = 220;
   const pPos: number[] = [];
   const pCols: number[] = [];
 
@@ -165,7 +168,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
     const pz = (Math.random() - 0.5) * 50;
     pPos.push(px, py, pz);
 
-    const c = Math.random() > 0.5 ? colorBlue : colorPurple;
+    const c = Math.random() > 0.4 ? colorGold : colorIvory;
     pCols.push(c.r, c.g, c.b);
   }
 
@@ -174,11 +177,11 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   particlesGeo.setAttribute('color', new THREE.Float32BufferAttribute(pCols, 3));
 
   const particlesMat = new THREE.PointsMaterial({
-    size: 1.2,
+    size: 1.3,
     map: canvasTexture,
     vertexColors: true,
     transparent: true,
-    opacity: 0.45,
+    opacity: 0.55,
     blending: THREE.AdditiveBlending,
     depthWrite: false
   });
@@ -239,7 +242,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
     nodesGeo.attributes.position.needsUpdate = true;
 
     // Slowly pulse line opacities like active neurons
-    linesMat.opacity = 0.22 + Math.sin(elapsedTime * 1.8) * 0.08;
+    linesMat.opacity = 0.25 + Math.sin(elapsedTime * 1.8) * 0.08;
 
     renderer.render(scene, camera);
   }
@@ -258,7 +261,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   };
 }
 
-// Generates a soft glowing radial circle texture programmatically
+// Generates an Ivory core + Wine aura + subtle Gold halo radial texture
 function createNodePointTexture(): THREE.Texture {
   const canvas = document.createElement('canvas');
   canvas.width = 64;
@@ -266,9 +269,9 @@ function createNodePointTexture(): THREE.Texture {
   const ctx = canvas.getContext('2d');
   if (ctx) {
     const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-    gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-    gradient.addColorStop(0.3, 'rgba(139, 92, 246, 0.8)');
-    gradient.addColorStop(0.7, 'rgba(6, 182, 212, 0.3)');
+    gradient.addColorStop(0, 'rgba(250, 247, 240, 1)');      // Ivory Core
+    gradient.addColorStop(0.35, 'rgba(148, 32, 54, 0.9)');    // Velvet Wine
+    gradient.addColorStop(0.7, 'rgba(223, 177, 91, 0.45)');   // Subtle Gold Halo
     gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
     ctx.fillStyle = gradient;
@@ -304,7 +307,7 @@ function createFallbackCanvas(container: HTMLElement) {
       });
     }
 
-    ctx.strokeStyle = 'rgba(139, 92, 246, 0.2)';
+    ctx.strokeStyle = 'rgba(148, 32, 54, 0.3)';
     ctx.lineWidth = 1;
     for (let i = 0; i < nodes; i++) {
       for (let j = i + 1; j < nodes; j++) {
@@ -321,7 +324,7 @@ function createFallbackCanvas(container: HTMLElement) {
     }
 
     points.forEach((p) => {
-      ctx.fillStyle = '#06b6d4';
+      ctx.fillStyle = '#dfb15b';
       ctx.beginPath();
       ctx.arc(p.x, p.y, 2.5, 0, Math.PI * 2);
       ctx.fill();

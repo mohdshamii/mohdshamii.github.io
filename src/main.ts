@@ -5,7 +5,6 @@ import { initLenis } from './animations/lenis.ts';
 import { initCustomCursor } from './animations/cursor.ts';
 
 // Components
-import { renderLoader, initLoader } from './components/Loader.ts';
 import { renderNavbar, initNavbarEvents } from './components/Navbar.ts';
 import { renderHero, initHeroEvents } from './components/Hero.ts';
 import { renderSummary, initSummaryEvents } from './components/Summary.ts';
@@ -21,14 +20,14 @@ import { renderDsaSection } from './components/DsaSection.ts';
 import { renderContact, initContactEvents } from './components/Contact.ts';
 import { renderFooter } from './components/Footer.ts';
 import { renderCommandPalette, initCommandPalette } from './components/CommandPalette.ts';
+import { renderSuperIntelligenceAssistant, initSuperIntelligenceAssistant } from './components/SuperIntelligenceAssistant.ts';
 
 function bootstrapApplication() {
   const app = document.getElementById('app');
   if (!app) return;
 
-  // Render DOM tree
+  // Render DOM tree immediately without preloader
   app.innerHTML = `
-    ${renderLoader()}
     ${renderNavbar()}
     <main id="main-content">
       ${renderHero()}
@@ -46,6 +45,7 @@ function bootstrapApplication() {
     </main>
     ${renderFooter()}
     ${renderCommandPalette()}
+    ${renderSuperIntelligenceAssistant()}
   `;
 
   // Initialize interactive systems
@@ -57,16 +57,14 @@ function bootstrapApplication() {
   initMlPipelineEvents();
   initContactEvents();
   initCommandPalette();
+  initSuperIntelligenceAssistant();
   initCustomCursor();
 
   // Initialize Lenis smooth inertia scroll
   initLenis();
 
-  // Boot sequence loader
-  initLoader(() => {
-    // When loader finishes, ensure hero interactions are responsive
-    window.dispatchEvent(new Event('resize'));
-  });
+  // Trigger instant layout calculation
+  window.dispatchEvent(new Event('resize'));
 }
 
 if (document.readyState === 'loading') {
