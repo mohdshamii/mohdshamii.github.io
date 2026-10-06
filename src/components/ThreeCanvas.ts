@@ -44,10 +44,18 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   const neuralGroup = new THREE.Group();
   scene.add(neuralGroup);
 
-  // --- Theme Palette: Burgundy (#7A1F35), Black (#111111), Soft Pink (#F5E7EB) ---
-  const colorBurgundy = new THREE.Color(0x7A1F35);
-  const colorBlack = new THREE.Color(0x111111);
-  const colorPink = new THREE.Color(0xF5E7EB);
+  // --- Theme Palette: Electric Cobalt Blue, Slate Gray, Crisp Contrast ---
+  function getThemeColors() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    return {
+      primary: isDark ? new THREE.Color(0x3B82F6) : new THREE.Color(0x2563EB),
+      secondary: isDark ? new THREE.Color(0xF8FAFC) : new THREE.Color(0x09090B),
+      line: isDark ? 0x3B82F6 : 0x2563EB,
+      particleAlt: isDark ? new THREE.Color(0x71717A) : new THREE.Color(0x94A3B8)
+    };
+  }
+
+  let themeCols = getThemeColors();
 
   // --- Ultra-Lightweight Neural Network Topology: 4 Layers (18 nodes total) ---
   const layers = [
@@ -79,8 +87,8 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
 
       nodePositions.push(x, y, z);
 
-      // Node colors: Burgundy on outer, Soft Pink/Black on inner
-      const c = lIdx % 2 === 0 ? colorBurgundy : colorBlack;
+      // Node colors: Cobalt on outer, Secondary on inner
+      const c = lIdx % 2 === 0 ? themeCols.primary : themeCols.secondary;
       nodeColors.push(c.r, c.g, c.b);
     }
   });
@@ -123,7 +131,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
   linesGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
 
   const linesMat = new THREE.LineBasicMaterial({
-    color: 0x7A1F35,
+    color: themeCols.line,
     transparent: true,
     opacity: 0.25
   });
@@ -142,7 +150,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
     const pz = (Math.random() - 0.5) * 35;
     pPos.push(px, py, pz);
 
-    const c = Math.random() > 0.5 ? colorBurgundy : colorPink;
+    const c = Math.random() > 0.5 ? themeCols.primary : themeCols.particleAlt;
     pCols.push(c.r, c.g, c.b);
   }
 
@@ -161,6 +169,23 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
 
   const particles = new THREE.Points(particlesGeo, particlesMat);
   scene.add(particles);
+
+  // Theme change listener for live recoloring
+  function onThemeChange() {
+    const newColors = getThemeColors();
+    linesMat.color.setHex(newColors.line);
+    const colorAttr = nodesGeo.attributes.color as THREE.BufferAttribute;
+    const colorsArr = colorAttr.array as Float32Array;
+    nodes.forEach((node, i) => {
+      const c = node.layerIdx % 2 === 0 ? newColors.primary : newColors.secondary;
+      colorsArr[i * 3] = c.r;
+      colorsArr[i * 3 + 1] = c.g;
+      colorsArr[i * 3 + 2] = c.b;
+    });
+    colorAttr.needsUpdate = true;
+  }
+
+  window.addEventListener('themechange', onThemeChange);
 
   // Mouse interaction state (damped)
   let targetRotationX = 0;
@@ -240,6 +265,7 @@ export function initHeroThreeCanvas(containerId: string): (() => void) | null {
     cancelAnimationFrame(animationFrameId);
     window.removeEventListener('mousemove', onMouseMove);
     window.removeEventListener('resize', onResize);
+    window.removeEventListener('themechange', onThemeChange);
     renderer.dispose();
     if (renderer.domElement && renderer.domElement.parentElement) {
       renderer.domElement.parentElement.removeChild(renderer.domElement);

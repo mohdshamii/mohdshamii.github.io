@@ -539,11 +539,11 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: "pydsa",
-      name: "PYDSA",
-      subtitle: "850+ Data Structures & Algorithms in Python",
-      period: "Ongoing",
+      name: "CORORBIT / PYDSA",
+      subtitle: "Interactive Platform to Master Python & 850+ Algorithms",
+      period: "2025 – Ongoing",
       category: "analytics",
-      overview: "A curated repository of 850+ algorithmic solutions solved exclusively in Python, categorized topic-wise across Trees, Graphs, Dynamic Programming, and Math.",
+      overview: "An interactive coding platform and curated repository to master Python data structures, algorithms, and runtime complexities with 850+ solved challenges.",
       pipeline: [
         "PROBLEM",
         "COMPLEXITY ANALYSIS",
@@ -553,13 +553,13 @@ export const portfolioData: PortfolioData = {
       ],
       metrics: [
         { label: "Problems Solved", value: "850+" },
-        { label: "Language", value: "Python" },
-        { label: "Platforms", value: "LeetCode & HackerRank" },
-        { label: "GitHub Stars", value: "8 Stars" }
+        { label: "Platform", value: "CorOrbit Engine" },
+        { label: "Language", value: "Python 3" },
+        { label: "Asymptotic Focus", value: "O(N) / O(log N)" }
       ],
-      technologies: ["Python", "Algorithms", "Data Structures", "Dynamic Programming", "Graph Theory"],
+      technologies: ["Python", "Algorithms", "Data Structures", "Dynamic Programming", "Graph Theory", "CorOrbit"],
       githubUrl: "https://github.com/mohdshamii/PyDSA",
-      liveDemoUrl: "https://leetcode.com/u/mohdshamii",
+      liveDemoUrl: "https://mohdshamii.github.io/PyDSA",
       image: "/images/pydsa.png",
       caseStudy: {
         problem: "Writing clean, optimal, and performant machine learning code requires deep foundational understanding of time complexity, space complexity, and algorithmic structures.",
@@ -567,8 +567,178 @@ export const portfolioData: PortfolioData = {
         preprocessing: "Structured solutions by algorithmic categories: Arrays, Two Pointers, Trees, Graphs, Heaps, Dynamic Programming, Bit Manipulation, and Mathematics.",
         model: "Every solution designed for optimal asymptotic runtime (O(N) / O(N log N)) using Python idiomatic data structures.",
         evaluation: "All test cases validated across official platform judge engines with optimal memory footprints.",
-        deployment: "Publicly maintained open-source GitHub archive with clear complexity notes for the developer community.",
+        deployment: "Publicly maintained open-source GitHub archive and interactive platform at mohdshamii.github.io/PyDSA.",
         result: "Built a solid algorithmic foundation directly applied to writing optimized data pipelines and vectorised ML operations."
+      }
+    },
+    {
+      id: "dsaos",
+      name: "DSAOS",
+      subtitle: "Top 250 DSA Problems for MNC & Campus Placements",
+      period: "2025 – 2026",
+      category: "analytics",
+      overview: "A curated repository and interactive roadmap covering 250 high-frequency DSA problems asked in top product MNCs (Google, Microsoft, Amazon) and campus placement coding assessments.",
+      pipeline: [
+        "TOPIC ROADMAP",
+        "FREQUENCY ANALYSIS",
+        "PATTERN IDENTIFICATION",
+        "OPTIMAL PYTHON CODE",
+        "PLACEMENT READY"
+      ],
+      metrics: [
+        { label: "Curated Problems", value: "250 Top" },
+        { label: "Focus", value: "MNC & Placements" },
+        { label: "Patterns", value: "14 Core DSA Patterns" },
+        { label: "Language", value: "Python" }
+      ],
+      technologies: ["Python", "Algorithms", "Data Structures", "Two Pointers", "Sliding Window", "Dynamic Programming", "Graphs"],
+      githubUrl: "https://github.com/mohdshamii/DSAos",
+      liveDemoUrl: "https://mohdshamii.github.io/DSAos",
+      image: "/images/pydsa.png",
+      caseStudy: {
+        problem: "Campus placements and technical interviews at top MNCs test specific problem patterns under strict time limits, requiring focused preparation on high-frequency questions rather than random problem solving.",
+        data: "Curated dataset of 250 interview questions frequently asked across Google, Amazon, Microsoft, and high-growth engineering companies.",
+        preprocessing: "Deconstructed questions into 14 universal algorithmic patterns: Sliding Window, Two Pointers, Fast & Slow Pointers, Merge Intervals, Modified Binary Search, and Tree Traversals.",
+        model: "Provided clean Pythonic solutions accompanied by intuitive intuition explanations, edge case checklists, and step-by-step memory trace diagrams.",
+        evaluation: "Benchmarked against standard interview time constraints (target solve time under 25 minutes per question).",
+        deployment: "Hosted as an accessible open-source portal at mohdshamii.github.io/DSAos with instant category filters.",
+        result: "Created a focused, high-yield preparation ecosystem for campus placement aspirants and engineering peers."
+      }
+    },
+    {
+      id: "gateda",
+      name: "GATEDA",
+      subtitle: "GATE Data Science & Artificial Intelligence Portal",
+      period: "2025 – 2026",
+      category: "ml",
+      overview: "A comprehensive preparation platform designed specifically for the GATE Data Science & AI (DA) examination covering Probability & Statistics, Linear Algebra, Machine Learning, AI Search, and Relational Databases.",
+      pipeline: [
+        "SYLLABUS DECOMPOSITION",
+        "MATHEMATICAL RIGOR",
+        "ML THEORY & EQUATIONS",
+        "AI SEARCH STRATEGIES",
+        "EXAM DRILLS"
+      ],
+      metrics: [
+        { label: "Target Paper", value: "GATE DA 2026" },
+        { label: "Modules", value: "7 Core Subjects" },
+        { label: "Domain", value: "Data Science & AI" },
+        { label: "Status", value: "Active Study Engine" }
+      ],
+      technologies: ["Python", "Machine Learning", "Probability & Statistics", "Linear Algebra", "Calculus", "Artificial Intelligence", "SQL"],
+      githubUrl: "https://github.com/mohdshamii/GateDA",
+      liveDemoUrl: "https://mohdshamii.github.io/GateDA",
+      image: "/images/revive.png",
+      caseStudy: {
+        problem: "The GATE Data Science & AI (DA) examination demands rigorous mathematical understanding alongside theoretical and practical machine learning knowledge, requiring structured domain-specific resources.",
+        data: "Official GATE DA syllabus, previous year question trends, standard academic references in Linear Algebra (Strang), Probability, and Machine Learning (Hastie, Murphy).",
+        preprocessing: "Synthesized complex multi-variable calculus, matrix decomposition (SVD, Eigenvalues), probability distributions, and convex optimization into clear structured notes.",
+        model: "Mapped every algorithmic concept (Regression, SVM, Decision Trees, Clustering, Neural Networks) directly to its underlying mathematical formulations and code equivalents.",
+        evaluation: "Validated through conceptual problem solving, algorithmic derivations, and chapter-wise mock questions.",
+        deployment: "Published at mohdshamii.github.io/GateDA for open revision, academic peer sharing, and structured preparation.",
+        result: "Equipped aspirants and self-learners with a single comprehensive, high-standard reference engine for GATE DA."
+      }
+    },
+    {
+      id: "hydroraksh",
+      name: "HYDRORAKSH",
+      subtitle: "Automated Water Conservation & Monitoring Architecture",
+      period: "2025 – 2026",
+      category: "analytics",
+      overview: "An automated water protection and resource monitoring system utilizing sensor telemetry, real-time threshold analytics, and automated alert dispatch for smart conservation.",
+      pipeline: [
+        "SENSOR TELEMETRY",
+        "DATA INGESTION",
+        "STREAM PROCESSING",
+        "THRESHOLD ANALYTICS",
+        "ALERT DISPATCH"
+      ],
+      metrics: [
+        { label: "Telemetry Latency", value: "< 250ms" },
+        { label: "Alert Dispatch", value: "Real-time" },
+        { label: "System Protocol", value: "IoT & Python" },
+        { label: "Architecture", value: "Modular" }
+      ],
+      technologies: ["Python", "IoT Systems", "Anomaly Detection", "Stream Analytics", "Automation", "REST API"],
+      githubUrl: "https://github.com/mohdshamii/HydroRaksh",
+      liveDemoUrl: "https://github.com/mohdshamii/HydroRaksh",
+      image: "/images/revive.png",
+      caseStudy: {
+        problem: "Unmonitored water systems cause massive volumetric wastage and catastrophic overflows due to lack of real-time sensor monitoring and predictive thresholds.",
+        data: "Continuous multi-sensor telemetry capturing water levels, inflow/outflow rates, flow pressure, and environmental temperature.",
+        preprocessing: "Cleaned raw telemetry streams, removed noise jitter, and calculated dynamic moving-window averages for rate-of-change detection.",
+        model: "Engineered real-time anomaly detection heuristics paired with threshold-based predictive rules to trigger preemptive conservation valves.",
+        evaluation: "Benchmarked on streaming telemetry feeds with sub-250ms processing latency and zero missed threshold breach alerts.",
+        deployment: "Structured as an open-source Python system with modular drivers ready for embedded microcontrollers and central telemetry dashboards.",
+        result: "Provided an end-to-end automated protection system preventing water wastage and safeguarding reservoirs."
+      }
+    },
+    {
+      id: "100days-aiml",
+      name: "100 DAYS OF AI/ML",
+      subtitle: "Comprehensive AI/ML Roadmap, Research Papers & Free Books Repository",
+      period: "2025 – 2026",
+      category: "ml",
+      overview: "A structured 100-day curriculum spanning foundational mathematics, Scikit-learn, deep learning, NLP, computer vision, seminal research papers, and curated open-access textbooks.",
+      pipeline: [
+        "FOUNDATIONAL MATH",
+        "SCIKIT-LEARN & ML",
+        "DEEP LEARNING & CNN",
+        "NLP & TRANSFORMERS",
+        "PAPERS & PRODUCTION"
+      ],
+      metrics: [
+        { label: "Roadmap Scope", value: "100 Days" },
+        { label: "Research Papers", value: "Seminal Papers" },
+        { label: "Free Books", value: "Curated Library" },
+        { label: "Code Repos", value: "100+ Notebooks" }
+      ],
+      technologies: ["Python", "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Research Papers", "PyTorch"],
+      githubUrl: "https://github.com/mohdshamii/100",
+      liveDemoUrl: "https://github.com/mohdshamii/100",
+      image: "/images/pydsa.png",
+      caseStudy: {
+        problem: "Aspiring AI/ML engineers often face fragmented learning roadmaps with disjointed theory, missing math fundamentals, and lack of guidance on reading seminal research papers.",
+        data: "Comprehensive aggregation of top machine learning research papers, official library documentations, and open-access computer science textbooks.",
+        preprocessing: "Decomposed the vast field of modern artificial intelligence into a day-by-day 100-step pedagogical learning path.",
+        model: "Structured each milestone into: Core Mathematical Intuition -> Clean Python Code Implementation -> Seminal Paper Reading -> Project Application.",
+        evaluation: "Peer-reviewed by student cohorts and campus engineering peers who achieved measurable acceleration in model development.",
+        deployment: "Open-sourced as a community knowledge repository at github.com/mohdshamii/100 with free books, code templates, and daily milestones.",
+        result: "Delivered a complete, self-contained educational ecosystem empowering developers to master AI/ML from first principles."
+      }
+    },
+    {
+      id: "industrial-training",
+      name: "INDUSTRIAL TRAINING",
+      subtitle: "Production Machine Learning & Applied Python Engineering Projects",
+      period: "2025 – 2026",
+      category: "ml",
+      overview: "A comprehensive collection of industry-grade Machine Learning, Deep Learning, and applied Python projects covering end-to-end data pipelines, exploratory analysis, and predictive models.",
+      pipeline: [
+        "RAW DATASET INGESTION",
+        "EXPLORATORY DATA ANALYSIS",
+        "FEATURE PIPELINES",
+        "MODEL BENCHMARKING",
+        "DEPLOYABLE ARTIFACTS"
+      ],
+      metrics: [
+        { label: "Repository Scope", value: "Huge Collection" },
+        { label: "Focus", value: "Industrial ML" },
+        { label: "Pipeline Quality", value: "Production-grade" },
+        { label: "Stack", value: "Python & Scikit-learn" }
+      ],
+      technologies: ["Python", "Machine Learning", "Scikit-learn", "Pandas", "NumPy", "Jupyter", "ETL Pipelines", "Data Visualization"],
+      githubUrl: "https://github.com/mohdshamii/Industrial-training",
+      liveDemoUrl: "https://github.com/mohdshamii/Industrial-training",
+      image: "/images/farmaiq.png",
+      caseStudy: {
+        problem: "Academic machine learning projects frequently isolate models in clean synthetic datasets, leaving engineers unprepared for messy real-world industrial data nuances.",
+        data: "Multiple industrial and enterprise benchmark datasets spanning tabular classification, regression, customer analytics, and time-series records.",
+        preprocessing: "Implemented end-to-end robust data cleaning, missing value imputation, skewness correction, categorical encoding, and leakage-proof train/test splitting.",
+        model: "Built and benchmarked diverse algorithms ranging from Linear/Logistic baselines to Random Forests, Gradient Boosting (XGBoost), and Neural Networks.",
+        evaluation: "Evaluated with comprehensive diagnostic matrices: Confusion Matrices, ROC-AUC curves, Precision-Recall tradeoffs, and residual analyses.",
+        deployment: "Archived with clean, reproducible Jupyter notebooks and reusable Python script modules on GitHub.",
+        result: "Built a robust, battle-tested portfolio of industrial ML solutions demonstrating end-to-end data science proficiency."
       }
     }
   ],

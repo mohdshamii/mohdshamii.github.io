@@ -714,6 +714,182 @@ function initLab() {
 
   if (runSqlBtn) runSqlBtn.addEventListener('click', executeSqlSimulation);
   executeSqlSimulation();
+
+  // ==========================================================================
+  // MODEL 9: CorOrbit Python Snippet Switcher
+  // ==========================================================================
+  const cororbitSnippets: Record<string, string> = {
+    'binary-search': `def binary_search(nums: list[int], target: int) -> int:
+    left, right = 0, len(nums) - 1
+    while left <= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+# Time Complexity: O(log N) | Space: O(1)`,
+    'two-pointers': `def max_area(height: list[int]) -> int:
+    left, right = 0, len(height) - 1
+    max_water = 0
+    while left < right:
+        w = right - left
+        h = min(height[left], height[right])
+        max_water = max(max_water, w * h)
+        if height[left] < height[right]:
+            left += 1
+        else:
+            right -= 1
+    return max_water
+
+# Time Complexity: O(N) | Space: O(1)`,
+    'dp-fib': `def climb_stairs(n: int) -> int:
+    if n <= 2:
+        return n
+    prev1, prev2 = 2, 1
+    for _ in range(3, n + 1):
+        curr = prev1 + prev2
+        prev2, prev1 = prev1, curr
+    return prev1
+
+# Time Complexity: O(N) | Space: O(1) Dynamic Programming`,
+    'graph-bfs': `from collections import deque
+
+def bfs(graph: dict[str, list[str]], start: str) -> list[str]:
+    visited = {start}
+    queue = deque([start])
+    order = []
+    while queue:
+        node = queue.popleft()
+        order.append(node)
+        for neighbor in graph.get(node, []):
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+    return order
+
+# Time Complexity: O(V + E) | Space: O(V)`
+  };
+
+  const snippetBox = document.getElementById('cororbitCodeSnippet');
+  document.querySelectorAll('.cororbit-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cororbit-preset').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const pyKey = btn.getAttribute('data-py') || 'binary-search';
+      if (snippetBox && cororbitSnippets[pyKey]) {
+        snippetBox.textContent = cororbitSnippets[pyKey];
+      }
+    });
+  });
+
+  // ==========================================================================
+  // MODEL 10: DSAos Company Category Switcher
+  // ==========================================================================
+  const dsaosCategories: Record<string, string> = {
+    faang: `
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">#01 · Two Sum / Pair Hash:</span> O(N) Hash Map Lookup [Google, Amazon, Meta]
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">#02 · Longest Substring Without Repeating:</span> Sliding Window + Dynamic Set [Microsoft, Uber]
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">#03 · Number of Islands:</span> Disjoint Set Union &amp; BFS Grid Traversal [Amazon, Bloomberg]
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">#04 · Coin Change:</span> Unbounded Knapsack Bottom-Up DP [Goldman Sachs, Atlassian]
+      </div>
+    `,
+    patterns: `
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Pattern 01 · Sliding Window:</span> Fixed &amp; Variable size sub-arrays (Max Sum, Anagrams)
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Pattern 02 · Two Pointers:</span> Converging bounds &amp; fast/slow runners (Cycle Detection)
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Pattern 03 · Top K Elements:</span> Min-Heap &amp; Max-Heap priority queues in O(N log K)
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Pattern 04 · Topological Sort:</span> Directed Acyclic Graph (DAG) Kahn's algorithm
+      </div>
+    `,
+    mock: `
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Checklist 01:</span> Clarify constraints &amp; input bounds (N <= 10^5 indicates O(N log N) or O(N)).
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Checklist 02:</span> State brute-force solution upfront, then optimize with hash-table or two pointers.
+      </div>
+      <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+        <span style="color: var(--accent-color); font-weight: 600;">Checklist 03:</span> Write edge test cases: empty array, single element, negative numbers, duplicates.
+      </div>
+    `
+  };
+
+  const dsaosListBox = document.getElementById('dsaosPreviewList');
+  document.querySelectorAll('.dsaos-company').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.dsaos-company').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const coKey = btn.getAttribute('data-co') || 'faang';
+      if (dsaosListBox && dsaosCategories[coKey]) {
+        dsaosListBox.innerHTML = dsaosCategories[coKey];
+      }
+    });
+  });
+
+  // ==========================================================================
+  // MODEL 11: GateDA Syllabus Switcher
+  // ==========================================================================
+  const gatedaSyllabusContent: Record<string, string> = {
+    math: `
+      <p><strong>Core Mathematical Foundations:</strong></p>
+      <ul style="padding-left: 1.25rem; margin-top: 0.35rem;">
+        <li><strong>Linear Algebra:</strong> Vector spaces, matrices, rank, eigenvalues/eigenvectors, SVD, PCA projection.</li>
+        <li><strong>Calculus &amp; Optimization:</strong> Gradients, directional derivatives, maxima/minima, convex optimization.</li>
+        <li><strong>Probability &amp; Statistics:</strong> Bayes theorem, conditional probability, expectation, distributions (Gaussian, Bernoulli), central limit theorem.</li>
+      </ul>
+    `,
+    ml: `
+      <p><strong>Machine Learning (Supervised &amp; Unsupervised):</strong></p>
+      <ul style="padding-left: 1.25rem; margin-top: 0.35rem;">
+        <li><strong>Supervised:</strong> Linear/Logistic Regression, Ridge &amp; Lasso regularization, Decision Trees, Random Forests, XGBoost, Support Vector Machines (SVM).</li>
+        <li><strong>Unsupervised:</strong> K-Means Clustering, Hierarchical clustering, Gaussian Mixture Models (EM algorithm), Dimensionality Reduction (PCA, t-SNE).</li>
+        <li><strong>Deep Learning:</strong> Multi-layer Perceptrons (MLP), backpropagation, activation functions, loss surfaces, vanishing gradient treatment.</li>
+      </ul>
+    `,
+    ai: `
+      <p><strong>Artificial Intelligence (Search &amp; Reasoning):</strong></p>
+      <ul style="padding-left: 1.25rem; margin-top: 0.35rem;">
+        <li><strong>Search Algorithms:</strong> Informed search (A*, Greedy Best-First), Uninformed search (BFS, DFS, Uniform Cost Search), Adversarial search (Minimax, Alpha-Beta pruning).</li>
+        <li><strong>Logic &amp; Reasoning:</strong> Propositional logic, First-order predicate calculus, resolution refutation, forward/backward chaining.</li>
+      </ul>
+    `,
+    db: `
+      <p><strong>Database Management Systems &amp; Warehousing:</strong></p>
+      <ul style="padding-left: 1.25rem; margin-top: 0.35rem;">
+        <li><strong>Relational Model:</strong> Relational algebra, tuple calculus, entity-relationship (ER) mapping, SQL DDL/DML/DQL queries, sub-queries, joins, aggregations.</li>
+        <li><strong>Normalization:</strong> Functional dependencies, 1NF, 2NF, 3NF, BCNF, lossless join decomposition.</li>
+      </ul>
+    `
+  };
+
+  const gatedaBox = document.getElementById('gatedaSyllabusBox');
+  document.querySelectorAll('.gateda-sub').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.gateda-sub').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const subKey = btn.getAttribute('data-sub') || 'math';
+      if (gatedaBox && gatedaSyllabusContent[subKey]) {
+        gatedaBox.innerHTML = gatedaSyllabusContent[subKey];
+      }
+    });
+  });
 }
 
 if (document.readyState === 'loading') {

@@ -1,5 +1,8 @@
 import './styles/cinematic.css';
 
+// Core Theme System (Dual-Mode Native)
+import { initTheme } from './utils/theme.ts';
+
 // Core Animations & Creative-Dev Systems
 import { initLenis } from './animations/lenis.ts';
 import { initCustomCursor } from './animations/cursor.ts';
@@ -12,6 +15,7 @@ import { renderAbout } from './components/About.ts';
 import { renderSkills, initSkillsEvents } from './components/Skills.ts';
 import { renderExperience } from './components/Experience.ts';
 import { renderProjects, initProjectEvents } from './components/Projects.ts';
+import { renderExecutionTraces, initExecutionTracesEvents } from './components/ExecutionTraces.ts';
 import { renderMlPipeline, initMlPipelineEvents } from './components/MlPipeline.ts';
 import { renderEducation } from './components/Education.ts';
 import { renderCertifications } from './components/Certifications.ts';
@@ -26,6 +30,9 @@ function bootstrapApplication() {
   const app = document.getElementById('app');
   if (!app) return;
 
+  // Initialize theme from storage/system before layout mount
+  initTheme();
+
   // Render DOM tree immediately without preloader
   app.innerHTML = `
     ${renderNavbar()}
@@ -36,6 +43,7 @@ function bootstrapApplication() {
       ${renderSkills()}
       ${renderExperience()}
       ${renderProjects()}
+      ${renderExecutionTraces()}
       ${renderMlPipeline()}
       ${renderEducation()}
       ${renderCertifications()}
@@ -54,6 +62,7 @@ function bootstrapApplication() {
   initSummaryEvents();
   initSkillsEvents();
   initProjectEvents();
+  initExecutionTracesEvents();
   initMlPipelineEvents();
   initContactEvents();
   initCommandPalette();

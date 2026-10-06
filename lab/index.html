@@ -64,6 +64,15 @@
       <button class="lab-tab-btn" data-tab="sql-tab" role="tab">
         <i class="fas fa-database"></i> SQL Sandbox
       </button>
+      <button class="lab-tab-btn" data-tab="cororbit-tab" role="tab">
+        <i class="fab fa-python"></i> CorOrbit (Master Python)
+      </button>
+      <button class="lab-tab-btn" data-tab="dsaos-tab" role="tab">
+        <i class="fas fa-code"></i> DSAos (Top 250 Placement)
+      </button>
+      <button class="lab-tab-btn" data-tab="gateda-tab" role="tab">
+        <i class="fas fa-graduation-cap"></i> GateDA (GATE DS & AI)
+      </button>
     </div>
 
     <!-- TAB 1: REVIVE -->
@@ -526,6 +535,213 @@
 
           <div id="sqlResultsWrap">
             <!-- Dynamically populated table -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 9: CORORBIT (CODING PLATFORM TO MASTER PYTHON SKILLS) -->
+    <div class="lab-tab-panel" id="cororbit-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fab fa-python" style="color: var(--accent-color);"></i>
+            <span>CorOrbit — Master Python & Algorithmic Foundations</span>
+          </div>
+
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            <strong>CorOrbit</strong> is my dedicated interactive coding platform designed to master Python data structures, algorithms, runtime optimizations, and computational problem-solving from scratch to competitive level.
+          </p>
+
+          <div class="preset-wrap">
+            <button class="preset-chip cororbit-preset active" data-py="binary-search">Binary Search O(log N)</button>
+            <button class="preset-chip cororbit-preset" data-py="two-pointers">Two Pointers O(N)</button>
+            <button class="preset-chip cororbit-preset" data-py="dp-fib">Dynamic Programming O(N)</button>
+            <button class="preset-chip cororbit-preset" data-py="graph-bfs">Graph BFS Traversal</button>
+          </div>
+
+          <div class="lab-input-group" style="margin-top: 1rem;">
+            <div class="lab-input-label">
+              <span>Python Code Sandbox (Interactive Snippet)</span>
+              <span class="lab-val-highlight">Python 3.12 Engine</span>
+            </div>
+            <pre id="cororbitCodeSnippet" style="background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 1rem; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--text-primary); overflow-x: auto; line-height: 1.5; margin-top: 0.5rem;">def binary_search(nums: list[int], target: int) -&gt; int:
+    left, right = 0, len(nums) - 1
+    while left &lt;= right:
+        mid = (left + right) // 2
+        if nums[mid] == target:
+            return mid
+        elif nums[mid] &lt; target:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return -1
+
+# Time Complexity: O(log N) | Space: O(1)</pre>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
+            <a href="https://mohdshamii.github.io/PyDSA" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1; text-align: center; justify-content: center;">
+              <i class="fas fa-external-link-alt"></i> Launch CorOrbit Platform (mohdshami.github.io/PyDSA)
+            </a>
+            <a href="https://github.com/mohdshamii/PyDSA" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fab fa-github"></i> View PyDSA Repo
+            </a>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-layer-group" style="color: var(--accent-color);"></i>
+            <span>Platform Curriculum & Telemetry</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div class="gauge-big-score">850+</div>
+            <span class="gauge-status-badge status-low">Comprehensive Solutions</span>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.5;">
+              Covering 14+ fundamental data structures, memory tracing, asymptotic complexity proofs, and Pythonic idioms.
+            </p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.8125rem; color: var(--text-secondary);">
+            <div style="display: flex; justify-content: space-between; padding: 0.35rem 0; border-bottom: 1px dashed var(--border-color);">
+              <span>Topic Modules:</span>
+              <span style="font-weight: 600; color: var(--text-primary);">Arrays, Trees, Graphs, DP, Heaps, Math</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 0.35rem 0; border-bottom: 1px dashed var(--border-color);">
+              <span>Judge Verification:</span>
+              <span style="font-weight: 600; color: var(--accent-color);">100% LeetCode &amp; HackerRank Verified</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; padding: 0.35rem 0;">
+              <span>Direct Link:</span>
+              <a href="https://mohdshamii.github.io/PyDSA" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-family: var(--font-mono);">mohdshamii.github.io/PyDSA</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 10: DSAos (TOP 250 DSA PROBLEMS FOR MNC & PLACEMENTS) -->
+    <div class="lab-tab-panel" id="dsaos-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-laptop-code" style="color: var(--accent-color);"></i>
+            <span>DSAos — Top 250 MNC &amp; Campus Placement Engine</span>
+          </div>
+
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            <strong>DSAos</strong> is a curated platform targeting the top 250 Data Structures and Algorithms problems most frequently asked in product MNC coding rounds and campus placement assessments.
+          </p>
+
+          <div class="preset-wrap">
+            <button class="preset-chip dsaos-company active" data-co="faang">Tier-1 MNCs (Google, Amazon, Microsoft)</button>
+            <button class="preset-chip dsaos-company" data-co="patterns">14 Universal Patterns</button>
+            <button class="preset-chip dsaos-company" data-co="mock">Mock Assessment Checklist</button>
+          </div>
+
+          <div id="dsaosPreviewList" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem;">
+            <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+              <span style="color: var(--accent-color); font-weight: 600;">#01 · Two Sum / Pair Hash:</span> O(N) Hash Map Lookup [Google, Amazon, Meta]
+            </div>
+            <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+              <span style="color: var(--accent-color); font-weight: 600;">#02 · Longest Substring Without Repeating:</span> Sliding Window + Dynamic Set [Microsoft, Uber]
+            </div>
+            <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+              <span style="color: var(--accent-color); font-weight: 600;">#03 · Number of Islands:</span> Disjoint Set Union &amp; BFS Grid Traversal [Amazon, Bloomberg]
+            </div>
+            <div style="padding: 0.65rem 0.85rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem;">
+              <span style="color: var(--accent-color); font-weight: 600;">#04 · Coin Change:</span> Unbounded Knapsack Bottom-Up DP [Goldman Sachs, Atlassian]
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
+            <a href="https://mohdshamii.github.io/DSAos" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1; text-align: center; justify-content: center;">
+              <i class="fas fa-external-link-alt"></i> Open DSAos (mohdshamii.github.io/DSAos)
+            </a>
+            <a href="https://github.com/mohdshamii/DSAos" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fab fa-github"></i> GitHub Source
+            </a>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-bullseye" style="color: var(--accent-color);"></i>
+            <span>Placement Preparation Metrics</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div class="gauge-big-score">250</div>
+            <span class="gauge-status-badge status-low">High-Frequency Problems</span>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.5;">
+              Targeted preparation minimizing random grinding; categorized strictly by high-yield placement interview patterns.
+            </p>
+          </div>
+
+          <div style="font-size: 0.8125rem; color: var(--text-muted); line-height: 1.6;">
+            <strong>Features:</strong> Time &amp; space complexity breakdowns, edge-case checklists, and interview mock timers for campus placement readiness.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 11: GATEDA (GATE DATA SCIENCE & AI PREPARATION WEBSITE) -->
+    <div class="lab-tab-panel" id="gateda-tab" role="tabpanel">
+      <div class="lab-grid">
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-graduation-cap" style="color: var(--accent-color);"></i>
+            <span>GateDA — GATE Data Science &amp; AI Preparation Portal</span>
+          </div>
+
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.25rem;">
+            <strong>GateDA</strong> is my dedicated academic portal built specifically for the GATE examination in <strong>Data Science &amp; Artificial Intelligence (DA Paper)</strong>, covering end-to-end mathematical rigor and ML concepts.
+          </p>
+
+          <div class="preset-wrap">
+            <button class="preset-chip gateda-sub active" data-sub="math">Probability &amp; Linear Algebra</button>
+            <button class="preset-chip gateda-sub" data-sub="ml">Machine Learning (Supervised/Unsupervised)</button>
+            <button class="preset-chip gateda-sub" data-sub="ai">AI Search &amp; Propositional Logic</button>
+            <button class="preset-chip gateda-sub" data-sub="db">Relational Database Systems (SQL)</button>
+          </div>
+
+          <div id="gatedaSyllabusBox" style="margin-top: 1rem; padding: 1rem; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.8125rem; line-height: 1.6;">
+            <p><strong>Core Mathematical Foundations:</strong></p>
+            <ul style="padding-left: 1.25rem; margin-top: 0.35rem;">
+              <li><strong>Linear Algebra:</strong> Vector spaces, matrices, rank, eigenvalues/eigenvectors, SVD, PCA projection.</li>
+              <li><strong>Calculus &amp; Optimization:</strong> Gradients, directional derivatives, maxima/minima, convex optimization.</li>
+              <li><strong>Probability &amp; Statistics:</strong> Bayes theorem, conditional probability, expectation, distributions (Gaussian, Bernoulli), central limit theorem.</li>
+            </ul>
+          </div>
+
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.25rem; flex-wrap: wrap;">
+            <a href="https://mohdshamii.github.io/GateDA" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1; text-align: center; justify-content: center;">
+              <i class="fas fa-external-link-alt"></i> Access GateDA Portal (mohdshamii.github.io/GateDA)
+            </a>
+            <a href="https://github.com/mohdshamii/GateDA" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <i class="fab fa-github"></i> Repository
+            </a>
+          </div>
+        </div>
+
+        <div class="lab-card">
+          <div class="lab-card-title">
+            <i class="fas fa-book-reader" style="color: var(--accent-color);"></i>
+            <span>Syllabus Coverage &amp; Resources</span>
+          </div>
+
+          <div class="gauge-metric-box">
+            <div class="gauge-big-score">100%</div>
+            <span class="gauge-status-badge status-low">GATE DA Syllabus Mapped</span>
+            <p style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.5;">
+              Formula cheat-sheets, conceptual proofs, algorithm derivations, and chapter-wise mock questions.
+            </p>
+          </div>
+
+          <div style="font-size: 0.8125rem; color: var(--text-secondary); line-height: 1.6;">
+            <strong>Target Audience:</strong> GATE DA aspirants, Data Science undergraduate students, and engineers strengthening mathematical ML foundations.
           </div>
         </div>
       </div>

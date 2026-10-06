@@ -5,80 +5,83 @@
    ========================================================================== */
 
 :root {
-  /* Color Palette — White + Black + Burgundy + Soft Pink */
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F5E7EB;
-  --bg-tertiary: #EFE1E6;
+  /* Color Palette — Beautiful UI / GitHub Light Theme */
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F2F4F8;
+  --bg-tertiary: #EAECEF;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #FDF9FA;
+  --bg-card-hover: #F3F4F6;
 
-  --text-primary: #111111;
-  --text-secondary: #333333;
-  --text-muted: #555555;
+  --text-primary: #1F2328;
+  --text-secondary: #59636E;
+  --text-muted: #8C959F;
   --text-inverse: #FFFFFF;
 
-  --border-color: #E2CDD3;
-  --border-light: #EFE1E6;
-  --border-focus: #7A1F35;
+  --border-color: #D0D7DE;
+  --border-light: #EAECEF;
+  --border-focus: #0969DA;
 
-  --accent-color: #7A1F35;
-  --accent-hover: #962843;
-  --accent-light: rgba(122, 31, 53, 0.1);
-  --accent-border: #7A1F35;
-  --accent-gold: #7A1F35;
-  --accent-pink: #F5E7EB;
+  --accent-color: #0969DA;
+  --accent-hover: #0550AE;
+  --accent-light: rgba(9, 105, 218, 0.08);
+  --accent-border: #0969DA;
+  --accent-gold: #0969DA;
+  --accent-blue: #0969DA;
 
-  --badge-bg: #F5E7EB;
-  --badge-text: #7A1F35;
+  --badge-bg: rgba(9, 105, 218, 0.08);
+  --badge-text: #0969DA;
+  --badge-border: rgba(9, 105, 218, 0.2);
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(122, 31, 53, 0.06), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  --shadow-lg: 0 10px 15px -3px rgba(122, 31, 53, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
 
-  --radius-sm: 6px;
+  --radius-sm: 8px;
   --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-lg: 14px;
   --radius-full: 9999px;
 
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
+  --font-sans: 'Inter', 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Geist Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
 
   --nav-height: 64px;
-  --max-width: 1180px;
+  --max-width: 1140px;
   --container-padding: clamp(1rem, 3.5vw, 2rem);
-  --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.15s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* Dark Mode Support (Black Base + White Typography + Burgundy & Soft Pink Accents) */
+/* Beautiful UI / GitHub Dark Theme */
+.dark,
 [data-theme='dark'] {
-  --bg-primary: #111111;
-  --bg-secondary: #1A1A1A;
-  --bg-tertiary: #222222;
-  --bg-card: #181818;
-  --bg-card-hover: #222222;
+  --bg-primary: #0D1117;
+  --bg-secondary: #161B22;
+  --bg-tertiary: #21262D;
+  --bg-card: #21262D;
+  --bg-card-hover: #292E36;
 
-  --text-primary: #FFFFFF;
-  --text-secondary: #E5E5E5;
-  --text-muted: #AAAAAA;
-  --text-inverse: #111111;
+  --text-primary: #F0F6FC;
+  --text-secondary: #8B949E;
+  --text-muted: #6E7681;
+  --text-inverse: #0D1117;
 
-  --border-color: rgba(245, 231, 235, 0.15);
-  --border-light: rgba(245, 231, 235, 0.08);
-  --border-focus: #7A1F35;
+  --border-color: #30363D;
+  --border-light: #21262D;
+  --border-focus: #58A6FF;
 
-  --accent-color: #7A1F35;
-  --accent-hover: #962843;
-  --accent-light: rgba(122, 31, 53, 0.22);
-  --accent-border: #7A1F35;
-  --accent-gold: #7A1F35;
-  --accent-pink: #F5E7EB;
+  --accent-color: #58A6FF;
+  --accent-hover: #79C0FF;
+  --accent-light: rgba(88, 166, 255, 0.14);
+  --accent-border: #58A6FF;
+  --accent-gold: #58A6FF;
+  --accent-blue: #58A6FF;
 
-  --badge-bg: #221518;
-  --badge-text: #F5E7EB;
+  --badge-bg: rgba(88, 166, 255, 0.14);
+  --badge-text: #79C0FF;
+  --badge-border: rgba(88, 166, 255, 0.3);
 
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6);
 }
 
 /* ==========================================================================

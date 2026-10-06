@@ -3,20 +3,21 @@ import { scrollToTarget } from '../animations/lenis.ts';
 
 export function renderSuperIntelligenceAssistant(): string {
   return `
-    <!-- Floating Super Intelligence Assistant Launcher -->
+    <!-- Floating Super Intelligence Assistant Launcher with Photo -->
     <aside aria-label="Super Intelligence Assistant">
       <button
         id="si-assistant-launcher"
         class="si-assistant-floating-btn"
         type="button"
         aria-label="Open Super Intelligence Assistant"
-        title="Super Intelligence Assistant"
+        title="Super Intelligence Assistant (AI Agent)"
       >
-        <span class="si-btn-glow"></span>
         <span class="si-btn-core">
-          <span class="si-pulse-dot"></span>
-          <span class="si-symbol">◈</span>
-          <span class="si-btn-label">SUPER INTELLIGENCE ASSISTANT</span>
+          <div class="si-launcher-avatar-box">
+            <img src="/img/logo.png" alt="Mohd Shami AI" class="si-launcher-img" />
+            <span class="si-pulse-dot"></span>
+          </div>
+          <span class="si-btn-label">AI ASSISTANT</span>
         </span>
       </button>
 
@@ -26,10 +27,13 @@ export function renderSuperIntelligenceAssistant(): string {
           <!-- Drawer Header -->
           <div class="si-drawer-header">
             <div class="si-header-left">
-              <span class="si-header-icon">◈</span>
+              <div class="si-header-avatar-wrap">
+                <img src="/img/profile.png" alt="Mohd Shami" class="si-header-photo" />
+                <span class="status-indicator-dot green"></span>
+              </div>
               <div>
                 <h3 class="si-header-title">SUPER INTELLIGENCE ASSISTANT</h3>
-                <span class="si-header-status">NEURAL KNOWLEDGE BASE // ACTIVE</span>
+                <span class="si-header-status">NEURAL KNOWLEDGE BASE // SYS_ONLINE</span>
               </div>
             </div>
             <button id="si-drawer-close-btn" class="si-drawer-close" aria-label="Close Assistant">✕</button>
@@ -38,16 +42,18 @@ export function renderSuperIntelligenceAssistant(): string {
           <!-- Chat Transcript Container -->
           <div class="si-drawer-body" id="si-chat-body">
             <div class="si-message-bubble assistant-msg">
-              <div class="msg-avatar">◈</div>
+              <div class="msg-avatar">
+                <img src="/img/profile.png" alt="Mohd Shami" class="msg-avatar-img" />
+              </div>
               <div class="msg-content">
-                <p><strong>Greetings.</strong> I am Mohd Shami's Super Intelligence Assistant.</p>
-                <p>I have direct access to his verified machine learning pipelines, production metrics, academic cohort rank, and engineering case studies. How can I assist your evaluation today?</p>
+                <p><strong>Greetings.</strong> I am Mohd Shami's verified AI Engineering Assistant.</p>
+                <p>I have direct access to his production machine learning pipelines, verified metrics (85% clinical accuracy, 97.8% NLP precision, 850+ DSA), and Docker deployments. How can I assist your evaluation today?</p>
               </div>
             </div>
 
             <!-- Suggested Inquiry Chips -->
             <div class="si-chips-container" id="si-chips-container">
-              <span class="si-chips-label">PROMPT INTELLIGENCE:</span>
+              <span class="si-chips-label">SELECT TELEMETRY QUERY:</span>
               <div class="si-chips-grid">
                 <button class="si-chip" data-query="core-skills">
                   <span>⚡ Core ML & DL Stack</span>
@@ -77,14 +83,25 @@ export function renderSuperIntelligenceAssistant(): string {
             </div>
           </div>
 
-          <!-- Drawer Input Area -->
+          <!-- Drawer Input Area: Multi-Action Prompt Bar -->
           <div class="si-drawer-footer">
+            <div class="si-prompt-toolbar">
+              <button type="button" class="si-tool-tag" data-insert="@models">@models</button>
+              <button type="button" class="si-tool-tag" data-insert="/explain">/explain</button>
+              <button type="button" class="si-tool-tag" data-insert="/metrics">/metrics</button>
+              <button type="button" class="si-tool-tag" data-insert="/resume">/resume</button>
+            </div>
             <form id="si-assistant-form" class="si-input-form">
+              <button type="button" class="si-attach-btn" title="Dataset artifacts attached" aria-label="Attach dataset">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+                </svg>
+              </button>
               <input
                 type="text"
                 id="si-assistant-input"
                 class="si-input-field"
-                placeholder="Ask about models, architectures, metrics, experience..."
+                placeholder="Ask about models, metrics, or type @models, /explain..."
                 autocomplete="off"
                 spellcheck="false"
               />
@@ -95,8 +112,8 @@ export function renderSuperIntelligenceAssistant(): string {
               </button>
             </form>
             <div class="si-input-meta">
-              <span>Press <kbd>Enter</kbd> to submit query</span>
-              <span class="gold-text">100% Verified Resume Telemetry</span>
+              <span>Press <kbd>Enter</kbd> to query</span>
+              <span class="si-verified-tag">100% Verified Telemetry</span>
             </div>
           </div>
         </div>
@@ -140,6 +157,17 @@ export function initSuperIntelligenceAssistant() {
     if (e.key === 'Escape' && backdrop.style.display === 'flex') {
       closeAssistant();
     }
+  });
+
+  // Prompt toolbar injection
+  document.querySelectorAll('.si-tool-tag').forEach((tool) => {
+    tool.addEventListener('click', () => {
+      const ins = tool.getAttribute('data-insert') || '';
+      if (input) {
+        input.value = ins + ' ';
+        input.focus();
+      }
+    });
   });
 
   // Query chips click
@@ -267,7 +295,9 @@ export function initSuperIntelligenceAssistant() {
     const bubble = document.createElement('div');
     bubble.className = 'si-message-bubble assistant-msg';
     bubble.innerHTML = `
-      <div class="msg-avatar">◈</div>
+      <div class="msg-avatar">
+        <img src="/img/profile.png" alt="Mohd Shami AI" class="msg-avatar-img" />
+      </div>
       <div class="msg-content">${htmlContent}</div>
     `;
     chatBody.appendChild(bubble);
