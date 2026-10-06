@@ -124,11 +124,16 @@ export function renderNavbar(): string {
           </button>
         </div>
       </div>
+    </header>
 
-      <!-- Mobile Fullscreen Overlay Navigation -->
-      <div id="mobile-nav-drawer" class="mobile-nav-drawer gh-mobile-drawer" aria-hidden="true">
-        <div class="mobile-nav-inner">
-          <div class="mobile-header-profile">
+    <!-- Responsive Drawer Backdrop -->
+    <div id="mobile-nav-backdrop" class="mobile-nav-backdrop gh-mobile-backdrop" aria-hidden="true"></div>
+
+    <!-- Responsive Navigation Side Panel / Drawer -->
+    <div id="mobile-nav-drawer" class="mobile-nav-drawer gh-mobile-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+      <div class="mobile-nav-inner">
+        <div class="mobile-header-profile">
+          <div class="mobile-profile-info">
             <div class="mobile-avatar-box">
               <img src="/img/profile.png" alt="Mohd Shami" class="mobile-logo-img" />
               <span class="mobile-status-dot"></span>
@@ -138,44 +143,50 @@ export function renderNavbar(): string {
               <span class="mobile-profile-sub">@mohdshamii · AI/ML Engineer</span>
             </div>
           </div>
-
-          <!-- Quick Mobile Search Trigger -->
-          <button class="gh-search-btn cmd-palette-trigger" type="button" style="width: 100%; margin: 1rem 0; justify-content: flex-start;">
-            <svg class="octicon octicon-search" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
+          <button id="mobile-drawer-close" class="gh-drawer-close-btn" type="button" aria-label="Close navigation menu">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M3.72 3.72a.75.75 0 0 1 1.06 0L8 6.94l3.22-3.22a.749.749 0 0 1 1.275.326.749.749 0 0 1-.215.734L9.06 8l3.22 3.22a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215L8 9.06l-3.22 3.22a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042L6.94 8 3.72 4.78a.75.75 0 0 1 0-1.06Z"></path>
             </svg>
-            <span class="gh-search-text">Search systems, diff, @models...</span>
           </button>
+        </div>
 
-          <ul class="mobile-menu-list">
-            <li><a href="#projects" class="mobile-nav-link" data-nav="projects"><span class="m-idx">01</span> Systems</a></li>
-            <li><a href="#diff-inspector" class="mobile-nav-link" data-nav="diff-inspector"><span class="m-idx">02</span> Traces & Diff</a></li>
-            <li><a href="#experience" class="mobile-nav-link" data-nav="experience"><span class="m-idx">03</span> Experience</a></li>
-            <li><a href="#skills" class="mobile-nav-link" data-nav="skills"><span class="m-idx">04</span> Stack</a></li>
-            <li><a href="#pipeline" class="mobile-nav-link" data-nav="pipeline"><span class="m-idx">05</span> ML Pipeline</a></li>
-            <li><a href="#about" class="mobile-nav-link" data-nav="about"><span class="m-idx">06</span> About</a></li>
-            <li><a href="#education" class="mobile-nav-link" data-nav="education"><span class="m-idx">07</span> Education</a></li>
-            <li><a href="#contact" class="mobile-nav-link" data-nav="contact"><span class="m-idx">08</span> Contact</a></li>
-          </ul>
+        <!-- Quick Mobile Search Trigger -->
+        <button class="gh-search-btn cmd-palette-trigger drawer-search-trigger" type="button" aria-label="Search or jump to... (Press / or Ctrl+K)" title="Search or jump to... (Press / or Ctrl+K)">
+          <svg class="octicon octicon-search" width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M10.68 11.74a6 6 0 0 1-7.922-8.982 6 6 0 0 1 8.982 7.922l3.04 3.04a.749.749 0 0 1-.326 1.275.749.749 0 0 1-.734-.215ZM11.5 7a4.499 4.499 0 1 0-8.997 0A4.499 4.499 0 0 0 11.5 7Z"></path>
+          </svg>
+          <span class="gh-search-text">Search systems, diff, @models...</span>
+          <kbd class="gh-search-kbd">/</kbd>
+        </button>
 
-          <div class="mobile-drawer-footer">
-            <a href="/lab/index.html" class="gh-btn gh-btn-primary" style="justify-content: center; width: 100%;">
-              <i class="fa-solid fa-flask-vial"></i> Launch Super Intelligence Lab
-            </a>
-            <a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf" class="gh-btn gh-btn-secondary" style="justify-content: center; width: 100%;">
-              <i class="fa-solid fa-download"></i> Download Resume (.pdf)
-            </a>
-            <div class="mobile-social-row">
-              <a href="${identity.socials.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
-              <span class="dot-sep">•</span>
-              <a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <span class="dot-sep">•</span>
-              <a href="mailto:${identity.email}">Email</a>
-            </div>
+        <ul class="mobile-menu-list">
+          <li><a href="#projects" class="mobile-nav-link" data-nav="projects"><span class="m-idx">01</span> Systems</a></li>
+          <li><a href="#diff-inspector" class="mobile-nav-link" data-nav="diff-inspector"><span class="m-idx">02</span> Traces & Diff</a></li>
+          <li><a href="#experience" class="mobile-nav-link" data-nav="experience"><span class="m-idx">03</span> Experience</a></li>
+          <li><a href="#skills" class="mobile-nav-link" data-nav="skills"><span class="m-idx">04</span> Stack</a></li>
+          <li><a href="#pipeline" class="mobile-nav-link" data-nav="pipeline"><span class="m-idx">05</span> ML Pipeline</a></li>
+          <li><a href="#about" class="mobile-nav-link" data-nav="about"><span class="m-idx">06</span> About</a></li>
+          <li><a href="#education" class="mobile-nav-link" data-nav="education"><span class="m-idx">07</span> Education</a></li>
+          <li><a href="#contact" class="mobile-nav-link" data-nav="contact"><span class="m-idx">08</span> Contact</a></li>
+        </ul>
+
+        <div class="mobile-drawer-footer">
+          <a href="/lab/index.html" class="gh-btn gh-btn-primary drawer-action-btn" title="Launch Super Intelligence Lab">
+            <i class="fa-solid fa-flask-vial"></i> Launch Super Intelligence Lab
+          </a>
+          <a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf" class="gh-btn gh-btn-secondary drawer-action-btn" title="Download Resume (.pdf)">
+            <i class="fa-solid fa-download"></i> Download Resume (.pdf)
+          </a>
+          <div class="mobile-social-row">
+            <a href="${identity.socials.github}" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <span class="dot-sep">•</span>
+            <a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <span class="dot-sep">•</span>
+            <a href="mailto:${identity.email}">Email</a>
           </div>
         </div>
       </div>
-    </header>
+    </div>
   `;
 }
 
@@ -211,45 +222,95 @@ export function initNavbarEvents() {
   window.addEventListener('scroll', handleScroll, { passive: true });
   handleScroll();
 
-  // Mobile drawer open/close
-  if (toggle && drawer) {
-    const toggleEl: HTMLElement = toggle;
-    const drawerEl: HTMLElement = drawer;
-
-    toggleEl.addEventListener('click', () => {
-      const isOpen = drawerEl.classList.contains('active');
-      if (isOpen) {
-        closeDrawer();
-      } else {
-        openDrawer();
-      }
-    });
+  // Responsive Drawer Open / Close System
+  if (drawer) {
+    const toggleEl = toggle as HTMLElement | null;
+    const drawerEl = drawer as HTMLElement;
+    const backdropEl = document.getElementById('mobile-nav-backdrop');
+    const closeBtnEl = document.getElementById('mobile-drawer-close');
 
     function openDrawer() {
       drawerEl.classList.add('active');
-      toggleEl.classList.add('is-open');
-      toggleEl.setAttribute('aria-expanded', 'true');
+      if (backdropEl) backdropEl.classList.add('active');
+      if (toggleEl) {
+        toggleEl.classList.add('is-open');
+        toggleEl.setAttribute('aria-expanded', 'true');
+      }
       drawerEl.setAttribute('aria-hidden', 'false');
+      if (backdropEl) backdropEl.setAttribute('aria-hidden', 'false');
+
+      // Prevent background scroll without layout shift
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      if (scrollbarWidth > 0) {
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
+        if (header) header.style.paddingRight = `${scrollbarWidth}px`;
+      }
     }
 
     function closeDrawer() {
       drawerEl.classList.remove('active');
-      toggleEl.classList.remove('is-open');
-      toggleEl.setAttribute('aria-expanded', 'false');
+      if (backdropEl) backdropEl.classList.remove('active');
+      if (toggleEl) {
+        toggleEl.classList.remove('is-open');
+        toggleEl.setAttribute('aria-expanded', 'false');
+      }
       drawerEl.setAttribute('aria-hidden', 'true');
+      if (backdropEl) backdropEl.setAttribute('aria-hidden', 'true');
+
       document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+      if (header) header.style.paddingRight = '';
     }
 
-    // Close when clicking mobile nav links
+    if (toggleEl) {
+      toggleEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = drawerEl.classList.contains('active');
+        if (isOpen) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+    }
+
+    if (closeBtnEl) {
+      closeBtnEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeDrawer();
+      });
+    }
+
+    if (backdropEl) {
+      backdropEl.addEventListener('click', () => {
+        closeDrawer();
+      });
+    }
+
+    // Close on Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawerEl.classList.contains('active')) {
+        closeDrawer();
+      }
+    });
+
+    // Close when clicking mobile nav links & smooth scroll
     drawerEl.querySelectorAll('.mobile-nav-link').forEach((link) => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href');
         closeDrawer();
         if (targetId) {
-          setTimeout(() => scrollToTarget(targetId), 200);
+          setTimeout(() => scrollToTarget(targetId), 250);
         }
+      });
+    });
+
+    // Close when clicking command palette trigger inside drawer
+    drawerEl.querySelectorAll('.cmd-palette-trigger').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        closeDrawer();
       });
     });
   }
