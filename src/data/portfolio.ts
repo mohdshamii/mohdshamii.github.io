@@ -157,7 +157,7 @@ export const portfolioData: PortfolioData = {
     status: "OPEN TO AI/ML ENGINEER ROLES",
     location: "Moradabad, UP, India",
     email: "codexshami@gmail.com",
-    phone: "+91 89235 91576",
+    phone: "",
     resumeUrl: "/resume.pdf",
     quote: "Pure mathematics, is, in its way, the poetry of logical ideas.",
     philosophy: "Data has a story — my job is to tell it well, and ship the model that acts on it.",
@@ -202,7 +202,7 @@ export const portfolioData: PortfolioData = {
       value: "8.5",
       suffix: "/10",
       label: "B.Tech CGPA",
-      description: "Rank 1 in Academic Cohort at Teerthanker Mahaveer University",
+      description: "Cumulative 8.5/10 at Teerthanker Mahaveer University",
       verifiedSource: "TMU Academic Record"
     },
     {
@@ -219,7 +219,7 @@ export const portfolioData: PortfolioData = {
     paragraphs: [
       "I am an AI/ML Engineer with 1+ year of experience designing and shipping practical machine learning systems from scratch. Rather than confining ML to exploratory notebooks, I architect production workflows spanning robust data ingestion, feature engineering, class rebalancing, Bayesian hyperparameter tuning, and containerized REST APIs.",
       "My work bridges classical ensemble algorithms (XGBoost, Random Forest), deep neural networks (CNNs for computer vision), and specialized natural language processing (TF-IDF, SMOTE-balanced classification). I have achieved 97.8% NLP classification accuracy, boosted clinical diagnostic precision by 13 percentage points, and built automated ETL pipelines reducing data preprocessing latency by 50%.",
-      "Currently pursuing B.Tech in Data Science at Teerthanker Mahaveer University (Class of 2027), where I maintain the 1st Rank in the Academic Cohort (CGPA 8.5/10). Grounded in algorithmic rigor with 850+ Data Structures & Algorithms solved exclusively in Python."
+      "Currently pursuing B.Tech in Data Science at Teerthanker Mahaveer University (Class of 2027) with a cumulative CGPA of 8.5/10. Grounded in algorithmic rigor with 850+ Data Structures & Algorithms solved exclusively in Python."
     ],
     disciplines: [
       {
@@ -851,8 +851,8 @@ export const portfolioData: PortfolioData = {
     location: "Moradabad, UP, India",
     period: "2023 — Expected 2027",
     cgpa: "8.5 / 10",
-    rank: "1st Rank in Academic Cohort",
-    description: "Specializing in Machine Learning, Deep Neural Networks, Natural Language Processing, Statistical Modeling, and Database Architecture. Maintaining first rank across all academic cohorts.",
+    rank: "Academic Distinction (CGPA 8.5/10)",
+    description: "Specializing in Machine Learning, Deep Neural Networks, Natural Language Processing, Statistical Modeling, and Database Architecture. Academic excellence across all semesters.",
     coreCourses: [
       "Machine Learning & Statistical Pattern Recognition",
       "Deep Learning & Convolutional Architectures",
@@ -937,10 +937,10 @@ export const portfolioData: PortfolioData = {
       year: "2025 — 2026"
     },
     {
-      title: "1st Rank in Academic Cohort",
+      title: "Academic Excellence Scholar",
       category: "Academic Excellence",
       highlight: "CGPA 8.5 / 10",
-      description: "Ranked #1 across academic semesters in B.Tech Data Science at Teerthanker Mahaveer University with an overall CGPA of 8.5/10.",
+      description: "Academic distinction across semesters in B.Tech Data Science at Teerthanker Mahaveer University with an overall CGPA of 8.5/10.",
       year: "2023 — Present"
     }
   ],

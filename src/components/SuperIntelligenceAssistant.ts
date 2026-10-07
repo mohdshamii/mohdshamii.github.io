@@ -270,7 +270,6 @@ export function initSuperIntelligenceAssistant() {
           <p>Mohd is currently open to <strong>AI/ML Engineer</strong> and <strong>Data Science</strong> positions.</p>
           <ul>
             <li><strong>Email:</strong> <a href="mailto:${portfolioData.identity.email}" class="si-link-action">${portfolioData.identity.email}</a></li>
-            <li><strong>Phone:</strong> ${portfolioData.identity.phone}</li>
             <li><strong>Location:</strong> ${portfolioData.identity.location}</li>
             <li><strong>LinkedIn:</strong> <a href="${portfolioData.identity.socials.linkedin}" target="_blank" class="si-link-action">linkedin.com/in/mohdshamii</a></li>
           </ul>
@@ -348,10 +347,10 @@ export function initSuperIntelligenceAssistant() {
       `;
     }
 
-    if (q.includes('cgpa') || q.includes('education') || q.includes('college') || q.includes('tmu') || q.includes('rank')) {
+    if (q.includes('cgpa') || q.includes('education') || q.includes('college') || q.includes('tmu')) {
       return `
         <p><strong>Academic Rigor:</strong></p>
-        <p>Pursuing B.Tech in Data Science at Teerthanker Mahaveer University (Class of 2027). Currently holds <strong>1st Rank in Academic Cohort</strong> with a cumulative <strong>CGPA of 8.5 / 10.0</strong>.</p>
+        <p>Pursuing B.Tech in Data Science at Teerthanker Mahaveer University (Class of 2027) with a cumulative <strong>CGPA of 8.5 / 10.0</strong>.</p>
         <p><a href="#education" class="si-link-action" onclick="document.getElementById('si-assistant-backdrop').style.display='none'; document.body.style.overflow='';" >View Education &rarr;</a></p>
       `;
     }
@@ -371,12 +370,11 @@ export function initSuperIntelligenceAssistant() {
       `;
     }
 
-    if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('phone') || q.includes('role')) {
+    if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('role')) {
       return `
         <p><strong>Contact Direct Channels:</strong></p>
         <p>Open to AI/ML Engineer and Data Science positions.<br>
         • <strong>Email:</strong> <a href="mailto:${portfolioData.identity.email}" class="si-link-action">${portfolioData.identity.email}</a><br>
-        • <strong>Phone:</strong> ${portfolioData.identity.phone}<br>
         • <strong>LinkedIn:</strong> <a href="${portfolioData.identity.socials.linkedin}" target="_blank" class="si-link-action">linkedin.com/in/mohdshamii</a></p>
       `;
     }

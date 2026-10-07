@@ -30,7 +30,7 @@ export function renderHero(): string {
             <div class="gh-meta-list">
               <span class="gh-meta-item">
                 <i class="fa-solid fa-graduation-cap"></i>
-                <span>B.Tech 2027 · TMU Cohort Rank 1 (CGPA 8.5/10)</span>
+                <span>B.Tech 2027 (CGPA 8.5/10)</span>
               </span>
               <span class="gh-meta-item">
                 <i class="fa-solid fa-location-dot"></i>
@@ -39,10 +39,6 @@ export function renderHero(): string {
               <span class="gh-meta-item">
                 <i class="fa-regular fa-envelope"></i>
                 <a href="mailto:${identity.email}">${identity.email}</a>
-              </span>
-              <span class="gh-meta-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>${identity.phone}</span>
               </span>
               <span class="gh-meta-item gh-meta-status">
                 <span class="status-indicator-dot green"></span>

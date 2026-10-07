@@ -55,7 +55,7 @@ export function renderAbout(): string {
           <div class="about-narrative-panel">
             <div class="narrative-badge">
               <span class="status-indicator-dot green"></span>
-              <span>ACADEMIC LEADER · COHORT RANK #1</span>
+              <span>ACADEMIC LEADER · CGPA 8.5/10</span>
             </div>
             
             <h3 class="narrative-title">
@@ -95,8 +95,8 @@ export function renderAbout(): string {
 
               <div class="engineer-spec-table">
                 <div class="spec-row">
-                  <span class="spec-label">COHORT RANK:</span>
-                  <span class="spec-val highlight">Rank #1 (CGPA 8.5/10)</span>
+                  <span class="spec-label">DEGREE:</span>
+                  <span class="spec-val highlight">B.Tech Data Science (CGPA 8.5/10)</span>
                 </div>
                 <div class="spec-row">
                   <span class="spec-label">ALMA MATER:</span>

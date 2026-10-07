@@ -50,11 +50,11 @@ export const profileData: Profile = {
   summary: [
     'AI/ML Engineer with 1+ year of experience building end-to-end AI and machine learning systems spanning supervised learning, NLP, computer vision, deep learning (CNN), feature engineering, model optimisation, and Flask-based production deployment.',
     'Proficient in Python, Scikit-learn, XGBoost, Random Forest, CNN, TF-IDF, SMOTE, SQL, Docker, and Git. Delivered AI-powered applications achieving up to 97.8% NLP accuracy, improved clinical diagnostic models by 13 percentage points (AUC-ROC: 0.91), and deployed real-time ML inference APIs.',
-    'Currently pursuing B.Tech in Data Science at Teerthanker Mahaveer University (Expected 2027), holding the 1st Rank in the Academic Cohort with a CGPA of 8.5/10. Seeking an AI/ML Engineer, AI Engineer Fresher, or ML Engineer role to build and scale intelligent systems.'
+    'Currently pursuing B.Tech in Data Science at Teerthanker Mahaveer University (Expected 2027) with a cumulative CGPA of 8.5/10. Seeking an AI/ML Engineer, AI Engineer Fresher, or ML Engineer role to build and scale intelligent systems.'
   ],
   location: 'Moradabad, UP, India',
   email: 'codexshami@gmail.com',
-  phone: '+91 89235 91576',
+  phone: '',
   resumeUrl: '/files/Mohd_Shami_Resume.pdf',
   socials: {
     github: 'https://github.com/mohdshamii',
@@ -70,7 +70,7 @@ export const profileData: Profile = {
       location: 'Moradabad, UP, India',
       period: '2023 — Expected 2027',
       cgpa: '8.5 / 10.0',
-      badge: '1st Rank in Academic Cohort',
+      badge: 'Academic Distinction',
       details: 'Specialization in Data Science, Machine Learning, Deep Neural Architectures, Natural Language Processing, Database Management, and Statistical Inference.'
     }
   ],
@@ -141,9 +141,9 @@ export const profileData: Profile = {
       year: '2025 — 2026'
     },
     {
-      title: '1st Rank in Academic Cohort',
+      title: 'Academic Excellence Scholar',
       category: 'Academic Excellence',
-      description: 'Ranked #1 across all academic semesters in B.Tech Data Science at TMU with a cumulative CGPA of 8.5/10.',
+      description: 'Academic distinction across all academic semesters in B.Tech Data Science at TMU with a cumulative CGPA of 8.5/10.',
       highlight: 'CGPA: 8.5 / 10',
       year: '2023 — Present'
     }

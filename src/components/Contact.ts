@@ -56,17 +56,6 @@ export function renderContact(): string {
                 <span class="method-arrow">↗</span>
               </a>
 
-              <!-- Phone -->
-              <a href="tel:${identity.phone.replace(/\s+/g, '')}" class="contact-method-card" data-cursor="open">
-                <div class="method-icon-wrap">
-                  <i class="fa-solid fa-phone"></i>
-                </div>
-                <div class="method-meta">
-                  <span class="method-label">PHONE & WHATSAPP</span>
-                  <span class="method-val">${identity.phone}</span>
-                </div>
-                <span class="method-arrow">↗</span>
-              </a>
 
               <!-- LinkedIn -->
               <a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-method-card" data-cursor="open">

@@ -15,10 +15,9 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 - **Name**: Mohd Shami
 - **Headline**: B.Tech-2027 AI/ML Engineer | Python | Deep Learning | NLP | Computer Vision | Scikit-learn | XGBoost | Flask | Model Deployment
 - **Education**: B.Tech in Data Science, Teerthanker Mahaveer University, Moradabad, UP (Expected 2027)
-- **Academic Standing**: **1st Rank in Academic Cohort** with a cumulative **CGPA of 8.5 / 10.0**
+- **Academic Standing**: Cumulative **CGPA of 8.5 / 10.0** (Teerthanker Mahaveer University)
 - **Location**: Moradabad, UP, India
 - **Email**: [codexshami@gmail.com](mailto:codexshami@gmail.com)
-- **Phone**: +91 89235 91576
 - **Resume**: [Download Official PDF](Mohd_Shami_Resume.pdf)
 - **Target Roles**: AI/ML Engineer, AI Engineer Fresher, ML Engineer
 

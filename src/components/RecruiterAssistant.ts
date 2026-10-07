@@ -186,13 +186,13 @@ export function initRecruiterAssistant() {
       • <a href="${p.githubUrl}" target="_blank" style="color: var(--accent-color); font-weight: 600;">GitHub Repository &rarr;</a> | <a href="${p.liveDemoUrl}" style="color: var(--accent-color); font-weight: 600;">Interactive Lab Demo &rarr;</a>`;
     }
 
-    if (q.includes('cgpa') || q.includes('academic') || q.includes('college') || q.includes('education') || q.includes('university') || q.includes('rank')) {
+    if (q.includes('cgpa') || q.includes('academic') || q.includes('college') || q.includes('education') || q.includes('university')) {
       const edu = profileData.education[0];
       return `<strong>Academic Standing:</strong><br>
       • <strong>Degree:</strong> ${edu.degree}<br>
       • <strong>Institution:</strong> ${edu.institution}, Moradabad, UP<br>
       • <strong>Expected Graduation:</strong> 2027<br>
-      • <strong>Academic Cohort Rank:</strong> <strong>1st Rank</strong> in Cohort with a cumulative CGPA of <strong>${edu.cgpa}</strong>.<br>
+      • <strong>Cumulative CGPA:</strong> <strong>${edu.cgpa}</strong>.<br>
       <a href="#education" onclick="document.getElementById('assistantOverlay')?.click()" style="color: var(--accent-color); font-weight: 600; text-decoration: underline;">View Education details &rarr;</a>`;
     }
 
@@ -207,13 +207,12 @@ export function initRecruiterAssistant() {
       return `<strong>Target Roles & Contact:</strong><br>
       Mohd is seeking an <strong>AI/ML Engineer</strong>, <strong>AI Engineer Fresher</strong>, or <strong>ML Engineer</strong> role.<br>
       • <strong>Email:</strong> <a href="mailto:${profileData.email}" style="color: var(--accent-color); font-weight: 600;">${profileData.email}</a><br>
-      • <strong>Phone:</strong> ${profileData.phone}<br>
       • <strong>Location:</strong> ${profileData.location}<br>
       • <strong>LinkedIn:</strong> <a href="${profileData.socials.linkedin}" target="_blank" style="color: var(--accent-color); font-weight: 600;">linkedin.com/in/mohdshamii</a><br>
       • <strong>GitHub:</strong> <a href="${profileData.socials.github}" target="_blank" style="color: var(--accent-color); font-weight: 600;">github.com/mohdshamii</a>`;
     }
 
     // Default Fallback
-    return `Mohd Shami is an AI/ML Engineer (B.Tech 2027, 1st Rank, CGPA 8.5) with experience in Scikit-learn Pipelines, XGBoost, CNNs, NLP (97.8% accuracy), and Docker/Flask deployment. Ask about his <strong>skills</strong>, <strong>Revive / HamOrSpam projects</strong>, <strong>Codec Technologies internship</strong>, or <a href="${profileData.resumeUrl}" download style="color: var(--accent-color); font-weight: 600;">download his resume</a>.`;
+    return `Mohd Shami is an AI/ML Engineer (B.Tech 2027, CGPA 8.5) with experience in Scikit-learn Pipelines, XGBoost, CNNs, NLP (97.8% accuracy), and Docker/Flask deployment. Ask about his <strong>skills</strong>, <strong>Revive / HamOrSpam projects</strong>, <strong>Codec Technologies internship</strong>, or <a href="${profileData.resumeUrl}" download style="color: var(--accent-color); font-weight: 600;">download his resume</a>.`;
   }
 }

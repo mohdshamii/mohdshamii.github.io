@@ -124,7 +124,7 @@ export function initCommandPalette() {
     {
       id: 'sec-about',
       name: 'About & Engineering Philosophy',
-      desc: 'B.Tech 2027 · TMU Cohort Rank 1 · Background and specializations',
+      desc: 'B.Tech 2027 · Background and specializations',
       category: 'Section',
       badgeClass: 'badge-section',
       shortcut: 'A',
@@ -154,11 +154,11 @@ export function initCommandPalette() {
     {
       id: 'sec-contact',
       name: 'Contact & Engineering Handshake',
-      desc: 'Direct communication terminal: codexshami@gmail.com · +91 89235 91576',
+      desc: 'Direct communication terminal: codexshami@gmail.com',
       category: 'Section',
       badgeClass: 'badge-section',
       shortcut: 'T',
-      tags: ['contact', 'email', 'phone', 'message', 'hire'],
+      tags: ['contact', 'email', 'message', 'hire'],
       action: () => scrollToTarget('#contact')
     },
 

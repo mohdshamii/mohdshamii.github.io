@@ -1,17 +1,22 @@
 /* ==========================================================================
-   Interactive AI Lab Stylesheet — High-Tech, Clean, Professional Engineering
-   Mobile-First Responsive Layout (320px to 1920px+)
+   Super Intelligence Lab — GitHub-Inspired Developer Stylesheet
+   Clean, Professional, Distraction-Free AI/ML Laboratory Architecture
+   Mobile-First (320px to 1920px+) | Zero Loss of Existing Styles
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   1. Base & Header Navigation
+   -------------------------------------------------------------------------- */
 .lab-header {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   border-bottom: 1px solid var(--border-color);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-card);
   position: sticky;
   top: 0;
-  z-index: 50;
+  z-index: 100;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .lab-nav {
@@ -29,51 +34,338 @@
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--text-secondary);
-  padding: 0.4rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   background-color: var(--bg-secondary);
-  min-height: 38px;
+  min-height: 34px;
   flex-shrink: 0;
+  text-decoration: none;
+  transition: all 0.15s ease;
 }
 
 .lab-back-btn:hover {
   color: var(--accent-color);
-  border-color: var(--accent-border);
+  border-color: var(--accent-color);
   background-color: var(--accent-light);
 }
 
 .lab-title-wrap {
-  text-align: center;
-  flex: 1 1 100%;
-  order: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 220px;
 }
 
-.lab-title-wrap h1 {
-  font-family: 'Space Grotesk', var(--font-sans);
-  font-size: clamp(1.25rem, 4vw, 1.85rem);
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  background: linear-gradient(135deg, #111111 0%, #7A1F35 60%, #962843 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.25;
+.gh-breadcrumb-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.gh-repo-owner {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9375rem;
+}
+
+.gh-repo-sep {
+  color: var(--text-muted);
+}
+
+.gh-repo-name {
+  font-weight: 700;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.gh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.gh-badge-public {
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.gh-badge-version {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-light);
 }
 
 .lab-title-wrap p {
-  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: 0.15rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.lab-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   2. GitHub-Inspired Buttons & Controls
+   -------------------------------------------------------------------------- */
+.gh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  min-height: 34px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.gh-btn:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--text-muted);
+}
+
+.gh-btn-primary {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+.gh-btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+.gh-btn-sm {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.75rem;
+  min-height: 28px;
+}
+
+.gh-btn-micro {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gh-btn-micro:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: var(--accent-light);
+}
+
+.gh-btn-danger {
+  color: #dc2626;
+}
+
+.gh-btn-danger:hover {
+  background-color: #fef2f2;
+  border-color: #ef4444;
+}
+
+.gh-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.gh-btn-icon:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+/* --------------------------------------------------------------------------
+   3. AI/ML Command Center & Telemetry Ribbon
+   -------------------------------------------------------------------------- */
+.gh-command-center {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.15rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.gh-command-center-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.gh-active-system-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.gh-model-arch-tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 0.2rem 0.5rem;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+}
+
+.gh-telemetry-metrics-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+.gh-telemetry-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.gh-telemetry-item strong {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.gh-health-strip {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border-top: 1px dashed var(--border-light);
+  margin-top: 0.65rem;
+}
+
+.gh-health-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. Search, Filtering & Navigation Tabs
+   -------------------------------------------------------------------------- */
+.gh-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.gh-search-filter-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 260px;
+}
+
+.gh-search-icon-inside {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
+
+.gh-filter-input {
+  width: 100%;
+  padding: 0.45rem 0.75rem 0.45rem 2.2rem;
+  font-size: 0.8125rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.gh-filter-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-light);
 }
 
 /* Tabs Navigation */
 .lab-tabs {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.4rem;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0.75rem 0;
-  margin-bottom: 1.5rem;
+  padding: 0.5rem 0 0.75rem 0;
+  margin-bottom: 1.25rem;
   border-bottom: 1px solid var(--border-color);
   scrollbar-width: thin;
 }
@@ -82,7 +374,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.5rem 0.95rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-sm);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -90,21 +382,45 @@
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   white-space: nowrap;
-  transition: var(--transition);
-  min-height: 38px;
+  transition: all 0.15s ease;
+  min-height: 36px;
   user-select: none;
+  cursor: pointer;
 }
 
 .lab-tab-btn:hover {
   color: var(--text-primary);
-  border-color: var(--accent-border);
+  border-color: var(--text-muted);
+  background-color: var(--bg-tertiary);
 }
 
 .lab-tab-btn.active {
   background-color: var(--accent-color);
-  color: #fff;
-  border-color: var(--accent-border);
-  box-shadow: 0 4px 15px rgba(122, 31, 53, 0.3);
+  color: #ffffff;
+  border-color: var(--accent-color);
+  box-shadow: 0 2px 6px rgba(9, 105, 218, 0.25);
+}
+
+/* Smart Presets Bar */
+.gh-smart-presets-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 0.85rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  margin-bottom: 1.25rem;
+}
+
+.gh-presets-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
 }
 
 /* Tab Panels */
@@ -116,6 +432,9 @@
   display: block;
 }
 
+/* --------------------------------------------------------------------------
+   5. Existing Lab Grid & Cards (100% Preserved)
+   -------------------------------------------------------------------------- */
 .lab-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -135,7 +454,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1.25rem;
@@ -166,7 +485,7 @@
 
 .lab-range-slider {
   width: 100%;
-  height: 8px;
+  height: 6px;
   border-radius: var(--radius-full);
   background-color: var(--bg-tertiary);
   outline: none;
@@ -176,22 +495,22 @@
 
 .lab-range-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background-color: var(--accent-color);
   cursor: pointer;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--bg-card);
   box-shadow: var(--shadow-sm);
 }
 
 .lab-range-slider::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background-color: var(--accent-color);
   cursor: pointer;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--bg-card);
   box-shadow: var(--shadow-sm);
 }
 
@@ -206,44 +525,45 @@
 .preset-chip {
   font-size: 0.75rem;
   font-weight: 500;
-  padding: 0.35rem 0.65rem;
+  padding: 0.3rem 0.65rem;
   border-radius: var(--radius-full);
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   color: var(--text-secondary);
   cursor: pointer;
-  transition: var(--transition);
-  min-height: 32px;
+  transition: all 0.15s ease;
+  min-height: 28px;
+  user-select: none;
 }
 
 .preset-chip:hover,
 .preset-chip.active {
   background-color: var(--accent-light);
-  border-color: var(--accent-border);
+  border-color: var(--accent-color);
   color: var(--accent-color);
 }
 
-/* Output Display Widgets */
+/* Gauge Score Box */
 .gauge-metric-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: clamp(1.5rem, 4vw, 2rem) 1rem;
+  padding: clamp(1.25rem, 3.5vw, 1.75rem) 1rem;
   background-color: var(--bg-secondary);
   border-radius: var(--radius-md);
   border: 1px solid var(--border-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
   text-align: center;
 }
 
 .gauge-big-score {
-  font-size: clamp(2.5rem, 7vw, 3.25rem);
+  font-size: clamp(2.25rem, 6vw, 3rem);
   font-weight: 800;
   line-height: 1;
   font-family: var(--font-mono);
   color: var(--accent-color);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .gauge-status-badge {
@@ -314,7 +634,7 @@
 .canvas-holder {
   display: flex;
   justify-content: center;
-  background-color: #F5E7EB;
+  background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 0.5rem;
@@ -347,13 +667,15 @@
 .sql-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  margin-top: 1rem;
-  max-height: 280px;
+  margin-top: 0.75rem;
+  max-height: 320px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
 }
 
 .sql-table {
   width: 100%;
-  min-width: 480px;
+  min-width: 520px;
   border-collapse: collapse;
   font-size: 0.8125rem;
   text-align: left;
@@ -362,42 +684,1030 @@
 .sql-table th,
 .sql-table td {
   padding: 0.5rem 0.75rem;
-  border: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .sql-table th {
   background-color: var(--bg-secondary);
   font-weight: 600;
   color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .sql-table tr:hover {
   background-color: var(--bg-secondary);
 }
 
-/* ==========================================================================
-   Lab Responsive Breakpoints
-   ========================================================================== */
+/* Clinical Disclaimer Notice */
+.clinical-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  color: #92400e;
+  font-size: 0.75rem;
+  line-height: 1.45;
+  margin-top: 1rem;
+}
+
+[data-theme='dark'] .clinical-disclaimer {
+  background-color: rgba(217, 119, 6, 0.15);
+  border-color: rgba(217, 119, 6, 0.4);
+  color: #fcd34d;
+}
+
+/* --------------------------------------------------------------------------
+   6. Extended Intelligence Suite (Tabs & Sub-Views)
+   -------------------------------------------------------------------------- */
+.gh-extended-suite {
+  margin-top: 2rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.gh-subnav-tabs {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.25rem;
+  scrollbar-width: thin;
+}
+
+.gh-subnav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.gh-subnav-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+}
+
+.gh-subnav-btn.active {
+  color: var(--accent-color);
+  background-color: var(--accent-light);
+  border-color: var(--accent-color);
+}
+
+.gh-subnav-panel {
+  display: none;
+}
+
+.gh-subnav-panel.active {
+  display: block;
+}
+
+/* Explainable AI Cards */
+.gh-xai-narrative-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.gh-xai-narrative-card strong {
+  color: var(--accent-color);
+}
+
+.gh-feature-impact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.75rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.5rem;
+  font-size: 0.8125rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* What-If Counterfactual Comparison */
+.gh-counterfactual-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gh-counterfactual-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gh-snapshot-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.gh-snapshot-score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.gh-delta-pill {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.gh-delta-up {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.gh-delta-down {
+  background-color: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+/* Scenarios Side-by-Side */
+.gh-scenarios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.gh-scenario-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+}
+
+.gh-scenario-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.gh-scenario-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.gh-scenario-time {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.gh-scenario-score-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  margin-bottom: 0.65rem;
+}
+
+.gh-scenario-score-val {
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--accent-color);
+}
+
+.gh-scenario-params-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.gh-scenario-param-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+  border-bottom: 1px dashed var(--border-light);
+  padding: 0.15rem 0;
+}
+
+.gh-scenario-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Batch Summary Cards */
+.gh-batch-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.gh-summary-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-summary-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.gh-summary-lbl {
+  font-size: 0.6875rem;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Alerts */
+.gh-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  padding: 0.75rem 0.95rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.gh-alert-success {
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.gh-alert-warning {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  color: #92400e;
+}
+
+.gh-alert-danger {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+}
+
+.gh-alert-info {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+}
+
+[data-theme='dark'] .gh-alert-success {
+  background-color: rgba(5, 150, 105, 0.15);
+  border-color: rgba(5, 150, 105, 0.35);
+  color: #6ee7b7;
+}
+
+[data-theme='dark'] .gh-alert-warning {
+  background-color: rgba(217, 119, 6, 0.15);
+  border-color: rgba(217, 119, 6, 0.35);
+  color: #fcd34d;
+}
+
+[data-theme='dark'] .gh-alert-danger {
+  background-color: rgba(220, 38, 38, 0.15);
+  border-color: rgba(220, 38, 38, 0.35);
+  color: #fca5a5;
+}
+
+[data-theme='dark'] .gh-alert-info {
+  background-color: rgba(9, 105, 218, 0.15);
+  border-color: rgba(9, 105, 218, 0.35);
+  color: #93c5fd;
+}
+
+/* Developer Mode */
+.gh-dev-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 860px) {
+  .gh-dev-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.gh-dev-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.gh-dev-section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.gh-code-block-wrap {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.gh-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+}
+
+.gh-code-pre {
+  padding: 0.75rem;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  overflow-x: auto;
+  max-height: 240px;
+}
+
+.gh-vector-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.65rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.gh-vector-lbl {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.gh-vector-code {
+  font-family: var(--font-mono);
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Model Card README Card */
+.gh-readme-card {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-card);
+  overflow: hidden;
+}
+
+.gh-readme-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gh-readme-content {
+  padding: 1.25rem;
+}
+
+.gh-readme-section {
+  margin-bottom: 1.25rem;
+}
+
+.gh-readme-section h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 0.25rem;
+}
+
+.gh-readme-section p,
+.gh-readme-section ul {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0.35rem 0;
+}
+
+.gh-readme-section ul {
+  padding-left: 1.25rem;
+}
+
+.gh-metrics-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.gh-metric-chip {
+  padding: 0.35rem 0.65rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.gh-metric-key {
+  color: var(--text-secondary);
+}
+
+.gh-metric-val {
+  font-weight: 700;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+}
+
+/* API Explorer */
+.gh-api-explorer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.gh-api-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.gh-api-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+
+.gh-api-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.gh-method-badge {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.gh-method-badge.post {
+  background-color: #0969da;
+  color: #ffffff;
+}
+
+.gh-method-badge.get {
+  background-color: #1a7f37;
+  color: #ffffff;
+}
+
+.gh-endpoint-code {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.8125rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Modals & Drawers (Command Palette, History, Activity, Export)
+   -------------------------------------------------------------------------- */
+.gh-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(2rem, 10vh, 5rem);
+}
+
+.gh-modal-backdrop.active {
+  display: flex;
+}
+
+.gh-cmd-modal {
+  width: 100%;
+  max-width: 620px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: ghModalIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ghModalIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.gh-cmd-header {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  gap: 0.75rem;
+}
+
+.gh-cmd-search-icon {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.gh-cmd-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.9375rem;
+  font-family: var(--font-sans);
+}
+
+.gh-cmd-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.gh-cmd-close-btn:hover {
+  color: var(--text-primary);
+}
+
+.gh-cmd-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 0.5rem 0;
+}
+
+.gh-cmd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.gh-cmd-item:hover,
+.gh-cmd-item.selected {
+  background-color: var(--accent-light);
+}
+
+.gh-cmd-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.gh-cmd-icon {
+  color: var(--accent-color);
+  width: 18px;
+  text-align: center;
+}
+
+.gh-cmd-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gh-cmd-desc {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.gh-cmd-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gh-cmd-category {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.gh-cmd-kbd {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.gh-cmd-empty {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.gh-cmd-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* Drawers (History & Activity) */
+.gh-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+  display: none;
+  justify-content: flex-end;
+}
+
+.gh-drawer-backdrop.active {
+  display: flex;
+}
+
+.gh-drawer-panel {
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  background-color: var(--bg-card);
+  border-left: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  animation: ghDrawerIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ghDrawerIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.gh-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gh-drawer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.gh-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* History Card */
+.gh-history-item {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.gh-history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.gh-history-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.gh-history-sys-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.gh-history-time {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+.gh-history-score-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.gh-history-score {
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+
+.gh-history-inputs-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.25rem 0;
+}
+
+.gh-param-pill {
+  font-size: 0.6875rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.gh-history-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  border-top: 1px dashed var(--border-light);
+  padding-top: 0.35rem;
+}
+
+.gh-history-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+/* Activity Items */
+.gh-activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed var(--border-light);
+  font-size: 0.75rem;
+}
+
+.gh-activity-time {
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.gh-activity-badge {
+  font-size: 0.625rem;
+  font-weight: 700;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.gh-badge-system {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.gh-badge-inference {
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+}
+
+.gh-badge-preset {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.gh-badge-what_if {
+  background-color: #fffbeb;
+  color: #d97706;
+}
+
+.gh-badge-scenario {
+  background-color: #f3e8ff;
+  color: #9333ea;
+}
+
+.gh-badge-batch {
+  background-color: #eff6ff;
+  color: #2563eb;
+}
+
+.gh-activity-body {
+  flex: 1;
+}
+
+.gh-activity-msg {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.gh-activity-detail {
+  color: var(--text-secondary);
+  font-size: 0.6875rem;
+}
+
+.gh-activity-latency {
+  font-family: var(--font-mono);
+  color: var(--accent-color);
+  font-size: 0.6875rem;
+  flex-shrink: 0;
+}
+
+/* Export Modal */
+.gh-export-modal {
+  width: 100%;
+  max-width: 580px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: ghModalIn 0.15s ease;
+}
+
+.gh-export-body {
+  padding: 1.25rem;
+}
+
+.gh-export-actions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.gh-code-preview {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  max-height: 200px;
+  overflow-y: auto;
+  color: var(--text-primary);
+}
+
+/* Toast Notifications */
+.gh-toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  z-index: 2000;
+  pointer-events: none;
+}
+
+.gh-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--text-primary);
+  color: var(--text-inverse);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: auto;
+}
+
+.gh-toast-success {
+  background-color: #059669;
+  color: #ffffff;
+}
+
+.gh-toast-warning {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+.gh-toast-fade {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive Breakpoints
+   -------------------------------------------------------------------------- */
 @media (min-width: 640px) {
   .lab-title-wrap {
-    order: unset;
     flex: 1;
-    text-align: left;
   }
 }
 
 @media (min-width: 900px) {
-  .lab-header {
-    padding: 1.5rem 0;
-  }
-
   .lab-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 1.75rem;
   }
+}
 
-  .lab-tabs {
-    padding: 1rem 0;
-    margin-bottom: 2rem;
+@media (max-width: 640px) {
+  .gh-command-center-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gh-telemetry-metrics-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .gh-export-actions-grid {
+    grid-template-columns: 1fr;
   }
 }
