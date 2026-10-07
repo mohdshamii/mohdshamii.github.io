@@ -35,7 +35,7 @@ export function renderFooter(): string {
         <div class="footer-social-col">
           <div class="footer-col-title">RESOURCES</div>
           <ul class="footer-nav-list">
-            <li><a href="${identity.resumeUrl}" download="Mohd_Shami_Resume.pdf">Download Resume (.pdf)</a></li>
+            <li><a href="${identity.resumeUrl}" target="_blank" rel="noopener noreferrer" download="Mohd_Shami_Resume.pdf">Download Resume (.pdf)</a></li>
             <li><a href="${identity.socials.github}" target="_blank" rel="noopener noreferrer">GitHub Profile</a></li>
             <li><a href="${identity.socials.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></li>
             <li><a href="${identity.socials.leetcode}" target="_blank" rel="noopener noreferrer">LeetCode Profile</a></li>

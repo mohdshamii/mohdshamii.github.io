@@ -262,7 +262,7 @@ export function initSuperIntelligenceAssistant() {
         answer = `
           <p><strong>Verified Resume Document:</strong></p>
           <p>You can download Mohd Shami's verified PDF resume directly:</p>
-          <p><a href="${portfolioData.identity.resumeUrl}" download class="si-btn-inline-gold">📥 Download Resume (.PDF)</a></p>
+          <p><a href="${portfolioData.identity.resumeUrl}" target="_blank" rel="noopener noreferrer" download="Mohd_Shami_Resume.pdf" class="si-btn-inline-gold">📥 Download Resume (.PDF)</a></p>
         `;
       } else if (type === 'contact') {
         answer = `
@@ -358,7 +358,7 @@ export function initSuperIntelligenceAssistant() {
     if (q.includes('resume') || q.includes('cv') || q.includes('pdf')) {
       return `
         <p>You can download Mohd Shami's verified resume PDF here:</p>
-        <p><a href="${portfolioData.identity.resumeUrl}" download class="si-btn-inline-gold">📥 Download Resume PDF</a></p>
+        <p><a href="${portfolioData.identity.resumeUrl}" target="_blank" rel="noopener noreferrer" download="Mohd_Shami_Resume.pdf" class="si-btn-inline-gold">📥 Download Resume PDF</a></p>
       `;
     }
 
@@ -382,7 +382,7 @@ export function initSuperIntelligenceAssistant() {
     // Default intelligence response
     return `
       <p>Mohd Shami is an AI/ML Engineer with 1+ year of experience building end-to-end intelligent systems, deep neural vision models, and production APIs.</p>
-      <p>Feel free to ask about his <strong>algorithms</strong>, <strong>Revive & HamOrSpam projects</strong>, <strong>Codec Technologies internship</strong>, <strong>Super Intelligence Lab</strong>, or <a href="${portfolioData.identity.resumeUrl}" download class="si-link-action">download his resume</a>.</p>
+      <p>Feel free to ask about his <strong>algorithms</strong>, <strong>Revive & HamOrSpam projects</strong>, <strong>Codec Technologies internship</strong>, <strong>Super Intelligence Lab</strong>, or <a href="${portfolioData.identity.resumeUrl}" target="_blank" rel="noopener noreferrer" download="Mohd_Shami_Resume.pdf" class="si-link-action">download his resume</a>.</p>
     `;
   }
 }

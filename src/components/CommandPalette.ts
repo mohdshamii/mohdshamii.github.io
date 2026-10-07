@@ -418,10 +418,12 @@ export function initCommandPalette() {
       category: 'Action',
       badgeClass: 'badge-page',
       shortcut: 'R',
-      tags: ['resume', 'cv', 'pdf', 'download', 'hire'],
+      tags: ['resume', 'cv', 'pdf', 'download', 'hire', 'view resume'],
       action: () => {
         const a = document.createElement('a');
         a.href = identity.resumeUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
         a.download = 'Mohd_Shami_Resume.pdf';
         document.body.appendChild(a);
         a.click();

@@ -18,7 +18,7 @@ A clean, modern, and recruiter-focused engineering portfolio for an **AI/ML Engi
 - **Academic Standing**: Cumulative **CGPA of 8.5 / 10.0** (Teerthanker Mahaveer University)
 - **Location**: Moradabad, UP, India
 - **Email**: [codexshami@gmail.com](mailto:codexshami@gmail.com)
-- **Resume**: [Download Official PDF](Mohd_Shami_Resume.pdf)
+- **Resume**: [Download Official PDF](dist/resume.pdf)
 - **Target Roles**: AI/ML Engineer, AI Engineer Fresher, ML Engineer
 
 ---

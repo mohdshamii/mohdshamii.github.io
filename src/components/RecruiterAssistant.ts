@@ -198,7 +198,7 @@ export function initRecruiterAssistant() {
 
     if (q.includes('resume') || q.includes('cv') || q.includes('pdf')) {
       return `You can download Mohd Shami's verified resume PDF directly here:<br>
-      <a href="${profileData.resumeUrl}" download class="btn btn-primary btn-sm" style="margin-top: 0.5rem; display: inline-flex;">
+      <a href="${profileData.resumeUrl}" target="_blank" rel="noopener noreferrer" download="Mohd_Shami_Resume.pdf" class="btn btn-primary btn-sm" style="margin-top: 0.5rem; display: inline-flex;">
         <i class="fas fa-download"></i> Download Resume (PDF)
       </a>`;
     }
@@ -213,6 +213,6 @@ export function initRecruiterAssistant() {
     }
 
     // Default Fallback
-    return `Mohd Shami is an AI/ML Engineer (B.Tech 2027, CGPA 8.5) with experience in Scikit-learn Pipelines, XGBoost, CNNs, NLP (97.8% accuracy), and Docker/Flask deployment. Ask about his <strong>skills</strong>, <strong>Revive / HamOrSpam projects</strong>, <strong>Codec Technologies internship</strong>, or <a href="${profileData.resumeUrl}" download style="color: var(--accent-color); font-weight: 600;">download his resume</a>.`;
+    return `Mohd Shami is an AI/ML Engineer (B.Tech 2027, CGPA 8.5) with experience in Scikit-learn Pipelines, XGBoost, CNNs, NLP (97.8% accuracy), and Docker/Flask deployment. Ask about his <strong>skills</strong>, <strong>Revive / HamOrSpam projects</strong>, <strong>Codec Technologies internship</strong>, or <a href="${profileData.resumeUrl}" target="_blank" rel="noopener noreferrer" download="Mohd_Shami_Resume.pdf" style="color: var(--accent-color); font-weight: 600;">download his resume</a>.`;
   }
 }

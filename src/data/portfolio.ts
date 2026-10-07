@@ -158,7 +158,7 @@ export const portfolioData: PortfolioData = {
     location: "Moradabad, UP, India",
     email: "codexshami@gmail.com",
     phone: "",
-    resumeUrl: "/resume.pdf",
+    resumeUrl: "dist/resume.pdf",
     quote: "Pure mathematics, is, in its way, the poetry of logical ideas.",
     philosophy: "Data has a story — my job is to tell it well, and ship the model that acts on it.",
     bio: "AI/ML Engineer with 1+ year of experience building end-to-end AI and machine learning systems spanning supervised learning, NLP, computer vision, deep learning (CNN), feature engineering, model optimisation, and Flask-based production deployment.",
