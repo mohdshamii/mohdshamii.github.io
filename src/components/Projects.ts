@@ -62,6 +62,7 @@ function renderProjectCard(proj: ProjectItem, idx: number): string {
     <article
       class="project-card"
       data-project-id="${proj.id}"
+      data-project="${proj.id}"
       data-category="${proj.category}"
       data-cursor="view"
       tabindex="0"

@@ -397,6 +397,116 @@ export const portfolioData: PortfolioData = {
 
   projects: [
     {
+      id: "hydroraksh",
+      name: "HYDRORAKSH",
+      subtitle: "AI Groundwater Intelligence & Decision Support Platform (JalSuraksha)",
+      period: "Aug 2026 – Present",
+      category: "ml",
+      overview: "An authoritative pan-India groundwater geospatial intelligence platform aggregating live and scheduled groundwater levels, rainfall departures, and water quality telemetry across 700+ districts in 36 States/UTs. Implements Hydro-Geological Collaborative Filtering (HG-CF) with graph Laplacian regularization, multi-horizon machine learning forecasting, and GEC-2015 prescriptive decision support.",
+      pipeline: [
+        "TELEMETRY INGESTION",
+        "SPATIAL-TEMPORAL ETL",
+        "HG-CF GRAPH REGULARIZATION",
+        "MULTI-HORIZON FORECASTING",
+        "LDA TOPIC MINING",
+        "FASTAPI / FLASK REST API",
+        "DOCKER CONTAINER"
+      ],
+      metrics: [
+        { label: "Forecasting MAE", value: "3.85m" },
+        { label: "Spatial Coverage", value: "700+ Districts" },
+        { label: "Test Suite", value: "101 Tests Pass" },
+        { label: "Research Base", value: "16 Notebooks" }
+      ],
+      technologies: ["Python 3.10+", "FastAPI", "Flask", "Scikit-learn", "HG-CF Recommender", "Graph Laplacian", "TimescaleDB", "Gensim (LDA)", "SHAP", "Docker"],
+      githubUrl: "https://github.com/mohdshamii/HydroRaksh",
+      liveDemoUrl: "https://github.com/mohdshamii/HydroRaksh",
+      image: "/images/hydroraksh.png",
+      caseStudy: {
+        problem: "Over 63% of India's irrigated agriculture and 85% of rural drinking water depend on aquifers, withdrawing ~245 BCM annually with >17% of assessment units Over-Exploited. Conventional quarterly manual monitoring and static numerical simulations fail to generate localized, real-time engineering recommendations for data-sparse blocks.",
+        data: "National hydrological telemetry from Central Ground Water Board (CGWB), IMD meteorological stations, India-WRIS, CWC, and Open-Meteo across 36 States/UTs and 700+ districts (75 districts in Uttar Pradesh as reference), capturing depth-to-water (m bgl), rainfall departures, and BIS 10500 water quality markers (pH, EC, TDS, fluoride, arsenic, nitrate).",
+        preprocessing: "Automated ETL pipelines with schema validation, IQR outlier detection, bivariate hydrological correlation matrices (Pearson r), one-way ANOVA hypothesis testing across physical geological formations, and 4-fold rolling-origin temporal splits.",
+        model: "Formulated Hydro-Geological Collaborative Filtering (HG-CF) embedding physical aquifer conductivity, slope, extraction stage, and depth into a graph Laplacian regularization kernel; multi-horizon Ridge Regression, Gradient Boosting, and Random Forest forecasters; and Latent Dirichlet Allocation (LDA) for literature and citizen grievance mining.",
+        evaluation: "Validated via 4-fold rolling-origin cross-validation: Ridge regression achieved MAE of 3.851m (RMSE 4.352m) and Random Forest MAE 4.054m, heavily outperforming naive persistence (MAE 29.851m). HG-CF recommender scored NDCG@5 of 0.437 and MAE 0.123 across held-out units. 101 unit tests passing.",
+        deployment: "Dual-backend architecture: asynchronous FastAPI microservice for sub-100ms calculation endpoints and interactive Flask web UI, backed by TimescaleDB and containerized with Docker & Docker Compose (Dockerfile.research).",
+        result: "Turned static quarterly reports into actionable geospatial decision intelligence, providing automated recharge structure sizing (check dams, injection wells), GEC-2015 water balance audits, and knapsack budget optimizations under capital constraints."
+      }
+    },
+    {
+      id: "bharatlens",
+      name: "BHARATLENS ML",
+      subtitle: "Indian District Socioeconomic Intelligence & Trend Forecasting Platform",
+      period: "Oct 2026 – Present",
+      category: "analytics",
+      overview: "An empirical district-level econometric and machine learning platform processing multi-period panel microdata across 643 Indian districts in 37 States and Union Territories. Models socioeconomic velocity, solves National Baseline Drift ('The Momentum Paradox'), detects development anomalies, and attributes predictive drivers using Explainable AI (SHAP).",
+      pipeline: [
+        "PANEL HARMONIZATION",
+        "54-FEATURE STORE",
+        "MOMENTUM VELOCITY (Z_Δ)",
+        "K-MEANS TIER CLUSTERING",
+        "ISOLATION FOREST & LOF",
+        "RIDGE / XGBOOST",
+        "SHAP EXPLAINABILITY",
+        "FLASK REST API"
+      ],
+      metrics: [
+        { label: "District Scope", value: "643 Districts" },
+        { label: "Feature Matrix", value: "54 Features" },
+        { label: "Composite Index", value: "0–100 Score" },
+        { label: "Validation Suite", value: "22 Tests Pass" }
+      ],
+      technologies: ["Python 3.10+", "Scikit-learn 1.5+", "XGBoost", "SHAP", "Flask 3.0", "Pandas", "NumPy", "SciPy", "Chart.js", "Plotly.js", "Pytest"],
+      githubUrl: "https://github.com/mohdshamii/BharatLens",
+      liveDemoUrl: "https://github.com/mohdshamii/BharatLens",
+      image: "/images/bharatlens.png",
+      caseStudy: {
+        problem: "India's decentralized administrative units face severe structural data challenges: National Baseline Drift (where nationwide schemes lift absolute rates everywhere, concealing relative district deceleration), cross-silo administrative fragmentation across inconsistent spellings, and black-box arbitrary rankings without algorithmic transparency.",
+        data: "Harmonized multi-period panel microdata across 643 districts in 37 States and Union Territories from 4 primary sources: NFHS-4 (2015-16), NFHS-5 (2019-21), Census 2011 Primary Census Abstract, MGNREGA employment & wage registers, and IMD historical rainfall series.",
+        preprocessing: "Automated null audit, bounds checking, spatial name harmonization resolving historical bifurcations, and generation of a 54-engineered-feature matrix including annualized growth rates, dimensional aggregations, and state-relative standardized momentum velocity (Z_Δ).",
+        model: "K-Means clustering (k=4) for socioeconomic stratification (Aspirational, Developing, Progressing, Front-Runner); consensus anomaly detection combining Isolation Forest (150 trees, c=0.05) and Local Outlier Factor (k=20); 5-fold cross-validated benchmark of Ridge, Random Forest, Gradient Boosting, and XGBoost models; and SHAP (Linear & Tree) feature attribution.",
+        evaluation: "Benchmarked with 5-fold cross-validation: Ridge Regressor champion accurately predicted composite score deltas, while Logistic and Gradient Boosting classifiers achieved high macro-F1 on multi-class momentum trends. Isolated 33 multi-variate trajectory anomalies; verified by 22 automated Pytest unit tests.",
+        deployment: "Production Flask WSGI server with 11 RESTful JSON endpoints, dynamic CSV dataset stream exports, dual-mode (Flask + legacy Streamlit) architecture, and an accessible India.gov.in National Portal design (WCAG 2.1 AA compliant).",
+        result: "Delivered an auditable, peer-relative policy intelligence engine enabling policymakers to contrast districts side-by-side, understand local SHAP drivers, and detect developmental deceleration before it manifests in macro distress."
+      }
+    },
+    {
+      id: "atlas",
+      name: "ATLAS",
+      subtitle: "Civic Geospatial Intelligence & Predictive Public Policy Engine",
+      period: "Sep 2026 – Present",
+      category: "ml",
+      overview: "An enterprise-grade, academic-caliber civic and geographic data visualization platform covering all 75 districts of Uttar Pradesh across 18 administrative divisions and national economic hubs (2015–2024), featuring 2025–2030 predictive forecasting, K-Means clustering, 2D PCA, 3D WebGL visualizations, and an AI Policy Copilot.",
+      pipeline: [
+        "DETERMINISTIC PRNG ENGINE",
+        "50+ CIVIC METRICS",
+        "K-MEANS CLUSTERING (K=4)",
+        "2D PCA REDUCTION",
+        "RIDGE HORIZON FORECAST",
+        "VPI 4-QUADRANT MATRIX",
+        "THREE.JS 3D WEBGL",
+        "FLASK REST API"
+      ],
+      metrics: [
+        { label: "District Coverage", value: "75 UP Districts" },
+        { label: "Civic Sectors", value: "11 Indicators" },
+        { label: "Horizon Model", value: "2025–2030 Forecast" },
+        { label: "Observational Data", value: "42,750+ Data Points" }
+      ],
+      technologies: ["Python 3.10+", "Flask REST API", "Scikit-Learn", "Ridge Regression", "PCA", "Three.js (WebGL)", "Leaflet.js", "Plotly", "Pandas", "Jupyter"],
+      githubUrl: "https://github.com/mohdshamii/Atlas",
+      liveDemoUrl: "https://github.com/mohdshamii/Atlas",
+      image: "/images/atlas.png",
+      caseStudy: {
+        problem: "Civic and developmental data for Indian administrative units is fragmented, lack longitudinal depth, and offer static backward-looking summaries without forward-looking trajectory projections or policy simulation capabilities for capital resource allocation.",
+        data: "Comprehensive longitudinal matrix of 11 locked civic sectors (Demographics, Education, Healthcare, Employment, Crime, Roads, Agriculture, Water/Sanitation, Electricity, Welfare Schemes, Environment) spanning 50+ granular metrics across 10 historical years (2015–2024) for all 75 districts of Uttar Pradesh (42,750+ data points).",
+        preprocessing: "Engineered on a strict deterministic 32-bit FNV-1a hashing and Mulberry32 pseudo-random engine guaranteeing 100% data reproducibility and zero-database latency, with explicit provenance tagging (Verified, Demo, Unavailable) and realistic ~4% missingness handling.",
+        model: "Unsupervised K-Means clustering (k=4) stratifying districts into four developmental tiers; 2-component Principal Component Analysis (explaining ~40% of spatial variance) with convex hull envelopes; L2-penalized Ridge Regression for 2025–2030 time-series forecasting with parametric 95% confidence intervals; and an empirical elasticity-based AI Policy Budget Simulator.",
+        evaluation: "Validated via 15 automated unit tests (test_app.py), verified R² goodness-of-fit, compound annual growth rate (CAGR) projections, and statistical summary profiling in an academic publication-ready Jupyter research notebook (atlas_analytics_and_ml.ipynb).",
+        deployment: "Full-stack Flask web application serving 10 server-rendered views and 12 REST API endpoints, paired with client-side interactive Three.js 3D WebGL (rotatable India globe with flight arcs & 3D topographic district elevation) and Leaflet choropleths.",
+        result: "Created a comprehensive, academic-standard civic intelligence system enabling state-level policy planners to simulate 5-year multi-sectoral capital allocations (Healthcare, Education, Roads, Water) and forecast localized developmental trajectories through 2030."
+      }
+    },
+    {
       id: "revive",
       name: "REVIVE",
       subtitle: "AI-Powered Clinical Disease Prediction System",
@@ -430,6 +540,41 @@ export const portfolioData: PortfolioData = {
         evaluation: "Evaluated using stratified 5-fold cross-validation. Reached an AUC-ROC of 0.91, 85% overall accuracy, and an F1-Score of 0.87, confirming robust discrimination threshold stability.",
         deployment: "Packaged as a lightweight Flask REST microservice serving instant real-time JSON probability predictions; containerized with Docker for cross-platform portability.",
         result: "Delivered a verifiable, containerized inference pipeline with sub-50ms latency and high sensitivity, minimizing diagnostic false negatives."
+      }
+    },
+    {
+      id: "farmaiq",
+      name: "FARMAIQ",
+      subtitle: "Multi-Model AI Platform for Smart Agriculture",
+      period: "Nov 2025 – Dec 2025",
+      category: "vision",
+      overview: "A dual-model agricultural intelligence system combining Random Forest crop suitability recommendations (2,200 records, 93% accuracy) with a Convolutional Neural Network (CNN) for leaf disease diagnosis on the PlantVillage dataset.",
+      pipeline: [
+        "SOIL / IMAGE",
+        "FEATURE EXTRACTION",
+        "RANDOM FOREST / CNN",
+        "CROSS-VALIDATION",
+        "GRID SEARCH",
+        "DIAGNOSTIC ADVISORY"
+      ],
+      metrics: [
+        { label: "Crop Accuracy", value: "93%" },
+        { label: "Soil Records", value: "2,200 Records" },
+        { label: "Vision Engine", value: "Deep CNN" },
+        { label: "Dataset", value: "PlantVillage" }
+      ],
+      technologies: ["Python", "Random Forest", "CNN", "Deep Learning", "Keras / TensorFlow", "Grid Search", "Cross-Validation"],
+      githubUrl: "https://github.com/mohdshamii/FarmAIQ",
+      liveDemoUrl: "/lab/index.html#crop-tab",
+      image: "/images/farmaiq.png",
+      caseStudy: {
+        problem: "Agricultural yields are constrained by suboptimal crop selection based on intuition rather than soil chemistry, compounded by late-stage visual identification of crop pathogens.",
+        data: "Tabular soil data (2,200 records with Nitrogen, Phosphorus, Potassium, Temperature, Humidity, pH, and Rainfall) combined with thousands of high-resolution crop leaf images from PlantVillage.",
+        preprocessing: "Tabular data: statistical normalization and boundary inspection. Vision data: image augmentation (rotations, zooms, flips) and pixel scaling for convolutional layers.",
+        model: "Dual-model architecture: Random Forest ensemble for tabular crop suitability combined with a multi-layer Convolutional Neural Network (CNN) for lesion feature extraction.",
+        evaluation: "Achieved 93% predictive accuracy on crop recommendation and high precision on leaf disease classification across unseen agricultural splits.",
+        deployment: "Integrated into a unified dual-tab dashboard allowing farmers to toggle between soil nutrient recommendations and visual symptom diagnoses.",
+        result: "Provided a data-driven agronomy platform that pairs immediate visual pathology with preventative soil chemistry recommendations."
       }
     },
     {
@@ -468,76 +613,6 @@ export const portfolioData: PortfolioData = {
       }
     },
     {
-      id: "farmaiq",
-      name: "FARMAIQ",
-      subtitle: "Multi-Model AI Platform for Smart Agriculture",
-      period: "Nov 2025 – Dec 2025",
-      category: "vision",
-      overview: "A dual-model agricultural intelligence system combining Random Forest soil crop recommendation (2,200 records, 93% accuracy) with a Convolutional Neural Network (CNN) for leaf disease diagnosis on the PlantVillage dataset.",
-      pipeline: [
-        "SOIL / IMAGE",
-        "FEATURE EXTRACTION",
-        "RANDOM FOREST / CNN",
-        "CROSS-VALIDATION",
-        "GRID SEARCH",
-        "DIAGNOSTIC ADVISORY"
-      ],
-      metrics: [
-        { label: "Crop Accuracy", value: "93%" },
-        { label: "Soil Records", value: "2,200 Records" },
-        { label: "Vision Engine", value: "Deep CNN" },
-        { label: "Dataset", value: "PlantVillage" }
-      ],
-      technologies: ["Python", "Random Forest", "CNN", "Deep Learning", "Keras / TensorFlow", "Grid Search", "Cross-Validation"],
-      githubUrl: "https://github.com/mohdshamii/FarmAIQ",
-      liveDemoUrl: "/lab/index.html#crop-tab",
-      image: "/images/farmaiq.png",
-      caseStudy: {
-        problem: "Agricultural yields are constrained by suboptimal crop selection based on intuition rather than soil chemistry, compounded by late-stage visual identification of crop pathogens.",
-        data: "Tabular soil data (2,200 records with Nitrogen, Phosphorus, Potassium, Temperature, Humidity, pH, and Rainfall) combined with thousands of high-resolution crop leaf images from PlantVillage.",
-        preprocessing: "Tabular data: statistical normalization and boundary inspection. Vision data: image augmentation (rotations, zooms, flips) and pixel scaling for convolutional layers.",
-        model: "Dual-model architecture: Random Forest ensemble for tabular crop suitability combined with a multi-layer Convolutional Neural Network (CNN) for lesion feature extraction.",
-        evaluation: "Achieved 93% predictive accuracy on crop recommendation and high precision on leaf disease classification across unseen agricultural splits.",
-        deployment: "Integrated into a unified dual-tab dashboard allowing farmers to toggle between soil nutrient recommendations and visual symptom diagnoses.",
-        result: "Provided a data-driven agronomy platform that pairs immediate visual pathology with preventative soil chemistry recommendations."
-      }
-    },
-    {
-      id: "churnshield",
-      name: "CHURNSHIELD AI",
-      subtitle: "Customer Retention & Predictive Risk Scoring",
-      period: "2025 – 2026",
-      category: "analytics",
-      overview: "A predictive customer analytics engine identifying client churn risks and uncovering underlying behavioral drivers using gradient-boosted decision trees.",
-      pipeline: [
-        "CUSTOMER TELEMETRY",
-        "BEHAVIORAL FEATURES",
-        "SMOTE BALANCING",
-        "XGBOOST",
-        "SHAP ATTRIBUTION",
-        "RISK SCORECARD"
-      ],
-      metrics: [
-        { label: "Model Type", value: "XGBoost Classifier" },
-        { label: "Analysis", value: "SHAP Drivers" },
-        { label: "Focus", value: "Retention Analytics" },
-        { label: "Stack", value: "Python & Pandas" }
-      ],
-      technologies: ["Python", "XGBoost", "Scikit-learn", "Pandas", "Feature Engineering", "EDA"],
-      githubUrl: "https://github.com/mohdshamii/ChurnShield_AI",
-      liveDemoUrl: "/lab/index.html#churn-tab",
-      image: "/images/churnshield.png",
-      caseStudy: {
-        problem: "Customer churn directly drains annual recurring revenue; manual customer success outreach fails to prioritize the accounts at immediate departure risk.",
-        data: "Customer usage telemetry, subscription contracts, billing patterns, and support incident histories.",
-        preprocessing: "Engineered tenure ratios, interaction velocity indicators, and one-hot encoded categorical billing options.",
-        model: "XGBoost classifier fine-tuned to penalize false negative churn predictions while producing calibrated probability scores.",
-        evaluation: "Evaluated across precision-recall trade-offs to maximize capture rate of at-risk accounts before contract expiration.",
-        deployment: "Structured as an analytical risk scorecard delivering interpretability for strategic retention campaigns.",
-        result: "Identified high-impact risk indicators (month-to-month contracts, frequent support tickets), enabling preemptive retention actions."
-      }
-    },
-    {
       id: "pydsa",
       name: "CORORBIT / PYDSA",
       subtitle: "Interactive Platform to Master Python & 850+ Algorithms",
@@ -569,40 +644,6 @@ export const portfolioData: PortfolioData = {
         evaluation: "All test cases validated across official platform judge engines with optimal memory footprints.",
         deployment: "Publicly maintained open-source GitHub archive and interactive platform at mohdshamii.github.io/PyDSA.",
         result: "Built a solid algorithmic foundation directly applied to writing optimized data pipelines and vectorised ML operations."
-      }
-    },
-    {
-      id: "dsaos",
-      name: "DSAOS",
-      subtitle: "Top 250 DSA Problems for MNC & Campus Placements",
-      period: "2025 – 2026",
-      category: "analytics",
-      overview: "A curated repository and interactive roadmap covering 250 high-frequency DSA problems asked in top product MNCs (Google, Microsoft, Amazon) and campus placement coding assessments.",
-      pipeline: [
-        "TOPIC ROADMAP",
-        "FREQUENCY ANALYSIS",
-        "PATTERN IDENTIFICATION",
-        "OPTIMAL PYTHON CODE",
-        "PLACEMENT READY"
-      ],
-      metrics: [
-        { label: "Curated Problems", value: "250 Top" },
-        { label: "Focus", value: "MNC & Placements" },
-        { label: "Patterns", value: "14 Core DSA Patterns" },
-        { label: "Language", value: "Python" }
-      ],
-      technologies: ["Python", "Algorithms", "Data Structures", "Two Pointers", "Sliding Window", "Dynamic Programming", "Graphs"],
-      githubUrl: "https://github.com/mohdshamii/DSAos",
-      liveDemoUrl: "https://mohdshamii.github.io/DSAos",
-      image: "/images/pydsa.png",
-      caseStudy: {
-        problem: "Campus placements and technical interviews at top MNCs test specific problem patterns under strict time limits, requiring focused preparation on high-frequency questions rather than random problem solving.",
-        data: "Curated dataset of 250 interview questions frequently asked across Google, Amazon, Microsoft, and high-growth engineering companies.",
-        preprocessing: "Deconstructed questions into 14 universal algorithmic patterns: Sliding Window, Two Pointers, Fast & Slow Pointers, Merge Intervals, Modified Binary Search, and Tree Traversals.",
-        model: "Provided clean Pythonic solutions accompanied by intuitive intuition explanations, edge case checklists, and step-by-step memory trace diagrams.",
-        evaluation: "Benchmarked against standard interview time constraints (target solve time under 25 minutes per question).",
-        deployment: "Hosted as an accessible open-source portal at mohdshamii.github.io/DSAos with instant category filters.",
-        result: "Created a focused, high-yield preparation ecosystem for campus placement aspirants and engineering peers."
       }
     },
     {
@@ -640,40 +681,6 @@ export const portfolioData: PortfolioData = {
       }
     },
     {
-      id: "hydroraksh",
-      name: "HYDRORAKSH",
-      subtitle: "Automated Water Conservation & Monitoring Architecture",
-      period: "2025 – 2026",
-      category: "analytics",
-      overview: "An automated water protection and resource monitoring system utilizing sensor telemetry, real-time threshold analytics, and automated alert dispatch for smart conservation.",
-      pipeline: [
-        "SENSOR TELEMETRY",
-        "DATA INGESTION",
-        "STREAM PROCESSING",
-        "THRESHOLD ANALYTICS",
-        "ALERT DISPATCH"
-      ],
-      metrics: [
-        { label: "Telemetry Latency", value: "< 250ms" },
-        { label: "Alert Dispatch", value: "Real-time" },
-        { label: "System Protocol", value: "IoT & Python" },
-        { label: "Architecture", value: "Modular" }
-      ],
-      technologies: ["Python", "IoT Systems", "Anomaly Detection", "Stream Analytics", "Automation", "REST API"],
-      githubUrl: "https://github.com/mohdshamii/HydroRaksh",
-      liveDemoUrl: "https://github.com/mohdshamii/HydroRaksh",
-      image: "/images/revive.png",
-      caseStudy: {
-        problem: "Unmonitored water systems cause massive volumetric wastage and catastrophic overflows due to lack of real-time sensor monitoring and predictive thresholds.",
-        data: "Continuous multi-sensor telemetry capturing water levels, inflow/outflow rates, flow pressure, and environmental temperature.",
-        preprocessing: "Cleaned raw telemetry streams, removed noise jitter, and calculated dynamic moving-window averages for rate-of-change detection.",
-        model: "Engineered real-time anomaly detection heuristics paired with threshold-based predictive rules to trigger preemptive conservation valves.",
-        evaluation: "Benchmarked on streaming telemetry feeds with sub-250ms processing latency and zero missed threshold breach alerts.",
-        deployment: "Structured as an open-source Python system with modular drivers ready for embedded microcontrollers and central telemetry dashboards.",
-        result: "Provided an end-to-end automated protection system preventing water wastage and safeguarding reservoirs."
-      }
-    },
-    {
       id: "100days-aiml",
       name: "100 DAYS OF AI/ML",
       subtitle: "Comprehensive AI/ML Roadmap, Research Papers & Free Books Repository",
@@ -695,7 +702,7 @@ export const portfolioData: PortfolioData = {
       ],
       technologies: ["Python", "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Research Papers", "PyTorch"],
       githubUrl: "https://github.com/mohdshamii/100",
-      liveDemoUrl: "https://github.com/mohdshamii/100",
+      liveDemoUrl: "https://mohdshamii.github.io/100/",
       image: "/images/pydsa.png",
       caseStudy: {
         problem: "Aspiring AI/ML engineers often face fragmented learning roadmaps with disjointed theory, missing math fundamentals, and lack of guidance on reading seminal research papers.",

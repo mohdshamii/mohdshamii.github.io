@@ -165,15 +165,45 @@ export function initCommandPalette() {
     // 2. Featured Projects & Repositories
     {
       id: 'repo-hydroraksh',
-      name: 'HydroRaksh',
-      desc: 'IoT & Python automated water conservation & real-time reservoir monitoring system',
+      name: 'HydroRaksh (JalSuraksha)',
+      desc: 'AI groundwater intelligence platform · HG-CF graph recommender · 3.85m MAE time-series forecaster',
       category: 'Project',
       badgeClass: 'badge-project',
-      tags: ['hydroraksh', 'iot', 'python', 'water', 'sensor', 'automation'],
+      tags: ['hydroraksh', 'jalsuraksha', 'groundwater', 'water', 'fastapi', 'flask', 'hg-cf', 'timescaledb'],
       action: () => {
         scrollToTarget('#projects');
         setTimeout(() => {
           const card = document.querySelector('[data-project="hydroraksh"]') as HTMLElement | null;
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    },
+    {
+      id: 'repo-bharatlens',
+      name: 'BharatLens ML',
+      desc: 'Indian district socioeconomic intelligence · 643 districts panel microdata · Explainable AI (SHAP)',
+      category: 'Project',
+      badgeClass: 'badge-project',
+      tags: ['bharatlens', 'district', 'econometric', 'census', 'nfhs', 'shap', 'velocity', 'momentum'],
+      action: () => {
+        scrollToTarget('#projects');
+        setTimeout(() => {
+          const card = document.querySelector('[data-project="bharatlens"]') as HTMLElement | null;
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    },
+    {
+      id: 'repo-atlas',
+      name: 'Atlas (India Data Atlas)',
+      desc: 'Civic geospatial intelligence engine · 75 UP districts · 2025–2030 Ridge horizon forecasting · Three.js 3D WebGL',
+      category: 'Project',
+      badgeClass: 'badge-project',
+      tags: ['atlas', 'civic', 'geospatial', 'forecast', 'uttar pradesh', 'pca', 'threejs', 'prng'],
+      action: () => {
+        scrollToTarget('#projects');
+        setTimeout(() => {
+          const card = document.querySelector('[data-project="atlas"]') as HTMLElement | null;
           card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 300);
       }
@@ -488,7 +518,7 @@ export function initCommandPalette() {
       list!.innerHTML = `
         <div class="cmd-no-results">
           <p>No results matching your query.</p>
-          <span>Try searching for "Hydroraksh", "PyDSA", "Revive", "Python", "XGBoost", or "Resume"</span>
+          <span>Try searching for "HydroRaksh", "BharatLens", "Atlas", "Revive", "PyDSA", or "Resume"</span>
         </div>
       `;
       return;
