@@ -1717,6 +1717,88 @@ button {
   background: #bf8700;
 }
 
+/* GitHub Verified Achievements Bar */
+.gh-achievements-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.gh-achievements-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.gh-badges-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.gh-badge-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  padding: 0.18rem 0.55rem 0.18rem 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.gh-badge-chip:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.gh-badge-chip img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.gh-badge-tier {
+  font-size: 0.62rem;
+  color: #d97706;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Open-Source Contributions Grid */
+.gh-contributions-section {
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.gh-contributions-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .gh-contributions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 /* ==========================================================================
    SUMMARY & METRICS SECTION
    ========================================================================== */

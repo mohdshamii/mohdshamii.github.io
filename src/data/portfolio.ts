@@ -457,7 +457,6 @@ export const portfolioData: PortfolioData = {
       ],
       technologies: ["Python 3.10+", "Scikit-learn 1.5+", "XGBoost", "SHAP", "Flask 3.0", "Pandas", "NumPy", "SciPy", "Chart.js", "Plotly.js", "Pytest"],
       githubUrl: "https://github.com/mohdshamii/BharatLens",
-      liveDemoUrl: "https://github.com/mohdshamii/BharatLens",
       image: "/images/bharatlens.png",
       caseStudy: {
         problem: "India's decentralized administrative units face severe structural data challenges: National Baseline Drift (where nationwide schemes lift absolute rates everywhere, concealing relative district deceleration), cross-silo administrative fragmentation across inconsistent spellings, and black-box arbitrary rankings without algorithmic transparency.",
@@ -746,6 +745,111 @@ export const portfolioData: PortfolioData = {
         evaluation: "Evaluated with comprehensive diagnostic matrices: Confusion Matrices, ROC-AUC curves, Precision-Recall tradeoffs, and residual analyses.",
         deployment: "Archived with clean, reproducible Jupyter notebooks and reusable Python script modules on GitHub.",
         result: "Built a robust, battle-tested portfolio of industrial ML solutions demonstrating end-to-end data science proficiency."
+      }
+    },
+    {
+      id: "driver-guardian",
+      name: "DRIVER GUARDIAN",
+      subtitle: "Real-Time Driver Drowsiness & Distraction Detection System",
+      period: "May 2026 – Present",
+      category: "vision",
+      overview: "A real-time Computer Vision system for monitoring driver attention through a live webcam feed (cv2.VideoCapture(0)), detecting faces and eyes using official OpenCV Haar Cascades, estimating drowsiness and yawning via temporal tracking and mouth ROI adaptive thresholding, and approximating distraction from head centroid drift with a multi-factor risk engine.",
+      pipeline: [
+        "WEBCAM INGESTION (CV2)",
+        "HAAR FACE CASCADE",
+        "UPPER-EYE ROI TRACKING",
+        "MOUTH ADAPTIVE THRESHOLD",
+        "CENTROID DRIFT (ΔX, ΔY)",
+        "MULTI-FACTOR RISK ENGINE",
+        "WEB AUDIO & MJPEG STREAM"
+      ],
+      metrics: [
+        { label: "Temporal Window", value: "60 Frames" },
+        { label: "Risk Meter", value: "0–100%" },
+        { label: "Vision Engine", value: "OpenCV Haar" },
+        { label: "Unit Tests", value: "6 Tests Pass" }
+      ],
+      technologies: ["Python 3.10+", "OpenCV", "Haar Cascades", "Flask", "NumPy", "Web Audio API", "SQLite", "Chart.js"],
+      githubUrl: "https://github.com/mohdshamii/Driver-drowsiness-and-distraction-detection",
+      image: "/images/farmaiq.png",
+      caseStudy: {
+        problem: "Driver fatigue, microsleep, yawning, and phone distractions cause catastrophic road accidents. Real-time driver monitoring systems must operate with ultra-low latency on modest local compute without complex deep-learning overhead or cloud dependency.",
+        data: "Live webcam video frames acquired at 30 FPS directly via cv2.VideoCapture(0), converted to grayscale for localized feature processing.",
+        preprocessing: "Grayscale conversion, facial bounding box extraction, ROI segmentation for upper-face eyes (y in [0.18h, 0.58h]) and lower-face oral cavity (y in [0.62h, 0.95h]), inverted adaptive thresholding to segment oral void, and morphological closing.",
+        model: "Multi-factor heuristic computer vision pipeline: official OpenCV Haar Cascades (haarcascade_frontalface_default.xml and haarcascade_eye.xml) for eye closure tracking (>= 12 frames), Mouth Opening Metric for sustained yawning (>= 12 frames at metric > 0.30), and normalized centroid drift (Δx, Δy) tracking head turns and phone distraction.",
+        evaluation: "Validated via 6 automated unit and integration tests (tests/test_detectors.py) covering cascade loading, eye absence buffers, mouth void metrics, centroid offset limits, risk thresholds (Alert <30%, Warning 30-60%, Critical >60%), and camera reconnection.",
+        deployment: "Flask cockpit dashboard with live MJPEG multipart video streaming, real-time Chart.js signal waveform tracking, Web Audio API synthesized warning buzzers and sirens, and persistent SQLite event logging.",
+        result: "Built a self-contained, lightweight Python/OpenCV monitoring system running at 30+ FPS without external neural weights or cloud dependencies, delivering sub-second acoustic and visual alerts on driver impairment."
+      }
+    },
+    {
+      id: "agentops",
+      name: "AGENTOPS",
+      subtitle: "Modular Agentic AI Architecture & Multi-Model Platform",
+      period: "Mar 2026 – Present",
+      category: "nlp",
+      overview: "An open-source agentic AI architecture designed for multi-step reasoning, autonomous workflows, dynamic tool execution, and local vector memory management across open-weight models including LLaMA 3.2, Mistral 7B, Qwen 2.5 Coder, and DeepSeek R1.",
+      pipeline: [
+        "MODULAR ADAPTERS",
+        "REACT REASONING LOOP",
+        "SLIDING CONTEXT BUFFER",
+        "MINILM-L6-V2 VECTOR RETRIEVAL",
+        "TOOL CALL RUNNER",
+        "SERVER-SENT EVENTS (SSE)",
+        "NEXT.JS 14 INTERFACE"
+      ],
+      metrics: [
+        { label: "Model Adapters", value: "5+ Models" },
+        { label: "Vector Store", value: "MiniLM-L6-v2" },
+        { label: "Streaming", value: "SSE Tokens" },
+        { label: "Deployment", value: "Docker Compose" }
+      ],
+      technologies: ["Python", "FastAPI", "Flask", "Next.js 14", "Sentence-Transformers", "LLaMA 3.2", "Mistral 7B", "DeepSeek R1", "Qwen 2.5", "Docker"],
+      githubUrl: "https://github.com/mohdshamii/agentops",
+      image: "/images/revive.png",
+      caseStudy: {
+        problem: "Multi-step AI agents are often tightly coupled to proprietary APIs with rigid SDK lock-in, inflexible memory management, and opaque reasoning loops, making model evaluation, provider swapping, and offline operation difficult.",
+        data: "Conversational turns, contextual interaction sessions, vector embedding databases generated via all-MiniLM-L6-v2, and dynamic schema metadata from connected SQL databases.",
+        preprocessing: "Token budgeting over a sliding context window to prevent overflow, text chunking, and cosine similarity indexing over local vector representations.",
+        model: "Decoupled ModelAdapterFactory routing prompts to Hugging Face router, OpenAI-compatible endpoints, or offline local fallback; ReAct (Reason + Act) loop orchestrating step-by-step thought, action, and observation cycles.",
+        evaluation: "Evaluated across multi-step query decomposition, tool call accuracy (web scraping, DuckDuckGo search, HTTP caller, SQL queries, Python execution), and streaming latency over Server-Sent Events.",
+        deployment: "Dual-server architecture pairing a Python backend (FastAPI/Flask) with a Next.js 14 dark-mode conversational UI; containerized with Docker & Docker Compose.",
+        result: "Delivered a modular, provider-agnostic agent framework capable of hot-swapping open-weight models at runtime while maintaining conversational state and vector memory."
+      }
+    },
+    {
+      id: "agentops-cli",
+      name: "AGENTOPS-CLI",
+      subtitle: "Autonomous Terminal AI Coding Agent & Multi-Provider Platform",
+      period: "Nov 2026 – Present",
+      category: "analytics",
+      overview: "A production-oriented AI coding agent and terminal operations platform implemented entirely in Python. Features native local Ollama integration, OpenAI/Anthropic/Gemini multi-provider routing, AST context discovery, atomic file editing with unified diff previews, and strict workspace containment.",
+      pipeline: [
+        "MULTI-PROVIDER ROUTING",
+        "WORKSPACE CONTEXT INDEXING",
+        "TOKEN BUDGET ASSEMBLER",
+        "AGENTIC REPL LOOP",
+        "ATOMIC DIFF PREVIEW",
+        "WORKSPACE CONTAINMENT",
+        "SESSION PERSISTENCE"
+      ],
+      metrics: [
+        { label: "Provider Routing", value: "4 Providers" },
+        { label: "Validation Suite", value: "80 Tests Pass" },
+        { label: "Privacy Mode", value: "Local-Only" },
+        { label: "Security", value: "Path Containment" }
+      ],
+      technologies: ["Python 3.10+", "Ollama", "OpenAI API", "Anthropic Messages", "Google Gemini", "Rich Terminal UI", "Pytest (80 Tests)", "AST Indexing"],
+      githubUrl: "https://github.com/mohdshamii/AgentOps-CLI",
+      image: "/images/pydsa.png",
+      caseStudy: {
+        problem: "Terminal coding agents require transparent multi-model routing, reliable token budgeting, and strict security guarantees to prevent accidental destructive file overwrites or command execution without developer oversight.",
+        data: "Active workspace file tree, Git index, syntax-aware AST tokens, .gitignore exclusions, interactive REPL prompts, and terminal execution logs.",
+        preprocessing: "Intelligent context discovery ranking workspace files by query relevance, filtering out node_modules/.git/binaries, and assembling delimited prompts within strict model context limits.",
+        model: "SmartRouter engine with real-time latency and reliability scoring; transparent routing across local Ollama (llama3.1, qwen2.5-coder), OpenAI (gpt-4o), Anthropic (claude-3-5-sonnet), and Gemini; local-only privacy mode.",
+        evaluation: "Validated by a comprehensive automated test suite of 80 Pytest tests covering provider adapters, context indexing, token budgeting, command sandboxing, and session serialization without network calls.",
+        deployment: "Packaged as an executable Python CLI (agentops / agentopscli) featuring Rich syntax highlighting, colored unified diffs, interactive slash commands (/doctor, /sessions, /cost), and atomic ~/.agentops session storage.",
+        result: "Engineered a robust, developer-first command-line coding partner with path traversal containment, explicit confirmation before file writes/commands, and automatic secret redaction."
       }
     }
   ],

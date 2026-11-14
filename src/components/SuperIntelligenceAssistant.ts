@@ -316,6 +316,9 @@ export function initSuperIntelligenceAssistant() {
           <p><strong>Super Intelligence Lab:</strong></p>
           <p>Explore full in-browser interactive models: Revive Disease Inference, HamOrSpam NLP Tokenizer, FarmAIQ Crop Advisor, 2D Neural Decision Boundary, ChurnShield AI, and the SQL Data Analytics Sandbox.</p>
           <p><a href="/lab/index.html" class="si-link-action">Enter Super Intelligence Lab (/lab) &rarr;</a></p>
+          <p style="margin-top: 0.65rem;"><strong>DocuNexa (In-Browser Document &amp; PDF Ecosystem):</strong></p>
+          <p>All-in-one private, client-side document tools to convert, compress, merge, split, and edit documents 100% locally in your browser with zero remote transmission using WebAssembly and pdf-lib.</p>
+          <p><a href="https://docunexa.github.io/" target="_blank" rel="noopener noreferrer" class="si-link-action">Launch DocuNexa (docunexa.github.io) &rarr;</a></p>
         `;
       } else if (type === 'resume') {
         answer = `
@@ -526,11 +529,14 @@ export function initSuperIntelligenceAssistant() {
       `;
     }
 
-    if (q.includes('lab') || q.includes('super intelligence') || q.includes('interactive')) {
+    if (q.includes('lab') || q.includes('super intelligence') || q.includes('interactive') || q.includes('docunexa')) {
       return `
         <p><strong>Super Intelligence Lab:</strong></p>
         <p>Experience real-time interactive simulations of Revive, HamOrSpam, FarmAIQ, Neural Decision Boundary, ChurnShield, and SQL queries.</p>
         <p><a href="/lab/index.html" class="si-link-action">Open Super Intelligence Lab &rarr;</a></p>
+        <p style="margin-top: 0.65rem;"><strong>DocuNexa:</strong></p>
+        <p>All-in-one private in-browser document tools (convert, compress, merge, split, and edit) built with WebAssembly running 100% locally with zero server uploads.</p>
+        <p><a href="https://docunexa.github.io/" target="_blank" rel="noopener noreferrer" class="si-link-action">Open DocuNexa (docunexa.github.io) &rarr;</a></p>
       `;
     }
 

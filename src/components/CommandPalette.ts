@@ -194,6 +194,51 @@ export function initCommandPalette() {
       }
     },
     {
+      id: 'repo-driver-guardian',
+      name: 'Driver Guardian (Drowsiness & Distraction Detection)',
+      desc: 'Real-time computer vision driver monitor · OpenCV Haar cascades · Mouth thresholding & centroid drift',
+      category: 'Project',
+      badgeClass: 'badge-project',
+      tags: ['driver', 'drowsiness', 'distraction', 'opencv', 'haar', 'computer vision', 'webcam', 'flask'],
+      action: () => {
+        scrollToTarget('#projects');
+        setTimeout(() => {
+          const card = document.querySelector('[data-project="driver-guardian"]') as HTMLElement | null;
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    },
+    {
+      id: 'repo-agentops',
+      name: 'AgentOps (Agentic AI Platform)',
+      desc: 'Modular agent architecture · LLaMA 3.2, Mistral, Qwen, DeepSeek adapters · ReAct loop & vector memory',
+      category: 'Project',
+      badgeClass: 'badge-project',
+      tags: ['agentops', 'agent', 'agentic', 'llama', 'deepseek', 'mistral', 'qwen', 'react', 'vector'],
+      action: () => {
+        scrollToTarget('#projects');
+        setTimeout(() => {
+          const card = document.querySelector('[data-project="agentops"]') as HTMLElement | null;
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    },
+    {
+      id: 'repo-agentops-cli',
+      name: 'AgentOps-CLI (AI Coding Terminal Agent)',
+      desc: 'Terminal coding agent & operations platform · Ollama, OpenAI, Claude, Gemini · AST context & diff preview',
+      category: 'Project',
+      badgeClass: 'badge-project',
+      tags: ['agentops-cli', 'cli', 'terminal', 'coding agent', 'ollama', 'openai', 'gemini', 'claude'],
+      action: () => {
+        scrollToTarget('#projects');
+        setTimeout(() => {
+          const card = document.querySelector('[data-project="agentops-cli"]') as HTMLElement | null;
+          card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+      }
+    },
+    {
       id: 'repo-atlas',
       name: 'Atlas (India Data Atlas)',
       desc: 'Civic geospatial intelligence engine · 75 UP districts · 2025–2030 Ridge horizon forecasting · Three.js 3D WebGL',
@@ -426,6 +471,17 @@ export function initCommandPalette() {
       tags: ['lab', 'playground', 'demo', 'super intelligence', 'interactive'],
       action: () => {
         window.location.href = '/lab/index.html';
+      }
+    },
+    {
+      id: 'page-docunexa',
+      name: 'Launch DocuNexa (docunexa.github.io)',
+      desc: 'All-in-one private in-browser document & PDF tools: Convert, compress, merge, and split 100% locally',
+      category: 'Page',
+      badgeClass: 'badge-page',
+      tags: ['docunexa', 'docuflow', 'pdf', 'converter', 'tools', 'interactive', 'wasm'],
+      action: () => {
+        window.open('https://docunexa.github.io/', '_blank');
       }
     },
     {

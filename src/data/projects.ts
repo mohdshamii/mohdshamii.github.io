@@ -2,7 +2,7 @@ export interface Project {
   id: string;
   name: string;
   tagline: string;
-  category: 'ml' | 'nlp' | 'analytics' | 'all';
+  category: 'ml' | 'nlp' | 'analytics' | 'vision' | 'all';
   what: string;
   why: string;
   how: string;
@@ -41,7 +41,6 @@ export const projectsData: Project[] = [
     result: 'Isolated 33 multi-variate trajectory anomalies, achieved champion Ridge forecasting of score deltas, and generated plain-language SHAP driver narratives for all 643 districts with 22 automated Pytest tests.',
     technologies: ['Python 3.10+', 'Scikit-learn 1.5+', 'XGBoost', 'SHAP', 'Flask 3.0', 'Pandas', 'NumPy', 'SciPy', 'Chart.js', 'Plotly.js', 'Pytest'],
     githubUrl: 'https://github.com/mohdshamii/BharatLens',
-    liveDemoUrl: 'https://github.com/mohdshamii/BharatLens',
     image: '/img/project-bharatlens.png',
     featured: true
   },
@@ -103,6 +102,48 @@ export const projectsData: Project[] = [
     githubUrl: 'https://github.com/mohdshamii/HamOrSpam-Classifier',
     liveDemoUrl: '/lab/index.html#spam-tab',
     image: '/img/project-spam.png',
+    featured: true
+  },
+  {
+    id: 'driver-guardian',
+    name: 'Driver Guardian — Real-Time Driver Drowsiness and Distraction Detection System',
+    tagline: 'OpenCV Haar Cascades, Temporal Eye Tracking, Oral Cavity Image Processing & Multi-Factor Risk Engine',
+    category: 'vision',
+    what: 'A real-time Computer Vision system for monitoring driver attention through a live webcam feed (cv2.VideoCapture(0)), detecting faces and eyes using official OpenCV Haar Cascades, estimating drowsiness and yawning via temporal tracking and mouth ROI image processing, and approximating distraction from head centroid drift.',
+    why: 'Driver fatigue, microsleep, yawning, and phone distraction cause severe traffic accidents; lightweight localized CV monitoring is needed without heavy neural network latency or cloud dependencies.',
+    how: 'Captured live video streams using OpenCV cv2.VideoCapture(0); detected primary human faces and upper-face eyes using official Haar cascades; segmented lower-face mouth cavities via inverted adaptive thresholding; computed mouth opening aspect ratios; tracked head centroid drift (Δx, Δy); fused signals into a 0-100% multi-factor risk engine with synthesized Web Audio alarms and SQLite logging.',
+    result: 'Processes live webcam streams at 30+ FPS, passing 6 unit and integration tests across cascade loading, eye absence tracking, oral cavity metrics, centroid limits, and risk thresholds.',
+    technologies: ['Python 3.10+', 'OpenCV', 'Haar Cascades', 'Flask', 'NumPy', 'Web Audio API', 'SQLite', 'Chart.js'],
+    githubUrl: 'https://github.com/mohdshamii/Driver-drowsiness-and-distraction-detection',
+    image: '/img/project-farmaiq.png',
+    featured: true
+  },
+  {
+    id: 'agentops',
+    name: 'AgentOps — Modular Agentic AI Architecture & Multi-Model Platform',
+    tagline: 'Decoupled Model Adapters (LLaMA 3.2, Mistral, Qwen, DeepSeek), ReAct Loop & Local Vector Memory',
+    category: 'nlp',
+    what: 'An open-source agentic AI architecture designed for multi-step reasoning, autonomous workflows, dynamic tool execution, and local vector memory management across open-weight models.',
+    why: 'Modern agentic AI systems are frequently hardcoded to single proprietary APIs; developers require decoupled architectures capable of hot-swapping open-weight models without refactoring core reasoning loops.',
+    how: 'Built ModelAdapterFactory supporting Hugging Face router, OpenAI-compatible APIs, and offline local fallback; implemented ReAct thought-action-observation cycles streamed via Server-Sent Events (SSE); integrated sliding context window and local vector store using all-MiniLM-L6-v2 embeddings with cosine retrieval; provided tools for web scraping, HTTP requests, SQL inspection, and code execution.',
+    result: 'Delivered an end-to-end multi-agent framework hot-swapping LLaMA 3.2, Mistral 7B, Qwen 2.5 Coder, and DeepSeek R1 seamlessly with sub-100ms streaming responses.',
+    technologies: ['Python', 'FastAPI', 'Flask', 'Next.js 14', 'Sentence-Transformers', 'LLaMA 3.2', 'Mistral 7B', 'DeepSeek R1', 'Qwen 2.5', 'Docker'],
+    githubUrl: 'https://github.com/mohdshamii/agentops',
+    image: '/img/project-revive.png',
+    featured: true
+  },
+  {
+    id: 'agentops-cli',
+    name: 'AgentOps-CLI — Autonomous Terminal AI Coding Agent & Multi-Provider Platform',
+    tagline: 'Multi-Provider Router (Ollama, OpenAI, Claude, Gemini), AST Context Engine & Atomic Diff Previews',
+    category: 'analytics',
+    what: 'A production-oriented AI coding agent and terminal operations platform implemented entirely in Python, providing an agentic pair-programming loop with local Ollama, OpenAI, Anthropic, and Gemini support.',
+    why: 'Terminal developers need privacy-respecting coding assistants with strict workspace containment, transparent cost/latency routing, and explicit human confirmation before file edits or shell executions.',
+    how: 'Architected SmartRouter with real-time scoring, circuit breaking, and local-only privacy enforcement; built project-aware context indexer with token budgeting; implemented safe tools with path boundary protection, colored unified diff previews, and secret redaction; provided rich terminal REPL with slash commands and atomic session persistence.',
+    result: 'Validated across 80 Pytest unit and integration tests covering multi-provider adapters, context discovery, diff generation, and command sandboxing without external network calls.',
+    technologies: ['Python 3.10+', 'Ollama', 'OpenAI API', 'Anthropic Messages', 'Google Gemini', 'Rich Terminal UI', 'Pytest (80 Tests)', 'AST Indexing'],
+    githubUrl: 'https://github.com/mohdshamii/AgentOps-CLI',
+    image: '/img/project-pydsa.png',
     featured: true
   }
 ];
